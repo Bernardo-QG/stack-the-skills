@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Fundamentos de programación, checklist de revisión y estándares profesionales para cualquier proyecto.">
+<title>Stack the Skills</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: plano de obra — una columna de lectura, línea de tiempo numerada para las capas, rejilla de fichas para el temario */
+:root{
+  --bg:#F3F4F6; --surface:#FFFFFF; --ink:#16202C; --muted:#5B6573; --line:#D9DDE3;
+  --accent:#B4441C; --accent-soft:#F6E3DA; --ok:#1F7A4D; --ok-soft:#DDF1E6; --code:#EEF0F3;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11161D; --surface:#19202A; --ink:#E7EAEE; --muted:#9AA4B1; --line:#2B3442;
+  --accent:#F08A5D; --accent-soft:#3A2419; --ok:#5CC98F; --ok-soft:#173326; --code:#212A36; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161D; --surface:#19202A; --ink:#E7EAEE; --muted:#9AA4B1; --line:#2B3442;
+  --accent:#F08A5D; --accent-soft:#3A2419; --ok:#5CC98F; --ok-soft:#173326; --code:#212A36; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15.5px;line-height:1.6;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:980px;margin:0 auto;padding-block:40px 80px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.15;margin:0}
+h1{font-size:clamp(2rem,5vw,3.1rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:1.75rem;font-weight:800;letter-spacing:-.01em}
+h3{font-size:1.15rem;font-weight:600}
+p{margin:0}
+a{color:var(--accent)}
+code,.mono{font-family:var(--f-mono);font-size:.86em}
+code{background:var(--code);padding:.1em .35em;border-radius:4px}
+.eyebrow{font-family:var(--f-mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.lead{color:var(--muted);max-width:65ch;font-size:1.05rem}
+
+/* header */
+header{display:grid;gap:18px;margin-bottom:28px}
+.versions{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--f-mono);font-size:.78rem;border:1px solid var(--line);background:var(--surface);padding:4px 10px;border-radius:999px;white-space:nowrap}
+.chip b{color:var(--accent);font-weight:500}
+.global{display:grid;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.global-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.big{font-family:var(--f-display);font-size:2rem;font-weight:800;font-variant-numeric:tabular-nums}
+.bar{height:8px;background:var(--code);border-radius:999px;overflow:hidden}
+.bar>i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.stats{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);margin-bottom:8px}
+nav ul{list-style:none;margin:0;padding:10px 0;display:flex;gap:6px;overflow-x:auto}
+nav a{display:block;text-decoration:none;color:var(--ink);font-weight:500;font-size:.92rem;padding:6px 12px;border-radius:6px;white-space:nowrap}
+nav a:hover,nav a:focus-visible{background:var(--accent-soft);color:var(--accent);outline:none}
+
+section{padding-top:44px;display:grid;gap:18px}
+.sec-head{display:grid;gap:8px}
+
+/* principios */
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.rule{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:grid;gap:4px}
+.rule .k{font-family:var(--f-mono);font-size:.75rem;color:var(--accent)}
+
+/* timeline */
+.timeline{display:grid;gap:0;position:relative}
+.layer{display:grid;grid-template-columns:56px minmax(0,1fr);gap:0 16px;position:relative}
+.layer::before{content:"";position:absolute;left:27px;top:52px;bottom:0;width:2px;background:var(--line)}
+.layer:last-child::before{display:none}
+.num{width:56px;height:56px;border-radius:50%;border:2px solid var(--line);background:var(--surface);display:grid;place-items:center;
+  font-family:var(--f-display);font-weight:800;font-size:1.3rem;font-variant-numeric:tabular-nums;position:relative;z-index:1}
+.layer.done .num{background:var(--ok);border-color:var(--ok);color:var(--surface)}
+.card{min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin-bottom:22px;display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.meta{display:flex;gap:8px;flex-wrap:wrap;min-width:0}
+.card-top>*{min-width:0}
+.pill{font-family:var(--f-mono);font-size:.72rem;padding:3px 8px;border-radius:999px;background:var(--code);color:var(--muted);white-space:nowrap}
+.pill.hot{background:var(--accent-soft);color:var(--accent)}
+.pill.okp{background:var(--ok-soft);color:var(--ok)}
+.goal{color:var(--muted)}
+.dod{border-top:1px dashed var(--line);padding-top:10px;font-size:.92rem}
+.dod b{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ok);margin-right:6px}
+
+/* checklist */
+.checks{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.checks span{overflow-wrap:anywhere}
+.checks label{display:grid;grid-template-columns:20px minmax(0,1fr);gap:10px;align-items:start;cursor:pointer;padding:3px 4px;border-radius:6px}
+.checks label:hover{background:var(--code)}
+.checks input{appearance:none;width:18px;height:18px;margin:3px 0 0;border:1.5px solid var(--muted);border-radius:4px;display:grid;place-items:center;cursor:pointer;background:var(--surface)}
+.checks input:checked{background:var(--ok);border-color:var(--ok)}
+.checks input:checked::after{content:"";width:5px;height:9px;border:solid var(--surface);border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.checks input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.checks input:checked + span{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line)}
+.checks small{display:block;color:var(--muted);font-size:.84rem;text-decoration:none}
+
+/* temario grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:14px}
+.grid .card{margin:0}
+.mini{display:grid;gap:6px}
+.mini .bar{height:5px}
+.mini .stats{font-size:.78rem}
+
+/* estándares */
+pre{margin:0;background:var(--code);border-radius:8px;padding:12px 14px;overflow-x:auto;font-family:var(--f-mono);font-size:.82rem;line-height:1.55}
+.std-ex{display:grid;gap:6px}
+
+/* recursos */
+.res{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px}
+.res a{display:grid;gap:2px;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.res a:hover,.res a:focus-visible{border-color:var(--accent);outline:none}
+.res a span{color:var(--muted);font-size:.88rem}
+.res a .mono{color:var(--accent);font-size:.75rem}
+
+.week{width:100%;border-collapse:collapse;font-size:.92rem}
+.week th,.week td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.week th{font-family:var(--f-mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:500}
+.tablebox{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+
+.reset{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:8px}
+button{font:inherit;font-size:.88rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:7px 14px;border-radius:6px;cursor:pointer}
+button:hover{border-color:var(--accent)}
+button.danger{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+footer{margin-top:48px;color:var(--muted);font-size:.85rem;display:grid;gap:8px}
+
+@media (max-width:560px){
+  .layer{grid-template-columns:40px minmax(0,1fr);gap:0 10px}
+  .num{width:40px;height:40px;font-size:1rem}
+  .layer::before{left:19px;top:40px}
+  .card{padding:14px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* acordeones */
+.stack{display:grid;gap:10px}
+details.acc{background:var(--surface);border:1px solid var(--line);border-radius:10px}
+details.acc.done{border-color:var(--ok)}
+details.acc>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 14px;align-items:center;padding:14px 18px;border-radius:10px}
+details.acc>summary::-webkit-details-marker{display:none}
+details.acc>summary:hover{background:var(--code)}
+details.acc>summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.sum-main{display:grid;gap:2px;min-width:0}
+.sum-side{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.sum-bar{grid-column:1/-1;height:5px}
+.count{font-family:var(--f-mono);font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+details.acc.done .count{color:var(--ok)}
+.chev{width:9px;height:9px;border:solid var(--muted);border-width:0 2px 2px 0;transform:translateY(-2px) rotate(45deg);transition:transform .2s;flex:none}
+details[open]>summary .chev{transform:translateY(2px) rotate(225deg)}
+.acc-body{padding:4px 18px 18px;display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.btn-sm{font-size:.8rem;padding:5px 11px}
+.fallback{width:100%;min-height:120px;font-family:var(--f-mono);font-size:.8rem;background:var(--code);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:10px}
+.divider{margin-top:72px;padding-top:28px;border-top:2px solid var(--line);display:grid;gap:8px}
+.layer details.acc{margin-bottom:16px;min-width:0}
+@media (max-width:560px){details.acc>summary{padding:12px 14px}.acc-body{padding:4px 14px 14px}}
+body{margin:0}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header>
+  <span class="eyebrow">Bernardo Quintino · plan de estudio 2026–2027</span>
+  <h1>Stack the Skills</h1>
+  <p class="lead">Tu referencia de cabecera para cualquier proyecto y cualquier lenguaje: fundamentos por niveles, una checklist para revisar tu código y los estándares de los equipos profesionales. Abajo, en segundo plano, está el plan de práctica con Java + Angular. Marca cada punto cuando lo puedas <strong>explicar y hacer sin tutorial</strong>. Tu avance se guarda en este navegador.</p>
+  <div class="versions" aria-label="Versiones de referencia">
+    <span class="chip">Java <b>25 LTS</b></span>
+    <span class="chip">Spring Boot <b>4.x</b> · Framework 7</span>
+    <span class="chip">Angular <b>22</b></span>
+    <span class="chip">TypeScript <b>6</b></span>
+    <span class="chip">MySQL <b>8</b></span>
+  </div>
+  <div class="global">
+    <div class="global-top"><span class="eyebrow">Avance total</span><span class="big" id="gPct">0%</span></div>
+    <div class="bar"><i id="gBar"></i></div>
+    <div class="stats" id="gStats"></div>
+  </div>
+</header>
+
+
+<nav aria-label="Secciones"><ul>
+  <li><a href="#fundamentos">Fundamentos</a></li>
+  <li><a href="#checklist">Checklist</a></li>
+  <li><a href="#estandares">Estándares</a></li>
+  <li><a href="#practica">Plan de práctica</a></li>
+  <li><a href="#recursos">Recursos</a></li>
+</ul></nav>
+
+<section id="fundamentos">
+  <div class="sec-head">
+    <span class="eyebrow">Fundamentos · sirven en cualquier lenguaje</span>
+    <h2>Lo elemental, por niveles</h2>
+    <p class="lead">Conceptos que no dependen de un lenguaje, un framework ni un proyecto: los usas igual en Java, SQL, TypeScript, Python o Pascal. Van en orden, porque cada nivel se apoya en el anterior. Cada punto trae una explicación corta para consultarla cuando la necesites.</p>
+    <div class="toolbar"><button type="button" class="btn-sm" data-open="fundStack">Abrir todo</button><button type="button" class="btn-sm" data-close="fundStack">Cerrar todo</button></div>
+  </div>
+  <div class="stack" id="fundStack"></div>
+</section>
+
+<section id="checklist">
+  <div class="sec-head">
+    <span class="eyebrow">Checklist universal · para cualquier código</span>
+    <h2>Antes de dar algo por terminado</h2>
+    <p class="lead">Repásala con cualquier cosa que programes. Estas casillas no se guardan: márcalas en cada revisión y luego límpialas. Copia la checklist en Markdown para pegarla en la plantilla de PR o en el README de cualquier proyecto.</p>
+    <div class="toolbar"><button type="button" class="btn-sm" data-open="uniStack">Abrir todo</button><button type="button" class="btn-sm" data-close="uniStack">Cerrar todo</button><button type="button" class="btn-sm" data-copyall="uni">Copiar checklist completa</button><button type="button" class="btn-sm" id="uniClear">Limpiar</button></div>
+  </div>
+  <div class="stack" id="uniStack"></div>
+</section>
+
+<section id="estandares">
+  <div class="sec-head">
+    <span class="eyebrow">Estándares · aplican a cualquier proyecto</span>
+    <h2>Las reglas del juego</h2>
+    <p class="lead">Las convenciones que una empresa espera que ya conozcas. Aplícalas en todo lo que programes; un reclutador técnico las nota en tu GitHub en los primeros 30 segundos.</p>
+    <div class="toolbar"><button type="button" class="btn-sm" data-open="stdStack">Abrir todo</button><button type="button" class="btn-sm" data-close="stdStack">Cerrar todo</button></div>
+  </div>
+  <div class="stack" id="stdStack"></div>
+</section>
+
+<div class="divider" id="practica">
+  <span class="eyebrow">Segundo plano</span>
+  <h2>Plan de práctica con Java + Angular</h2>
+  <p class="lead">Opcional. Aquí aplicas lo de arriba en tu stack actual: reglas de estudio, un proyecto guiado por capas y el temario específico de Java y Angular.</p>
+</div>
+
+<section id="reglas">
+  <div class="sec-head"><span class="eyebrow">Antes de empezar</span><h2>Cinco reglas para no perderte</h2></div>
+  <div class="rules">
+    <div class="rule"><span class="k">70 / 30</span><h3>Construye más de lo que lees</h3><p>70% del tiempo escribiendo código en tu proyecto, 30% en cursos o docs. Si solo ves videos, no se queda.</p></div>
+    <div class="rule"><span class="k">profundidad</span><h3>Un stack, a fondo</h3><p>Java + Spring Boot + Angular + MySQL. Nada de React, Python ni Kubernetes hasta terminar las capas 0 a 7.</p></div>
+    <div class="rule"><span class="k">explícalo</span><h3>Marca solo lo que sabes explicar</h3><p>Si no puedes explicar un tema en voz alta (de preferencia en inglés), todavía no está.</p></div>
+    <div class="rule"><span class="k">trabajo</span><h3>Usa Castores como laboratorio</h3><p>Aprende ahí, pero nunca subas código, datos ni nombres internos de la empresa a tu GitHub.</p></div>
+    <div class="rule"><span class="k">IA</span><h3>La IA te ayuda, no te sustituye</h3><p>Úsala para entender y revisar, y lee todo lo que genera. En una entrevista no vas a tener a nadie que te sople.</p></div>
+  </div>
+</section>
+
+<section id="roadmap">
+  <div class="sec-head">
+    <span class="eyebrow">Proyecto · un proyecto, ocho capas</span>
+    <h2>StockFlow: tu inventario de portafolio</h2>
+    <p class="lead">Un sistema de inventario con productos, almacenes, movimientos de entrada y salida, y usuarios con roles. Es tu dominio, así que vas a poder hablar de él con seguridad, pero lo escribes desde cero. Calcula de 5 a 6 meses a unas 8 horas por semana. Cada capa termina con un entregable concreto.</p>
+  </div>
+  <div class="toolbar"><button type="button" class="btn-sm" data-open="timeline">Abrir todo</button><button type="button" class="btn-sm" data-close="timeline">Cerrar todo</button></div>
+  <div class="timeline" id="timeline"></div>
+</section>
+
+<section id="temario">
+  <div class="sec-head">
+    <span class="eyebrow">Temario · específico de tu stack (Java + Angular)</span>
+    <h2>Lo que te van a preguntar en una entrevista</h2>
+    <p class="lead">Estudia esto en paralelo con las capas. La etiqueta indica la prioridad: <span class="pill hot">alta</span> se pregunta en casi todas las entrevistas de backend Java, <span class="pill">media</span> te distingue de otros candidatos.</p>
+  </div>
+  <div class="toolbar"><button type="button" class="btn-sm" data-open="temarioStack">Abrir todo</button><button type="button" class="btn-sm" data-close="temarioStack">Cerrar todo</button></div>
+  <div class="stack" id="temarioStack"></div>
+</section>
+
+<section id="semana">
+  <div class="sec-head">
+    <span class="eyebrow">Ritmo</span>
+    <h2>Tu semana tipo</h2>
+    <p class="lead">Encaja con tu plan para ganar en dólares: unas 8 a 9 horas por semana junto con el inglés. El domingo se descansa.</p>
+  </div>
+  <div class="tablebox"><table class="week">
+    <thead><tr><th>Día</th><th>Bloque</th><th>Tiempo</th></tr></thead>
+    <tbody>
+      <tr><td>Lun · Mié · Vie</td><td>Inglés: conversación o curso. Explica en voz alta lo último que construiste.</td><td class="mono">45 min</td></tr>
+      <tr><td>Mar · Jue</td><td>Temario: un tema, con ejemplo de código propio y notas en tu README de estudio.</td><td class="mono">1 h</td></tr>
+      <tr><td>Sábado</td><td>Capa del roadmap: construir, probar, commit y PR a tu propio repo.</td><td class="mono">3 h</td></tr>
+      <tr><td>Domingo</td><td>Nada. Si te quemas en el mes 3, no llegas al mes 6.</td><td class="mono">—</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="recursos">
+  <div class="sec-head">
+    <span class="eyebrow">Recursos · gratis primero</span>
+    <h2>Dónde aprender cada cosa</h2>
+    <p class="lead">Pocos recursos y buenos. La documentación oficial siempre gana sobre un video viejo.</p>
+  </div>
+  <div class="res" id="res"></div>
+</section>
+
+<footer>
+  <div class="reset" id="resetBox"><button type="button" id="resetBtn">Reiniciar mi avance</button></div>
+  <p>Versiones de referencia revisadas en noviembre de 2026: Java 25 es la LTS actual, Spring Boot 4.1 salió en junio de 2026 y Angular 22 en 2026. En el trabajo puedes usar versiones anteriores. Aprende lo moderno y entiende lo que ya existe.</p>
+</footer>
+</div>
+
+<script>
+const ROADMAP = [
+ {id:"c0", t:"Cimientos del repositorio", w:"1 semana", tags:["Git","README"],
+  goal:"Que tu repo se vea profesional antes de escribir una sola línea de lógica.",
+  items:[
+   ["Repo en GitHub con README inicial: qué es, stack y cómo correrlo","El README es lo primero que lee un reclutador."],
+   ["Estructura monorepo: /backend (Spring Boot) y /frontend (Angular)",""],
+   ["Proyecto generado con start.spring.io: Java 25, Maven, Web, JPA, Validation, MySQL",""],
+   [".gitignore correcto y cero secretos en el repo (usa variables de entorno)",""],
+   ["Conventional Commits desde el primer commit","Ej.: feat(api): crea entidad Producto"],
+   ["Trabajar con ramas y Pull Requests hacia main, aunque estés solo",""]
+  ], dod:"El repo es público, el README explica el proyecto y el historial de commits se lee limpio."},
+ {id:"c1", t:"API REST con Spring Boot + MySQL", w:"3–4 semanas", tags:["Spring Boot","JPA","SQL"],
+  goal:"El corazón del proyecto: un CRUD bien hecho, no un CRUD de tutorial.",
+  items:[
+   ["Entidades JPA: Producto, Almacen, Movimiento, con relaciones bien mapeadas",""],
+   ["Capas controller → service → repository, con DTOs (records) y sin exponer entidades",""],
+   ["Bean Validation (@NotBlank, @Positive…) en los DTOs de entrada",""],
+   ["Manejo global de errores con @RestControllerAdvice y respuestas ProblemDetail (RFC 9457)",""],
+   ["Paginación y ordenamiento: GET /api/v1/productos?page=0&size=20&sort=nombre",""],
+   ["Migraciones de base de datos con Flyway (V1__crear_tablas.sql…)","Nunca uses ddl-auto=update fuera de pruebas."],
+   ["Lógica de negocio real: el stock no puede quedar negativo y cada movimiento es @Transactional",""],
+   ["Documentación automática con springdoc-openapi (Swagger UI)",""],
+   ["Perfiles dev y prod en application.yml",""]
+  ], dod:"Swagger muestra todos los endpoints, los errores devuelven JSON consistente y la base de datos se crea solo con migraciones."},
+ {id:"c2", t:"Testing", w:"2–3 semanas", tags:["JUnit 5","Mockito","Testcontainers"],
+  goal:"La skill que más falta en los candidatos y que más se nota.",
+  items:[
+   ["Tests unitarios del service con JUnit 5 + Mockito + AssertJ",""],
+   ["Patrón Arrange–Act–Assert y nombres descriptivos (debeRechazarSalida_cuandoStockInsuficiente)",""],
+   ["@WebMvcTest para probar controllers: códigos HTTP, validaciones y JSON",""],
+   ["@DataJpaTest para probar consultas del repository",""],
+   ["Tests de integración con Testcontainers (MySQL real en Docker)",""],
+   ["Reporte de cobertura con JaCoCo (meta: más de 70% en services)",""]
+  ], dod:"mvn verify corre todos los tests en verde y cada regla de negocio tiene al menos un test."},
+ {id:"c3", t:"Seguridad", w:"2–3 semanas", tags:["Spring Security","JWT"],
+  goal:"Login real, roles y lo básico de OWASP.",
+  items:[
+   ["Registro y login con contraseñas hasheadas (BCrypt)",""],
+   ["Autenticación con JWT: emisión, validación y expiración",""],
+   ["Roles (ADMIN, ALMACENISTA, CONSULTA) y @PreAuthorize por endpoint",""],
+   ["CORS configurado solo para tu frontend",""],
+   ["Revisar tu API contra el OWASP Top 10: inyección, control de acceso y exposición de datos",""],
+   ["Tests de seguridad: 401 sin token, 403 con rol incorrecto",""]
+  ], dod:"Ningún endpoint de negocio responde sin token y cada rol ve solo lo que debe."},
+ {id:"c4", t:"Frontend en Angular", w:"4 semanas", tags:["Angular 22","Signals","RxJS"],
+  goal:"Un frontend moderno que demuestre Angular actual, no el de 2018.",
+  items:[
+   ["Componentes standalone y estructura por features (productos/, almacenes/, auth/)",""],
+   ["Estado con signals: signal, computed, effect e input()/output()",""],
+   ["Llamadas HTTP con HttpClient o httpResource, con estados de carga y error",""],
+   ["Formularios con Signal Forms o Reactive Forms, con validaciones",""],
+   ["Interceptor que agrega el JWT y guard que protege rutas por rol",""],
+   ["Rutas con lazy loading",""],
+   ["UI con PrimeNG y Tailwind: tabla paginada de productos y formulario de movimientos",""],
+   ["RxJS que sí se usa: switchMap y debounceTime en un buscador",""],
+   ["Al menos 5 tests de componentes o servicios",""]
+  ], dod:"Puedes iniciar sesión, ver el inventario paginado y registrar una entrada o salida desde el navegador."},
+ {id:"c5", t:"Docker", w:"1–2 semanas", tags:["Dockerfile","Compose"],
+  goal:"Que cualquiera levante tu proyecto con un solo comando.",
+  items:[
+   ["Dockerfile multi-stage para el backend (build con Maven, imagen final ligera con JRE)",""],
+   ["Dockerfile para el frontend (build de Angular servido con Nginx)",""],
+   ["docker-compose.yml con mysql, api y web, más variables de entorno",""],
+   ["Entender imágenes, contenedores, volúmenes, redes y puertos",""]
+  ], dod:"git clone y luego docker compose up dejan todo funcionando. Pon eso en el README."},
+ {id:"c6", t:"CI/CD", w:"1 semana", tags:["GitHub Actions"],
+  goal:"Automatizar lo que un equipo real automatiza.",
+  items:[
+   ["GitHub Actions que compila y corre los tests en cada push y PR",""],
+   ["Pipeline del frontend: lint, test y build",""],
+   ["Badge de estado del build en el README",""],
+   ["(Opcional) Análisis de calidad con SonarCloud, gratis para repos públicos",""]
+  ], dod:"Un PR con un test roto queda marcado en rojo automáticamente."},
+ {id:"c7", t:"Nube y observabilidad", w:"2–3 semanas", tags:["AWS","Actuator"],
+  goal:"Que tu proyecto viva en internet y puedas mandar el link.",
+  items:[
+   ["Spring Boot Actuator: /health y métricas básicas",""],
+   ["Logs con niveles correctos y sin datos sensibles",""],
+   ["Conceptos de AWS: EC2, RDS, S3, IAM y regiones","Con AWS Free Tier y Skill Builder puedes aprender sin pagar."],
+   ["Desplegar: AWS (EC2 + RDS) o una opción gratuita como Render o Railway",""],
+   ["Demo en vivo con usuario de prueba y link en tu README y en tu CV",""]
+  ], dod:"Tienes una URL pública que funciona y la puedes poner en tu CV."},
+ {id:"c8", t:"Nivel pro (opcional)", w:"cuando quieras", tags:["Redis","Mensajería"],
+  goal:"Para cuando terminaste lo anterior y quieres destacar en entrevistas de nivel medio.",
+  items:[
+   ["Caché con Redis para consultas frecuentes",""],
+   ["Un segundo microservicio (por ejemplo, notificaciones de stock bajo) comunicado por RabbitMQ o Kafka",""],
+   ["Versionado de API (v1 y v2) y su estrategia",""],
+   ["Virtual threads (Java 21+) y entender cuándo ayudan",""],
+   ["ADRs: documentar por qué tomaste cada decisión de arquitectura",""]
+  ], dod:"Puedes explicar con un diagrama cómo se comunican tus servicios y por qué lo hiciste así."}
+];
+
+const TEMARIO = [
+ {id:"tj", t:"Java core", p:"alta", items:[
+  ["POO de verdad: encapsulación, interfaces, polimorfismo, composición sobre herencia",""],
+  ["Colecciones: List, Set, Map y cuándo usar cada una; cómo funciona HashMap",""],
+  ["equals() y hashCode(): el contrato y por qué importa",""],
+  ["Inmutabilidad, String y records",""],
+  ["Excepciones checked vs unchecked y cuándo crear las tuyas",""],
+  ["Generics: <T>, wildcards (? extends / ? super)",""],
+  ["Lambdas, interfaces funcionales y Streams (map, filter, collect, groupingBy)",""],
+  ["Optional bien usado (no como reemplazo de todo null)",""],
+  ["Java moderno: switch con pattern matching, sealed classes, var, text blocks",""],
+  ["Concurrencia básica: threads, ExecutorService, CompletableFuture, virtual threads",""],
+  ["JVM: heap vs stack y la idea de garbage collection",""]]},
+ {id:"ts", t:"Spring y Spring Boot", p:"alta", items:[
+  ["Inversión de control e inyección de dependencias (por constructor)",""],
+  ["Beans, scopes y estereotipos (@Component, @Service, @Repository)",""],
+  ["Autoconfiguración: qué hace Spring Boot por ti",""],
+  ["@Transactional: propagación, rollback y el problema de la auto-invocación (proxies)",""],
+  ["JPA/Hibernate: relaciones, LAZY vs EAGER, el problema N+1 y fetch join / @EntityGraph",""],
+  ["Spring Data: query methods, @Query y proyecciones",""],
+  ["Validación, @RestControllerAdvice y ProblemDetail",""],
+  ["Configuración: application.yml, perfiles y @ConfigurationProperties",""],
+  ["Clientes HTTP: RestClient y HTTP interfaces",""],
+  ["Spring Security: filtros, autenticación vs autorización",""]]},
+ {id:"tb", t:"Bases de datos y SQL", p:"alta", items:[
+  ["JOINs (inner, left, right) sin dudar",""],
+  ["GROUP BY, HAVING y subconsultas",""],
+  ["Funciones de ventana: ROW_NUMBER, RANK, SUM() OVER",""],
+  ["Índices: cómo funcionan (B-tree), índices compuestos y leer un EXPLAIN",""],
+  ["Normalización hasta 3FN y cuándo desnormalizar",""],
+  ["Transacciones ACID, niveles de aislamiento y bloqueos",""],
+  ["Optimizar una consulta lenta: tu experiencia en SICAP cuenta aquí",""]]},
+ {id:"tw", t:"Web, HTTP y APIs", p:"alta", items:[
+  ["Métodos HTTP, idempotencia y seguridad (GET, POST, PUT, PATCH, DELETE)",""],
+  ["Códigos de estado: 200, 201, 204, 400, 401, 403, 404, 409, 422, 500",""],
+  ["Diseño REST: recursos en plural, anidación y filtros por query params",""],
+  ["Sesiones vs JWT vs OAuth2 / OpenID Connect",""],
+  ["CORS: qué es y por qué el navegador lo bloquea",""],
+  ["Cookies, headers y caché HTTP básica",""]]},
+ {id:"ta", t:"Angular y TypeScript", p:"alta", items:[
+  ["TypeScript: tipos, interfaces, union types, generics y modo strict",""],
+  ["Componentes standalone y ciclo de vida",""],
+  ["Signals: signal, computed, effect y linkedSignal",""],
+  ["Detección de cambios: OnPush (el default en v22) y por qué importa",""],
+  ["RxJS: Observable, switchMap vs mergeMap vs concatMap, takeUntilDestroyed",""],
+  ["Inyección de dependencias en Angular",""],
+  ["Routing, guards, resolvers y lazy loading",""],
+  ["Formularios: Signal Forms y Reactive Forms",""],
+  ["Interceptors HTTP",""]]},
+ {id:"td", t:"Diseño y arquitectura", p:"alta", items:[
+  ["Principios SOLID con un ejemplo propio de cada uno",""],
+  ["DRY, KISS y YAGNI",""],
+  ["Patrones: Strategy, Factory, Builder, Adapter, Observer, Repository",""],
+  ["Arquitectura en capas y por qué separar DTO de entidad",""],
+  ["Arquitectura hexagonal (puertos y adaptadores), el concepto",""],
+  ["Monolito vs microservicios: ventajas, costos y cuándo cada uno",""],
+  ["Clean Code: nombres, funciones pequeñas, comentarios útiles",""]]},
+ {id:"tc", t:"Algoritmos para entrevistas", p:"media", items:[
+  ["Notación Big-O: tiempo y espacio",""],
+  ["Arrays, strings y hash maps",""],
+  ["Two pointers y sliding window",""],
+  ["Pilas, colas y recursión",""],
+  ["Búsqueda binaria y ordenamiento",""],
+  ["Árboles y grafos básicos (BFS / DFS)",""],
+  ["Resolver 75 problemas tipo LeetCode easy/medium","La lista NeetCode 75 o Blind 75 basta."]]},
+ {id:"th", t:"Herramientas del día a día", p:"media", items:[
+  ["Git: merge vs rebase, cherry-pick, resolver conflictos y revertir",""],
+  ["Maven: ciclo de vida, dependencias y perfiles",""],
+  ["Debugger de IntelliJ: breakpoints condicionales y evaluar expresiones",""],
+  ["Terminal Linux básica: navegar, grep, logs, permisos",""],
+  ["Probar APIs con Postman o archivos .http",""],
+  ["Leer un stack trace y encontrar la causa raíz",""]]},
+ {id:"ti", t:"IA aplicada al desarrollo", p:"media", items:[
+  ["Pedirle a la IA código con contexto: stack, versión y restricciones",""],
+  ["Revisar código generado: seguridad, edge cases y que compile",""],
+  ["Generar tests y documentación con IA, y validarlos",""],
+  ["Políticas: no pegar código ni datos de la empresa en herramientas no autorizadas",""]]}
+];
+
+const STD = [
+ {id:"s1", t:"Estilo de código", items:[
+  ["Google Java Style Guide o las convenciones de nombres de Java","clases PascalCase, métodos camelCase, CONSTANTES_MAYUS"],
+  ["Guía de estilo oficial de Angular (angular.dev/style-guide)",""],
+  ["Formateo automático: Spotless/Checkstyle en Java, ESLint y Prettier en Angular",""],
+  ["Sin código muerto, sin console.log y sin System.out en producción",""]],
+  ex:null},
+ {id:"s2", t:"Commits y control de versiones", items:[
+  ["Conventional Commits",""],
+  ["Commits pequeños que hacen una sola cosa",""],
+  ["GitHub Flow: rama por feature, PR a main y squash merge",""],
+  ["Versionado semántico (SemVer) en tus releases: MAJOR.MINOR.PATCH",""]],
+  ex:"feat(movimientos): valida stock antes de registrar salida\nfix(auth): corrige expiración del JWT en zona horaria MX\ntest(productos): agrega casos de paginación\ndocs: explica cómo levantar con docker compose"},
+ {id:"s3", t:"Pull Requests y code review", items:[
+  ["PR de menos de 400 líneas, con descripción de qué cambia, por qué y cómo probarlo",""],
+  ["Revisar tu propio PR antes de pedir revisión",""],
+  ["Responder comentarios de revisión sin tomarlo personal y con argumentos",""],
+  ["Definition of Done: compila, tests en verde, sin warnings nuevos, README actualizado",""]],
+  ex:null},
+ {id:"s4", t:"Diseño de APIs", items:[
+  ["Recursos en plural y kebab-case: /api/v1/ordenes-compra",""],
+  ["Código HTTP correcto: 201 + Location al crear, 204 al borrar",""],
+  ["Errores con Problem Details (RFC 9457)",""],
+  ["Contrato documentado con OpenAPI 3",""],
+  ["Paginación, filtros y versionado desde el inicio",""]],
+  ex:"POST /api/v1/movimientos  →  201 Created\n{\n  \"type\": \"/errores/stock-insuficiente\",\n  \"title\": \"Stock insuficiente\",\n  \"status\": 409,\n  \"detail\": \"El producto P-1023 tiene 4 piezas; se pidieron 10\"\n}"},
+ {id:"s5", t:"Seguridad", items:[
+  ["OWASP Top 10: conocer cada categoría",""],
+  ["Secretos solo en variables de entorno o un gestor de secretos, nunca en Git",""],
+  ["Validar toda entrada y usar consultas parametrizadas (nada de concatenar SQL)",""],
+  ["Principio de mínimo privilegio en roles y en usuarios de base de datos",""],
+  ["No registrar en logs contraseñas, tokens ni datos personales",""]],
+  ex:null},
+ {id:"s6", t:"Testing", items:[
+  ["Pirámide de tests: muchos unitarios, algunos de integración, pocos E2E",""],
+  ["Principios FIRST: rápidos, independientes, repetibles, auto-validables y oportunos",""],
+  ["Un test por comportamiento, no por método",""]],
+  ex:null},
+ {id:"s7", t:"Base de datos", items:[
+  ["Migraciones versionadas (Flyway); nunca cambios manuales en producción",""],
+  ["Convención snake_case para tablas y columnas",""],
+  ["Índices en llaves foráneas y columnas de búsqueda",""],
+  ["Nada de SELECT * en código de producción",""]],
+  ex:"V1__crear_productos.sql\nV2__crear_movimientos.sql\nV3__indice_movimientos_fecha.sql"},
+ {id:"s8", t:"Configuración y documentación", items:[
+  ["The Twelve-Factor App (12factor.net): configuración por entorno, logs como stream",""],
+  ["README con qué es, cómo correrlo, arquitectura y decisiones",""],
+  ["Diagrama de arquitectura simple en el README (Mermaid sirve)",""],
+  ["ADRs para decisiones importantes",""]],
+  ex:null}
+];
+
+const RES = [
+ ["roadmap.sh", "Rutas visuales de Java, Spring Boot y Angular", "https://roadmap.sh/spring-boot"],
+ ["Spring Guides", "Guías oficiales cortas y prácticas", "https://spring.io/guides"],
+ ["Baeldung", "La referencia de Java y Spring para cualquier duda", "https://www.baeldung.com"],
+ ["dev.java", "Tutoriales oficiales de Java moderno", "https://dev.java/learn/"],
+ ["angular.dev", "Docs y tutorial oficial de Angular actual", "https://angular.dev"],
+ ["Refactoring Guru", "Patrones de diseño explicados, en español", "https://refactoring.guru/es/design-patterns"],
+ ["Testcontainers Guides", "Tests de integración con bases de datos reales", "https://testcontainers.com/guides/"],
+ ["NeetCode", "Lista de problemas y explicaciones para entrevistas", "https://neetcode.io"],
+ ["OWASP Top 10", "Las 10 vulnerabilidades web más comunes", "https://owasp.org/Top10/"],
+ ["Conventional Commits", "La especificación, en español", "https://www.conventionalcommits.org/es/v1.0.0/"],
+ ["The Twelve-Factor App", "Principios para apps en la nube, en español", "https://12factor.net/es/"],
+ ["Effective Java (libro)", "Joshua Bloch. El libro que más te sube el nivel en Java", "https://www.oreilly.com/library/view/effective-java-3rd/9780134686097/"]
+];
+
+const FUND = [
+ {id:"f1", t:"Lógica y programación", w:"base de todo", items:[
+  ["Tipos de datos y tipado estático vs dinámico","Java y TypeScript revisan tipos al compilar; JavaScript y Python, al ejecutar."],
+  ["Control de flujo: condicionales, ciclos y salidas tempranas","Un return o guard clause al inicio evita anidar if dentro de if."],
+  ["Funciones: parámetros, retorno, alcance (scope) y efectos secundarios","Una función pura da el mismo resultado con la misma entrada y no modifica nada fuera de ella."],
+  ["Valor vs referencia","Si pasas un objeto a una función y lo modificas, cambias el original."],
+  ["Inmutabilidad","Crear un dato nuevo en lugar de modificar el existente evita muchos bugs."],
+  ["El problema del null","Decide qué significa la ausencia de un valor: Optional, valores por defecto o errores explícitos."],
+  ["Manejo de errores: excepciones vs valores de error","Falla rápido, con un mensaje claro y en el lugar correcto; nunca atrapes un error para ignorarlo."],
+  ["Recursión","Una función que se llama a sí misma con un caso base. Útil en árboles y estructuras anidadas."],
+  ["Estilo imperativo vs funcional (map, filter, reduce)","Existe en Java (Streams), JavaScript, Python, C#…"]]},
+ {id:"f2", t:"Estructuras de datos y algoritmos", w:"cómo guardar y buscar", items:[
+  ["Big-O: medir el costo en tiempo y memoria","O(1) acceso directo, O(log n) búsqueda binaria, O(n) recorrer, O(n²) doble ciclo."],
+  ["Arreglos y listas","Acceso por índice rápido; insertar a la mitad, lento."],
+  ["Hash map / diccionario","Búsqueda por llave en O(1) promedio. La estructura más útil del día a día."],
+  ["Set (conjunto)","Elementos únicos y saber rápido si algo existe."],
+  ["Pila (LIFO) y cola (FIFO)","Deshacer acciones usa pila; procesar pedidos en orden usa cola."],
+  ["Árboles","Jerarquías como categorías, menús o el DOM. Los índices de las bases de datos son árboles B."],
+  ["Grafos","Rutas, dependencias, redes. BFS y DFS para recorrerlos."],
+  ["Búsqueda binaria y ordenamiento","Ordenar primero te permite buscar en O(log n)."],
+  ["Elegir la estructura correcta","La mayoría de los problemas de rendimiento se resuelven cambiando de estructura, no de lenguaje."]]},
+ {id:"f3", t:"Paradigmas", w:"formas de organizar código", items:[
+  ["POO: encapsulamiento, abstracción, herencia y polimorfismo",""],
+  ["Composición sobre herencia","Un objeto que tiene un comportamiento es más flexible que uno que lo hereda."],
+  ["Interfaces y contratos","Programa contra lo que algo hace, no contra cómo está hecho."],
+  ["Programación funcional básica","Funciones como valores, funciones puras, sin estado compartido."],
+  ["Programación asíncrona","Callbacks, promesas, async/await y futures: el mismo concepto con distinto nombre en cada lenguaje."],
+  ["Programación orientada a eventos","Algo pasa y alguien reacciona: clics, mensajes, webhooks."]]},
+ {id:"f4", t:"Datos y bases de datos", w:"donde vive la información", items:[
+  ["Modelo relacional: tablas, llaves primarias y foráneas",""],
+  ["Normalización (1FN, 2FN, 3FN) y cuándo desnormalizar","Normalizar evita datos duplicados; desnormalizar a veces acelera los reportes."],
+  ["SQL esencial: SELECT, JOIN, GROUP BY, subconsultas","El mismo SQL sirve en MySQL, SQL Server, PostgreSQL y Oracle, con pequeñas diferencias."],
+  ["Índices: qué son y cuándo ayudan o estorban","Aceleran las lecturas y hacen más lentas las escrituras."],
+  ["Transacciones ACID","Todo o nada: una transferencia descuenta y abona, o no hace ninguna de las dos."],
+  ["Concurrencia en bases de datos: bloqueos y niveles de aislamiento",""],
+  ["NoSQL y cuándo usarlo","Documentos (MongoDB), clave-valor (Redis). No reemplaza a SQL; resuelve otros problemas."],
+  ["Caché","Guardar un resultado caro para reutilizarlo. Lo difícil es saber cuándo invalidarlo."]]},
+ {id:"f5", t:"Redes y web", w:"cómo se comunican los sistemas", items:[
+  ["Cliente-servidor y qué pasa al escribir una URL","DNS, conexión, petición HTTP, respuesta, renderizado."],
+  ["HTTP: métodos, códigos de estado y headers",""],
+  ["HTTPS y TLS: por qué el candado importa",""],
+  ["REST y JSON","El idioma común entre frontends, backends y servicios externos."],
+  ["Autenticación vs autorización","Quién eres vs qué puedes hacer."],
+  ["Sesiones, cookies y tokens (JWT)",""],
+  ["CORS y la política del mismo origen",""],
+  ["Síncrono vs mensajería (colas)","Llamar y esperar, o dejar un mensaje y seguir trabajando."]]},
+ {id:"f6", t:"Diseño de software", w:"código que aguanta cambios", items:[
+  ["Alta cohesión y bajo acoplamiento","Cada pieza hace una cosa y depende lo menos posible de las demás."],
+  ["Separación de responsabilidades","Presentación, lógica de negocio y acceso a datos en lugares distintos."],
+  ["SOLID","Cinco principios para que el código se pueda extender sin romperlo."],
+  ["DRY, KISS y YAGNI","No repitas, hazlo simple, no construyas lo que no te pidieron."],
+  ["Inyección de dependencias como concepto","Recibir lo que necesitas en vez de crearlo adentro. Facilita probar y cambiar piezas."],
+  ["Patrones de diseño más comunes","Strategy, Factory, Builder, Adapter, Observer, Repository."],
+  ["Arquitectura en capas y hexagonal",""],
+  ["Monolito vs microservicios","Los microservicios resuelven problemas de equipos grandes y crean otros nuevos."]]},
+ {id:"f7", t:"Calidad", w:"que funcione y se pueda mantener", items:[
+  ["Nombres claros","El mejor comentario es un buen nombre."],
+  ["Funciones pequeñas que hacen una sola cosa",""],
+  ["Code smells y refactorización","Métodos largos, clases enormes, parámetros de más, código duplicado."],
+  ["Tipos de pruebas: unitarias, de integración y end-to-end",""],
+  ["TDD como concepto","Escribir la prueba antes que el código."],
+  ["Code review: dar y recibir",""],
+  ["Deuda técnica","Atajos que se pagan con intereses. Anótala y págala a propósito."]]},
+ {id:"f8", t:"Concurrencia", w:"varias cosas a la vez", items:[
+  ["Procesos vs hilos",""],
+  ["Condiciones de carrera","Dos hilos modifican el mismo dato y el resultado depende de quién llega primero."],
+  ["Locks, deadlocks y cómo evitarlos",""],
+  ["La inmutabilidad como defensa","Si nadie puede modificar un dato, nadie lo modifica mal."],
+  ["I/O bloqueante vs no bloqueante","Por qué un servidor puede atender miles de peticiones con pocos hilos."]]},
+ {id:"f9", t:"Seguridad", w:"desconfía de toda entrada", items:[
+  ["Nunca confíes en la entrada del usuario","Valida en el servidor, aunque el frontend ya valide."],
+  ["Inyección SQL y consultas parametrizadas","Aplica en cualquier lenguaje y en cualquier base de datos."],
+  ["XSS: escapar lo que se muestra en HTML",""],
+  ["Hashing vs cifrado","Las contraseñas se hashean (bcrypt), no se cifran."],
+  ["Secretos fuera del código",""],
+  ["Mínimo privilegio","Cada usuario, servicio o conexión con solo los permisos que necesita."],
+  ["OWASP Top 10","El catálogo de errores de seguridad más comunes."]]},
+ {id:"f10", t:"Sistemas y operación", w:"de tu máquina a producción", items:[
+  ["Terminal Linux: archivos, procesos, permisos y logs",""],
+  ["Variables de entorno y configuración por ambiente","El mismo código en desarrollo y en producción, con distinta configuración."],
+  ["Logs útiles: niveles, contexto y sin datos sensibles",""],
+  ["Contenedores (Docker) como concepto","Empaquetar la app con todo lo que necesita para correr igual en cualquier lado."],
+  ["CI/CD","Integrar y desplegar de forma automática y repetible."],
+  ["Escalar vertical vs horizontal","Máquina más grande o más máquinas."],
+  ["Monitoreo y alertas","Enterarte de que algo falló antes de que te avise el usuario."]]},
+ {id:"f11", t:"Oficio del programador", w:"cómo trabajar", items:[
+  ["Git: commits, ramas, merge, rebase y resolver conflictos",""],
+  ["Depurar con método","Reproducir, aislar, formular una hipótesis, probarla. No cambiar cosas al azar."],
+  ["Usar el debugger en vez de prints",""],
+  ["Leer un stack trace de abajo hacia arriba hasta tu código",""],
+  ["Leer documentación oficial antes que tutoriales",""],
+  ["Dividir un problema grande en tareas chicas y estimarlas",""],
+  ["Preguntar bien","Qué intentas hacer, qué esperabas, qué pasó y qué ya probaste."]]}
+];
+
+const UNI = [
+ {t:"Entrada y errores", items:[
+  ["¿Valido toda entrada externa (usuario, archivo, API) en el servidor?",""],
+  ["¿Qué pasa con null, vacío, negativo, cero, texto muy largo o fecha inválida?",""],
+  ["¿Los errores tienen un mensaje claro y no se tragan en un catch vacío?",""],
+  ["¿Qué pasa si el servicio externo o la base de datos no responde?",""]]},
+ {t:"Datos", items:[
+  ["¿Las operaciones que deben ser todo o nada están en una transacción?",""],
+  ["¿Las consultas usan índices y evitan ejecutarse dentro de un ciclo (N+1)?",""],
+  ["¿Pagino cuando el resultado puede crecer?",""],
+  ["¿Qué pasa si dos usuarios modifican lo mismo al mismo tiempo?",""]]},
+ {t:"Seguridad", items:[
+  ["¿Las consultas son parametrizadas?",""],
+  ["¿Verifico permisos, no solo que el usuario haya iniciado sesión?",""],
+  ["¿Hay contraseñas, tokens o llaves en el código o en los logs?",""],
+  ["¿Devuelvo solo los datos que el cliente necesita?",""]]},
+ {t:"Mantenibilidad", items:[
+  ["¿Otra persona entiende este código sin que yo se lo explique?",""],
+  ["¿Los nombres dicen qué hace cada cosa?",""],
+  ["¿Hay código duplicado que convenga extraer?",""],
+  ["¿Quité código muerto, comentarios viejos y logs de depuración?",""]]},
+ {t:"Pruebas", items:[
+  ["¿Probé el caso feliz y al menos dos casos de error?",""],
+  ["¿Hay pruebas automáticas para la regla de negocio principal?",""],
+  ["¿Probé con datos reales o parecidos a los de producción?",""]]},
+ {t:"Entrega", items:[
+  ["¿Los commits son pequeños y con mensajes claros?",""],
+  ["¿Revisé mi propio diff antes de pedir revisión?",""],
+  ["¿Actualicé la documentación o el README si cambió algo?",""],
+  ["¿Sé cómo revertir este cambio si falla en producción?",""]]}
+];
+
+
+/* ---------- estado ---------- */
+const KEY="ruta-java-angular-v1", OKEY=KEY+"-open";
+let state={},openState={};
+try{state=JSON.parse(localStorage.getItem(KEY)||"{}")||{}}catch(e){state={}}
+try{openState=JSON.parse(localStorage.getItem(OKEY)||"{}")||{}}catch(e){openState={}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+function saveOpen(){try{localStorage.setItem(OKEY,JSON.stringify(openState))}catch(e){}}
+
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function fmt(s){return esc(s).replace(/(@\w+|\/api\/[\w/?=&;.-]+|V\d__\w+\.sql|ddl-auto=update|mvn verify|docker compose up|git clone|\/health)/g,m=>"<code>"+m+"</code>")}
+
+const COPY={};            // id -> {title, items}
+const GROUPS=[];          // [id, n, kind, persist]
+function checklist(prefix,items,persist){
+  return '<ul class="checks">'+items.map((it,i)=>{
+    const id=prefix+"-"+i, attr=persist?`data-k="${id}"${state[id]?" checked":""}`:`data-u="${prefix}"`;
+    return `<li><label for="${id}"><input type="checkbox" id="${id}" ${attr}><span>${fmt(it[0])}${it[1]?`<small>${fmt(it[1])}</small>`:""}</span></label></li>`;
+  }).join("")+"</ul>";
+}
+function acc(o){
+  COPY[o.id]={title:o.title,items:o.items};GROUPS.push([o.id,o.items.length,o.kind,o.persist!==false]);
+  return `<details class="acc" data-acc="${o.id}"${openState[o.id]?" open":""}>
+  <summary>
+    <div class="sum-main"><span class="eyebrow">${esc(o.eyebrow)}</span><h3>${esc(o.title)}</h3></div>
+    <div class="sum-side">${o.pill?`<span class="pill${o.hot?" hot":""}">${esc(o.pill)}</span>`:""}<span class="count" data-count="${o.id}"></span><span class="chev" aria-hidden="true"></span></div>
+    <div class="bar sum-bar"><i data-bar="${o.id}"></i></div>
+  </summary>
+  <div class="acc-body">${o.pre||""}${checklist(o.id,o.items,o.persist!==false)}${o.post||""}
+    <div class="toolbar"><button type="button" class="btn-sm" data-copy="${o.id}">Copiar como checklist Markdown</button></div>
+  </div>
+</details>`;
+}
+
+document.getElementById("fundStack").innerHTML=FUND.map((f,i)=>acc({id:f.id,kind:"f",eyebrow:"Nivel "+(i+1),title:f.t,pill:f.w,items:f.items})).join("");
+document.getElementById("uniStack").innerHTML=UNI.map((u,g)=>acc({id:"u"+g,kind:"u",persist:false,eyebrow:"Revisión",title:u.t,items:u.items})).join("");
+document.getElementById("stdStack").innerHTML=STD.map(s=>acc({id:s.id,kind:"s",eyebrow:"Estándar",title:s.t,items:s.items,
+  post:s.ex?`<div class="std-ex"><span class="eyebrow">Ejemplo</span><pre>${esc(s.ex)}</pre></div>`:""})).join("");
+document.getElementById("timeline").innerHTML=ROADMAP.map((c,i)=>`
+  <div class="layer" data-layer="${c.id}">
+    <div class="num" aria-hidden="true">${i}</div>
+    ${acc({id:c.id,kind:"r",eyebrow:"Capa "+i+" · "+c.w,title:c.t,pill:c.tags.join(" · "),items:c.items,
+      pre:`<p class="goal">${esc(c.goal)}</p>`,post:`<p class="dod"><b>Listo cuando</b>${fmt(c.dod)}</p>`})}
+  </div>`).join("");
+document.getElementById("temarioStack").innerHTML=TEMARIO.map(t=>acc({id:t.id,kind:"t",eyebrow:"Java + Angular",title:t.t,pill:"prioridad "+t.p,hot:t.p==="alta",items:t.items})).join("");
+document.getElementById("res").innerHTML=RES.map(r=>{
+  let host="";try{host=new URL(r[2]).hostname.replace("www.","")}catch(e){}
+  return `<a href="${r[2]}" target="_blank" rel="noopener"><strong>${esc(r[0])}</strong><span>${esc(r[1])}</span><span class="mono">${esc(host)}</span></a>`}).join("");
+
+/* ---------- progreso ---------- */
+function update(){
+  let tot=0,done=0;const by={f:[0,0],r:[0,0],t:[0,0],s:[0,0]};
+  GROUPS.forEach(([id,n,kind,persist])=>{
+    let d=0;
+    if(persist){for(let i=0;i<n;i++) if(state[id+"-"+i]) d++; tot+=n;done+=d;by[kind][0]+=d;by[kind][1]+=n;}
+    else d=document.querySelectorAll(`input[data-u="${id}"]:checked`).length;
+    const b=document.querySelector(`[data-bar="${id}"]`);if(b)b.style.width=(n?d/n*100:0)+"%";
+    const c=document.querySelector(`[data-count="${id}"]`);if(c)c.textContent=`${d}/${n}`;
+    const a=document.querySelector(`[data-acc="${id}"]`);if(a)a.classList.toggle("done",d===n);
+    const L=document.querySelector(`[data-layer="${id}"]`);if(L)L.classList.toggle("done",d===n);
+  });
+  const pct=tot?Math.round(done/tot*100):0;
+  document.getElementById("gPct").textContent=pct+"%";
+  document.getElementById("gBar").style.width=pct+"%";
+  document.getElementById("gStats").innerHTML=
+    `<span>Fundamentos: <b>${by.f[0]}/${by.f[1]}</b></span><span>Estándares: <b>${by.s[0]}/${by.s[1]}</b></span><span>Temario Java/Angular: ${by.t[0]}/${by.t[1]}</span><span>Proyecto: ${by.r[0]}/${by.r[1]}</span>`;
+}
+document.addEventListener("change",e=>{
+  const t=e.target;if(!t.dataset)return;
+  if(t.dataset.k){if(t.checked)state[t.dataset.k]=1;else delete state[t.dataset.k];save()}
+  if(t.dataset.k||t.dataset.u)update();
+});
+document.addEventListener("toggle",e=>{
+  const d=e.target;if(!d.dataset||!d.dataset.acc)return;
+  if(d.open)openState[d.dataset.acc]=1;else delete openState[d.dataset.acc];saveOpen();
+},true);
+
+/* ---------- botones ---------- */
+function md(id){const c=COPY[id];return `### ${c.title}\n`+c.items.map(it=>`- [ ] ${it[0]}`).join("\n")+"\n";}
+function copyText(btn,text){
+  const label=btn.textContent;
+  const fallback=()=>{let ta=btn.parentElement.nextElementSibling;
+    if(!ta||!ta.classList||!ta.classList.contains("fallback")){ta=document.createElement("textarea");ta.className="fallback";ta.readOnly=true;btn.parentElement.after(ta)}
+    ta.value=text;ta.focus();ta.select();btn.textContent="Selecciona y copia el texto";setTimeout(()=>btn.textContent=label,2500)};
+  try{navigator.clipboard.writeText(text).then(()=>{btn.textContent="Copiado ✓";setTimeout(()=>btn.textContent=label,1800)},fallback)}catch(e){fallback()}
+}
+document.addEventListener("click",e=>{
+  const b=e.target.closest("button");if(!b)return;
+  if(b.dataset.copy)copyText(b,md(b.dataset.copy));
+  else if(b.dataset.copyall==="uni")copyText(b,"## Checklist de revisión\n\n"+UNI.map((u,g)=>md("u"+g)).join("\n"));
+  else if(b.dataset.open||b.dataset.close){
+    const open=!!b.dataset.open,box=document.getElementById(b.dataset.open||b.dataset.close);
+    box.querySelectorAll("details.acc").forEach(d=>{d.open=open;if(open)openState[d.dataset.acc]=1;else delete openState[d.dataset.acc]});saveOpen();
+  }
+});
+document.getElementById("uniClear").onclick=()=>{document.querySelectorAll("input[data-u]").forEach(i=>i.checked=false);update()};
+
+/* reinicio con confirmación en la página */
+const box=document.getElementById("resetBox");
+function resetIdle(){box.innerHTML='<button type="button" id="resetBtn">Reiniciar mi avance</button>';document.getElementById("resetBtn").onclick=resetAsk}
+function resetAsk(){box.innerHTML='<span>¿Borrar todas las casillas marcadas?</span><button type="button" class="danger" id="yes">Sí, borrar</button><button type="button" id="no">Cancelar</button>';
+  document.getElementById("yes").onclick=()=>{state={};save();document.querySelectorAll("input[data-k]").forEach(i=>i.checked=false);update();resetIdle()};
+  document.getElementById("no").onclick=resetIdle}
+resetIdle();
+update();
+</script>
+</body>
+</html>
