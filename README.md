@@ -1,5 +1,7 @@
 # Stack the Skills
 
+![Versión](https://img.shields.io/badge/versión-1.0.0-B4441C) ![Licencia MIT](https://img.shields.io/badge/licencia-MIT-16202C)
+
 Mi referencia personal para programar mejor en cualquier lenguaje y en cualquier proyecto.
 
 **Ver en vivo:** https://bernardo-qg.github.io/stack-the-skills/
@@ -26,6 +28,8 @@ HTML, CSS y JavaScript sin frameworks ni build. El avance y la bitácora se guar
 
 ```
 ├── index.html          # Estructura de la página
+├── CHANGELOG.md        # Historial de versiones
+├── img/                # Favicon e imagen para vista previa en redes
 ├── css/styles.css      # Estilos y temas claro/oscuro
 ├── js/app.js           # Carga los datos, dibuja las secciones y guarda el avance
 └── data/               # Todo el contenido editable
@@ -65,3 +69,29 @@ python -m http.server 8000
 ```
 
 También sirve la extensión **Live Server** de VS Code.
+
+## Publicar una versión
+
+El proyecto usa [Versionado Semántico](https://semver.org/lang/es/):
+
+- **PATCH** (`1.0.1`): correcciones de texto o de errores.
+- **MINOR** (`1.1.0`): contenido o funciones nuevas.
+- **MAJOR** (`2.0.0`): cambios que rompen el avance guardado, como reordenar puntos o cambiar ids.
+
+Pasos:
+
+1. Mueve lo que está en `[Unreleased]` del `CHANGELOG.md` a una sección nueva con el número y la fecha.
+2. Actualiza el número en el footer de `index.html` y en el badge de este README.
+3. Haz commit, crea el tag y súbelo:
+
+```bash
+git commit -am "chore: release v1.1.0"
+git tag -a v1.1.0 -m "v1.1.0"
+git push && git push --tags
+```
+
+4. En GitHub, ve a **Releases → Draft a new release**, elige el tag y pega las notas del CHANGELOG.
+
+## Licencia
+
+[MIT](LICENSE) © 2026 Bernardo Quintino Guzman

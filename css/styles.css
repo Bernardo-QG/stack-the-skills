@@ -1,17 +1,17 @@
 /* Layout: plano de obra — una columna de lectura, línea de tiempo numerada para las capas, rejilla de fichas para el temario */
 :root{
-  --bg:#F3F4F6; --surface:#FFFFFF; --ink:#16202C; --muted:#5B6573; --line:#D9DDE3;
-  --accent:#B4441C; --accent-soft:#F6E3DA; --ok:#1F7A4D; --ok-soft:#DDF1E6; --code:#EEF0F3;
+  --bg:#F4F5F2; --surface:#FFFFFF; --ink:#1E2A23; --muted:#5C6A61; --line:#D9DED8;
+  --accent:#A9542F; --accent-soft:#F5E4DA; --ok:#3F7A57; --ok-soft:#E0EDE4; --code:#EDEFEB;
   --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --f-body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
   --f-mono:"IBM Plex Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#11161D; --surface:#19202A; --ink:#E7EAEE; --muted:#9AA4B1; --line:#2B3442;
-  --accent:#F08A5D; --accent-soft:#3A2419; --ok:#5CC98F; --ok-soft:#173326; --code:#212A36; color-scheme:dark}}
+  --bg:#121714; --surface:#1A211C; --ink:#E6EBE7; --muted:#9AA79E; --line:#2C362F;
+  --accent:#E8865B; --accent-soft:#3A2519; --ok:#7FC49A; --ok-soft:#1B3325; --code:#222B25; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#11161D; --surface:#19202A; --ink:#E7EAEE; --muted:#9AA4B1; --line:#2B3442;
-  --accent:#F08A5D; --accent-soft:#3A2419; --ok:#5CC98F; --ok-soft:#173326; --code:#212A36; color-scheme:dark}
+  --bg:#121714; --surface:#1A211C; --ink:#E6EBE7; --muted:#9AA79E; --line:#2C362F;
+  --accent:#E8865B; --accent-soft:#3A2519; --ok:#7FC49A; --ok-soft:#1B3325; --code:#222B25; color-scheme:dark}
 
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15.5px;line-height:1.6;
@@ -180,3 +180,4 @@ table.log tbody th{font-family:var(--f-mono);font-weight:500;white-space:nowrap;
 .log-in:hover{border-color:var(--line)}
 .log-in:focus{outline:none;border-color:var(--accent);background:var(--surface)}
 .log-in::placeholder{color:var(--muted);opacity:.7}
+.version{font-family:var(--f-mono);font-size:.8rem}
