@@ -1,0 +1,62 @@
+[
+  {
+    "name": "roadmap.sh",
+    "description": "Rutas visuales de Java, Spring Boot y Angular",
+    "url": "https://roadmap.sh/spring-boot"
+  },
+  {
+    "name": "Spring Guides",
+    "description": "Guías oficiales cortas y prácticas",
+    "url": "https://spring.io/guides"
+  },
+  {
+    "name": "Baeldung",
+    "description": "La referencia de Java y Spring para cualquier duda",
+    "url": "https://www.baeldung.com"
+  },
+  {
+    "name": "dev.java",
+    "description": "Tutoriales oficiales de Java moderno",
+    "url": "https://dev.java/learn/"
+  },
+  {
+    "name": "angular.dev",
+    "description": "Docs y tutorial oficial de Angular actual",
+    "url": "https://angular.dev"
+  },
+  {
+    "name": "Refactoring Guru",
+    "description": "Patrones de diseño explicados, en español",
+    "url": "https://refactoring.guru/es/design-patterns"
+  },
+  {
+    "name": "Testcontainers Guides",
+    "description": "Tests de integración con bases de datos reales",
+    "url": "https://testcontainers.com/guides/"
+  },
+  {
+    "name": "NeetCode",
+    "description": "Lista de problemas y explicaciones para entrevistas",
+    "url": "https://neetcode.io"
+  },
+  {
+    "name": "OWASP Top 10",
+    "description": "Las 10 vulnerabilidades web más comunes",
+    "url": "https://owasp.org/Top10/"
+  },
+  {
+    "name": "Conventional Commits",
+    "description": "La especificación, en español",
+    "url": "https://www.conventionalcommits.org/es/v1.0.0/"
+  },
+  {
+    "name": "The Twelve-Factor App",
+    "description": "Principios para apps en la nube, en español",
+    "url": "https://12factor.net/es/"
+  },
+  {
+    "name": "Effective Java (libro)",
+    "description": "Joshua Bloch. El libro que más te sube el nivel en Java",
+    "url": "https://www.oreilly.com/library/view/effective-java-3rd/9780134686097/"
+  }
+]

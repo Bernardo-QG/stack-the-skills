@@ -1,0 +1,267 @@
+[
+  {
+    "id": "tj",
+    "title": "Java core",
+    "priority": "alta",
+    "items": [
+      {
+        "text": "POO de verdad: encapsulación, interfaces, polimorfismo, composición sobre herencia"
+      },
+      {
+        "text": "Colecciones: List, Set, Map y cuándo usar cada una; cómo funciona HashMap"
+      },
+      {
+        "text": "equals() y hashCode(): el contrato y por qué importa"
+      },
+      {
+        "text": "Inmutabilidad, String y records"
+      },
+      {
+        "text": "Excepciones checked vs unchecked y cuándo crear las tuyas"
+      },
+      {
+        "text": "Generics: <T>, wildcards (? extends / ? super)"
+      },
+      {
+        "text": "Lambdas, interfaces funcionales y Streams (map, filter, collect, groupingBy)"
+      },
+      {
+        "text": "Optional bien usado (no como reemplazo de todo null)"
+      },
+      {
+        "text": "Java moderno: switch con pattern matching, sealed classes, var, text blocks"
+      },
+      {
+        "text": "Concurrencia básica: threads, ExecutorService, CompletableFuture, virtual threads"
+      },
+      {
+        "text": "JVM: heap vs stack y la idea de garbage collection"
+      }
+    ]
+  },
+  {
+    "id": "ts",
+    "title": "Spring y Spring Boot",
+    "priority": "alta",
+    "items": [
+      {
+        "text": "Inversión de control e inyección de dependencias (por constructor)"
+      },
+      {
+        "text": "Beans, scopes y estereotipos (@Component, @Service, @Repository)"
+      },
+      {
+        "text": "Autoconfiguración: qué hace Spring Boot por ti"
+      },
+      {
+        "text": "@Transactional: propagación, rollback y el problema de la auto-invocación (proxies)"
+      },
+      {
+        "text": "JPA/Hibernate: relaciones, LAZY vs EAGER, el problema N+1 y fetch join / @EntityGraph"
+      },
+      {
+        "text": "Spring Data: query methods, @Query y proyecciones"
+      },
+      {
+        "text": "Validación, @RestControllerAdvice y ProblemDetail"
+      },
+      {
+        "text": "Configuración: application.yml, perfiles y @ConfigurationProperties"
+      },
+      {
+        "text": "Clientes HTTP: RestClient y HTTP interfaces"
+      },
+      {
+        "text": "Spring Security: filtros, autenticación vs autorización"
+      }
+    ]
+  },
+  {
+    "id": "tb",
+    "title": "Bases de datos y SQL",
+    "priority": "alta",
+    "items": [
+      {
+        "text": "JOINs (inner, left, right) sin dudar"
+      },
+      {
+        "text": "GROUP BY, HAVING y subconsultas"
+      },
+      {
+        "text": "Funciones de ventana: ROW_NUMBER, RANK, SUM() OVER"
+      },
+      {
+        "text": "Índices: cómo funcionan (B-tree), índices compuestos y leer un EXPLAIN"
+      },
+      {
+        "text": "Normalización hasta 3FN y cuándo desnormalizar"
+      },
+      {
+        "text": "Transacciones ACID, niveles de aislamiento y bloqueos"
+      },
+      {
+        "text": "Optimizar una consulta lenta: tu experiencia en SICAP cuenta aquí"
+      }
+    ]
+  },
+  {
+    "id": "tw",
+    "title": "Web, HTTP y APIs",
+    "priority": "alta",
+    "items": [
+      {
+        "text": "Métodos HTTP, idempotencia y seguridad (GET, POST, PUT, PATCH, DELETE)"
+      },
+      {
+        "text": "Códigos de estado: 200, 201, 204, 400, 401, 403, 404, 409, 422, 500"
+      },
+      {
+        "text": "Diseño REST: recursos en plural, anidación y filtros por query params"
+      },
+      {
+        "text": "Sesiones vs JWT vs OAuth2 / OpenID Connect"
+      },
+      {
+        "text": "CORS: qué es y por qué el navegador lo bloquea"
+      },
+      {
+        "text": "Cookies, headers y caché HTTP básica"
+      }
+    ]
+  },
+  {
+    "id": "ta",
+    "title": "Angular y TypeScript",
+    "priority": "alta",
+    "items": [
+      {
+        "text": "TypeScript: tipos, interfaces, union types, generics y modo strict"
+      },
+      {
+        "text": "Componentes standalone y ciclo de vida"
+      },
+      {
+        "text": "Signals: signal, computed, effect y linkedSignal"
+      },
+      {
+        "text": "Detección de cambios: OnPush (el default en v22) y por qué importa"
+      },
+      {
+        "text": "RxJS: Observable, switchMap vs mergeMap vs concatMap, takeUntilDestroyed"
+      },
+      {
+        "text": "Inyección de dependencias en Angular"
+      },
+      {
+        "text": "Routing, guards, resolvers y lazy loading"
+      },
+      {
+        "text": "Formularios: Signal Forms y Reactive Forms"
+      },
+      {
+        "text": "Interceptors HTTP"
+      }
+    ]
+  },
+  {
+    "id": "td",
+    "title": "Diseño y arquitectura",
+    "priority": "alta",
+    "items": [
+      {
+        "text": "Principios SOLID con un ejemplo propio de cada uno"
+      },
+      {
+        "text": "DRY, KISS y YAGNI"
+      },
+      {
+        "text": "Patrones: Strategy, Factory, Builder, Adapter, Observer, Repository"
+      },
+      {
+        "text": "Arquitectura en capas y por qué separar DTO de entidad"
+      },
+      {
+        "text": "Arquitectura hexagonal (puertos y adaptadores), el concepto"
+      },
+      {
+        "text": "Monolito vs microservicios: ventajas, costos y cuándo cada uno"
+      },
+      {
+        "text": "Clean Code: nombres, funciones pequeñas, comentarios útiles"
+      }
+    ]
+  },
+  {
+    "id": "tc",
+    "title": "Algoritmos para entrevistas",
+    "priority": "media",
+    "items": [
+      {
+        "text": "Notación Big-O: tiempo y espacio"
+      },
+      {
+        "text": "Arrays, strings y hash maps"
+      },
+      {
+        "text": "Two pointers y sliding window"
+      },
+      {
+        "text": "Pilas, colas y recursión"
+      },
+      {
+        "text": "Búsqueda binaria y ordenamiento"
+      },
+      {
+        "text": "Árboles y grafos básicos (BFS / DFS)"
+      },
+      {
+        "text": "Resolver 75 problemas tipo LeetCode easy/medium",
+        "note": "La lista NeetCode 75 o Blind 75 basta."
+      }
+    ]
+  },
+  {
+    "id": "th",
+    "title": "Herramientas del día a día",
+    "priority": "media",
+    "items": [
+      {
+        "text": "Git: merge vs rebase, cherry-pick, resolver conflictos y revertir"
+      },
+      {
+        "text": "Maven: ciclo de vida, dependencias y perfiles"
+      },
+      {
+        "text": "Debugger de IntelliJ: breakpoints condicionales y evaluar expresiones"
+      },
+      {
+        "text": "Terminal Linux básica: navegar, grep, logs, permisos"
+      },
+      {
+        "text": "Probar APIs con Postman o archivos .http"
+      },
+      {
+        "text": "Leer un stack trace y encontrar la causa raíz"
+      }
+    ]
+  },
+  {
+    "id": "ti",
+    "title": "IA aplicada al desarrollo",
+    "priority": "media",
+    "items": [
+      {
+        "text": "Pedirle a la IA código con contexto: stack, versión y restricciones"
+      },
+      {
+        "text": "Revisar código generado: seguridad, edge cases y que compile"
+      },
+      {
+        "text": "Generar tests y documentación con IA, y validarlos"
+      },
+      {
+        "text": "Políticas: no pegar código ni datos de la empresa en herramientas no autorizadas"
+      }
+    ]
+  }
+]

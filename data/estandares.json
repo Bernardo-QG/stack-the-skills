@@ -1,0 +1,153 @@
+[
+  {
+    "id": "s1",
+    "title": "Estilo de código",
+    "items": [
+      {
+        "text": "Google Java Style Guide o las convenciones de nombres de Java",
+        "note": "clases PascalCase, métodos camelCase, CONSTANTES_MAYUS"
+      },
+      {
+        "text": "Guía de estilo oficial de Angular (angular.dev/style-guide)"
+      },
+      {
+        "text": "Formateo automático: Spotless/Checkstyle en Java, ESLint y Prettier en Angular"
+      },
+      {
+        "text": "Sin código muerto, sin console.log y sin System.out en producción"
+      }
+    ]
+  },
+  {
+    "id": "s2",
+    "title": "Commits y control de versiones",
+    "items": [
+      {
+        "text": "Conventional Commits"
+      },
+      {
+        "text": "Commits pequeños que hacen una sola cosa"
+      },
+      {
+        "text": "GitHub Flow: rama por feature, PR a main y squash merge"
+      },
+      {
+        "text": "Versionado semántico (SemVer) en tus releases: MAJOR.MINOR.PATCH"
+      }
+    ],
+    "example": "feat(movimientos): valida stock antes de registrar salida\nfix(auth): corrige expiración del JWT en zona horaria MX\ntest(productos): agrega casos de paginación\ndocs: explica cómo levantar con docker compose"
+  },
+  {
+    "id": "s3",
+    "title": "Pull Requests y code review",
+    "items": [
+      {
+        "text": "PR de menos de 400 líneas, con descripción de qué cambia, por qué y cómo probarlo"
+      },
+      {
+        "text": "Revisar tu propio PR antes de pedir revisión"
+      },
+      {
+        "text": "Responder comentarios de revisión sin tomarlo personal y con argumentos"
+      },
+      {
+        "text": "Definition of Done: compila, tests en verde, sin warnings nuevos, README actualizado"
+      }
+    ]
+  },
+  {
+    "id": "s4",
+    "title": "Diseño de APIs",
+    "items": [
+      {
+        "text": "Recursos en plural y kebab-case: /api/v1/ordenes-compra"
+      },
+      {
+        "text": "Código HTTP correcto: 201 + Location al crear, 204 al borrar"
+      },
+      {
+        "text": "Errores con Problem Details (RFC 9457)"
+      },
+      {
+        "text": "Contrato documentado con OpenAPI 3"
+      },
+      {
+        "text": "Paginación, filtros y versionado desde el inicio"
+      }
+    ],
+    "example": "POST /api/v1/movimientos  →  201 Created\n{\n  \"type\": \"/errores/stock-insuficiente\",\n  \"title\": \"Stock insuficiente\",\n  \"status\": 409,\n  \"detail\": \"El producto P-1023 tiene 4 piezas; se pidieron 10\"\n}"
+  },
+  {
+    "id": "s5",
+    "title": "Seguridad",
+    "items": [
+      {
+        "text": "OWASP Top 10: conocer cada categoría"
+      },
+      {
+        "text": "Secretos solo en variables de entorno o un gestor de secretos, nunca en Git"
+      },
+      {
+        "text": "Validar toda entrada y usar consultas parametrizadas (nada de concatenar SQL)"
+      },
+      {
+        "text": "Principio de mínimo privilegio en roles y en usuarios de base de datos"
+      },
+      {
+        "text": "No registrar en logs contraseñas, tokens ni datos personales"
+      }
+    ]
+  },
+  {
+    "id": "s6",
+    "title": "Testing",
+    "items": [
+      {
+        "text": "Pirámide de tests: muchos unitarios, algunos de integración, pocos E2E"
+      },
+      {
+        "text": "Principios FIRST: rápidos, independientes, repetibles, auto-validables y oportunos"
+      },
+      {
+        "text": "Un test por comportamiento, no por método"
+      }
+    ]
+  },
+  {
+    "id": "s7",
+    "title": "Base de datos",
+    "items": [
+      {
+        "text": "Migraciones versionadas (Flyway); nunca cambios manuales en producción"
+      },
+      {
+        "text": "Convención snake_case para tablas y columnas"
+      },
+      {
+        "text": "Índices en llaves foráneas y columnas de búsqueda"
+      },
+      {
+        "text": "Nada de SELECT * en código de producción"
+      }
+    ],
+    "example": "V1__crear_productos.sql\nV2__crear_movimientos.sql\nV3__indice_movimientos_fecha.sql"
+  },
+  {
+    "id": "s8",
+    "title": "Configuración y documentación",
+    "items": [
+      {
+        "text": "The Twelve-Factor App (12factor.net): configuración por entorno, logs como stream"
+      },
+      {
+        "text": "README con qué es, cómo correrlo, arquitectura y decisiones"
+      },
+      {
+        "text": "Diagrama de arquitectura simple en el README (Mermaid sirve)"
+      },
+      {
+        "text": "ADRs para decisiones importantes"
+      }
+    ]
+  }
+]
