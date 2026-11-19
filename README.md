@@ -9,9 +9,11 @@ Mi referencia personal para programar mejor en cualquier lenguaje y en cualquier
 ## Qué contiene
 
 **Referencia (primer plano)**
-- **Fundamentos:** 11 niveles de conceptos universales, cada uno con una explicación corta.
+- **Mi nivel:** tabla junior, intermedio y senior y checklist de autodiagnóstico.
+- **Fundamentos:** 12 niveles de conceptos universales, cada uno con una explicación corta.
 - **Checklist universal:** preguntas para revisar cualquier código. Se copia como Markdown para PRs o issues.
 - **Estándares:** convenciones de equipos profesionales (Conventional Commits, diseño de APIs, OWASP, testing, migraciones).
+- **Oficio:** profesionalismo en el día a día y lo que más te hace crecer.
 
 **Plan de 12 meses (segundo plano)**
 - **Punto de partida, reglas y errores a evitar.**
@@ -19,6 +21,7 @@ Mi referencia personal para programar mejor en cualquier lenguaje y en cualquier
 - **Inglés:** niveles, rutina diaria, ruta de gramática, etapas, frases útiles y trucos.
 - **Proyecto StockFlow:** proyecto de portafolio por capas con Java + Spring Boot + Angular.
 - **Temario:** lo que se pregunta en entrevistas de Java y Angular.
+- **Carrera:** especializaciones, certificaciones y comunidad.
 - **Semana tipo, bitácora mensual editable y presupuesto.**
 - **Recursos:** programación, inglés y trabajo remoto.
 
@@ -33,9 +36,12 @@ HTML, CSS y JavaScript sin frameworks ni build. El avance y la bitácora se guar
 ├── css/styles.css      # Estilos y temas claro/oscuro
 ├── js/app.js           # Carga los datos, dibuja las secciones y guarda el avance
 └── data/               # Todo el contenido editable
+    ├── niveles.json      # Tabla junior/intermedio/senior y autodiagnóstico
     ├── fundamentos.json
     ├── checklist.json
     ├── estandares.json
+    ├── oficio.json       # Profesionalismo y crecimiento
+    ├── carrera.json      # Especializaciones, certificaciones y comunidad
     ├── plan.json         # Meta, fases, semana, bitácora y presupuesto
     ├── reglas.json       # Reglas y errores a evitar
     ├── ingles.json       # Niveles, rutina, gramática, etapas, frases y trucos
@@ -81,7 +87,7 @@ El proyecto usa [Versionado Semántico](https://semver.org/lang/es/):
 Pasos:
 
 1. Mueve lo que está en `[Unreleased]` del `CHANGELOG.md` a una sección nueva con el número y la fecha.
-2. Actualiza el número en el footer de `index.html` y en el badge de este README.
+2. Actualiza el número en el footer de `index.html`, en el badge de este README y en el `?v=` de `css/styles.css` y `js/app.js` dentro de `index.html`. Ese `?v=` obliga al navegador a descargar los archivos nuevos en vez de usar los que tiene en caché.
 3. Haz commit, crea el tag y súbelo:
 
 ```bash

@@ -244,24 +244,5 @@
         "text": "Leer un stack trace y encontrar la causa raíz"
       }
     ]
-  },
-  {
-    "id": "ti",
-    "title": "IA aplicada al desarrollo",
-    "priority": "media",
-    "items": [
-      {
-        "text": "Pedirle a la IA código con contexto: stack, versión y restricciones"
-      },
-      {
-        "text": "Revisar código generado: seguridad, edge cases y que compile"
-      },
-      {
-        "text": "Generar tests y documentación con IA, y validarlos"
-      },
-      {
-        "text": "Políticas: no pegar código ni datos de la empresa en herramientas no autorizadas"
-      }
-    ]
   }
 ]

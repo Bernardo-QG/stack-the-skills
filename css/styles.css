@@ -181,3 +181,6 @@ table.log tbody th{font-family:var(--f-mono);font-weight:500;white-space:nowrap;
 .log-in:focus{outline:none;border-color:var(--accent);background:var(--surface)}
 .log-in::placeholder{color:var(--muted);opacity:.7}
 .version{font-family:var(--f-mono);font-size:.8rem}
+.levels-table{min-width:720px}
+.levels-table td:nth-child(2){color:var(--muted)}
+#nivel>.card,#reglas>.card,#bitacora>.card{margin:0}

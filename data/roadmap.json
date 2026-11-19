@@ -257,6 +257,35 @@
     "done": "Tienes una URL pública que funciona y la puedes poner en tu CV."
   },
   {
+    "id": "c9",
+    "title": "Función con IA",
+    "duration": "2–3 semanas",
+    "tags": [
+      "IA",
+      "RAG"
+    ],
+    "goal": "Agregar algo que hoy piden muchas vacantes: IA dentro de un producto, no solo para programar.",
+    "items": [
+      {
+        "text": "Búsqueda en lenguaje natural sobre el inventario",
+        "note": "“¿Qué productos tienen stock bajo en el almacén norte?”"
+      },
+      {
+        "text": "Llamar la API de un modelo desde Spring Boot, con manejo de errores, costos y límites"
+      },
+      {
+        "text": "RAG pequeño sobre la documentación del proyecto"
+      },
+      {
+        "text": "Pruebas para la parte determinista de la función"
+      },
+      {
+        "text": "Documentar qué datos se envían al modelo y cuáles no"
+      }
+    ],
+    "done": "Puedes hacer una demo de la función con IA y explicar cómo funciona y cuánto cuesta."
+  },
+  {
     "id": "c8",
     "title": "Nivel pro (opcional)",
     "duration": "cuando quieras",

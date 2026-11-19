@@ -7,6 +7,24 @@ y el proyecto usa [Versionado Semántico](https://semver.org/lang/es/).
 
 ## [Unreleased]
 
+### Added
+- Sección "Mi nivel": tabla junior, intermedio y senior, checklist de autodiagnóstico con resultado y señales de que vas pasando a senior.
+- Nivel 12 de Fundamentos: IA aplicada.
+- Más puntos en Fundamentos: CTEs, diseño de sistemas, Strangler Fig, pruebas de caracterización, CSRF, rendimiento en frontend y git bisect.
+- Sección "Oficio": profesionalismo en el día a día y lo que más te hace crecer.
+- Grupos "En el trabajo" y "Entrevistas" en las fases.
+- Capa del proyecto: función con IA.
+- Técnicas de estudio, hábitos de todo el año e inglés técnico.
+- Sección "Carrera": especializaciones, certificaciones y comunidad.
+- Revisión mensual y columna "Qué apliqué en el trabajo" en la bitácora.
+- Libros recomendados y fuentes de tendencias 2026 en Recursos.
+
+### Removed
+- "IA aplicada al desarrollo" del Temario Java/Angular: ahora es el nivel 12 de Fundamentos.
+
+### Fixed
+- El navegador ya no usa versiones en caché de los estilos, el script y los datos después de una actualización.
+
 ### Changed
 - Nuevo logo de escalera y paleta salvia y terracota en la página, el favicon y la imagen para redes.
 

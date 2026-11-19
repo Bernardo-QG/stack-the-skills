@@ -58,9 +58,75 @@
         "url": "https://12factor.net/es/"
       },
       {
-        "name": "Effective Java (libro)",
-        "description": "Joshua Bloch. El libro que más te sube el nivel en Java",
-        "url": "https://www.oreilly.com/library/view/effective-java-3rd/9780134686097/"
+        "name": "Pro Git",
+        "description": "El libro oficial de Git, gratis y en español",
+        "url": "https://git-scm.com/book/es/v2"
+      },
+      {
+        "name": "MDN: HTTP",
+        "description": "Cómo funciona HTTP, explicado a fondo",
+        "url": "https://developer.mozilla.org/es/docs/Web/HTTP"
+      },
+      {
+        "name": "Use The Index, Luke",
+        "description": "Índices y rendimiento de SQL, gratis",
+        "url": "https://use-the-index-luke.com/es"
+      },
+      {
+        "name": "Exercism",
+        "description": "Ejercicios de práctica con mentores voluntarios",
+        "url": "https://exercism.org"
+      },
+      {
+        "name": "Claude Docs",
+        "description": "Documentación para integrar modelos de lenguaje",
+        "url": "https://docs.claude.com"
+      },
+      {
+        "name": "DeepLearning.AI",
+        "description": "Cursos cortos de IA aplicada",
+        "url": "https://www.deeplearning.ai/short-courses/"
+      }
+    ]
+  },
+  {
+    "category": "Libros",
+    "items": [
+      {
+        "name": "Effective Java",
+        "description": "Joshua Bloch. El que más te sube el nivel en Java"
+      },
+      {
+        "name": "Working Effectively with Legacy Code",
+        "description": "Michael Feathers. Clave para migrar sistemas legacy"
+      },
+      {
+        "name": "Grokking Algorithms",
+        "description": "Aditya Bhargava. Algoritmos explicados con dibujos"
+      },
+      {
+        "name": "Clean Code",
+        "description": "Robert C. Martin"
+      },
+      {
+        "name": "Refactoring",
+        "description": "Martin Fowler"
+      },
+      {
+        "name": "Docker Deep Dive",
+        "description": "Nigel Poulton"
+      },
+      {
+        "name": "Designing Data-Intensive Applications",
+        "description": "Martin Kleppmann"
+      },
+      {
+        "name": "System Design Interview",
+        "description": "Alex Xu"
+      },
+      {
+        "name": "Fundamentals of Software Architecture",
+        "description": "Mark Richards y Neal Ford"
       }
     ]
   },
@@ -173,6 +239,31 @@
         "name": "Guía salarial LaPieza 2026",
         "description": "Cuánto pagan las empresas de EE. UU. por desarrolladores en LATAM",
         "url": "https://blog.lapieza.io/the-2026-latam-developer-salary-guide-what-us-canadian-companies-pay-to-hire-in-latin-america/"
+      }
+    ]
+  },
+  {
+    "category": "Tendencias 2026",
+    "items": [
+      {
+        "name": "Andela",
+        "description": "Rutas de aprendizaje más demandadas en 2026",
+        "url": "https://help.andela.com/hc/en-us/articles/49817924364947"
+      },
+      {
+        "name": "Hirebase",
+        "description": "Habilidades técnicas más pedidas, con datos de vacantes",
+        "url": "https://www.hirebase.org/blogs/in-demand-technical-skills-2026"
+      },
+      {
+        "name": "DEV Community",
+        "description": "Top 10 developer skills needed in 2026",
+        "url": "https://dev.to/niotechone/top-10-developer-skills-needed-in-2026-staying-ahead-in-the-ai-driven-era-32d"
+      },
+      {
+        "name": "Gloroots",
+        "description": "In-demand software developer skills in 2026",
+        "url": "https://gloroots.com/blog/in-demand-software-developer-skills"
       }
     ]
   }

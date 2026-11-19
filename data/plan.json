@@ -93,6 +93,19 @@
               "text": "Proyecto StockFlow: capas 0 y 1"
             }
           ]
+        },
+        {
+          "title": "En el trabajo",
+          "items": [
+            {
+              "text": "Hacer el autodiagnóstico y anotar tus temas débiles",
+              "note": "Está al inicio de la página."
+            },
+            {
+              "text": "Elegir un módulo del trabajo como laboratorio para todo el plan",
+              "note": "Ahí aplicas lo que aprendes; nada de ese código sale a tu GitHub."
+            }
+          ]
         }
       ],
       "checkpoint": [
@@ -156,6 +169,23 @@
           "items": [
             {
               "text": "Fundamentos: niveles 5 a 8"
+            }
+          ]
+        },
+        {
+          "title": "En el trabajo",
+          "items": [
+            {
+              "text": "Pruebas de caracterización a un módulo legacy antes de tocarlo"
+            },
+            {
+              "text": "Refactorizarlo en pasos pequeños, un commit por paso"
+            },
+            {
+              "text": "Encontrar las 3 consultas más lentas y optimizarlas con EXPLAIN e índices"
+            },
+            {
+              "text": "Detectar y corregir al menos un caso de N+1"
             }
           ]
         }
@@ -233,6 +263,35 @@
               "text": "Un reto con un cliente o compañero y cómo lo resolviste"
             }
           ]
+        },
+        {
+          "title": "Entrevistas",
+          "items": [
+            {
+              "text": "Explicar en voz alta tu razonamiento al resolver problemas"
+            },
+            {
+              "text": "Diseño de sistemas básico: un caso por semana",
+              "note": "Por ejemplo, un acortador de URLs o un sistema de notificaciones."
+            },
+            {
+              "text": "Investigar a cada empresa y preparar tus propias preguntas"
+            }
+          ]
+        },
+        {
+          "title": "En el trabajo",
+          "items": [
+            {
+              "text": "Auditar un módulo contra el OWASP Top 10 y corregir lo que encuentres"
+            },
+            {
+              "text": "Revisar el manejo de transacciones en un flujo crítico"
+            },
+            {
+              "text": "Revisar cómo se guardan secretos y credenciales"
+            }
+          ]
         }
       ],
       "checkpoint": [
@@ -296,6 +355,34 @@
               "text": "Renunciar solo con la oferta firmada, sin quemar puentes"
             }
           ]
+        },
+        {
+          "title": "Técnico",
+          "items": [
+            {
+              "text": "Proyecto StockFlow: capa 8, función con IA"
+            },
+            {
+              "text": "Fundamentos: nivel 12, IA aplicada"
+            }
+          ]
+        },
+        {
+          "title": "En el trabajo",
+          "items": [
+            {
+              "text": "Dibujar la arquitectura de un sistema y señalar sus puntos débiles"
+            },
+            {
+              "text": "Escribir un documento de diseño antes de tu siguiente funcionalidad mediana"
+            },
+            {
+              "text": "Documentar 3 decisiones técnicas con ADRs"
+            },
+            {
+              "text": "Proponer un plan de migración gradual con el patrón Strangler Fig"
+            }
+          ]
         }
       ],
       "checkpoint": [
@@ -320,17 +407,22 @@
       "time": "1 h"
     },
     {
+      "day": "Viernes",
+      "what": "Leer código open source o revisar PRs",
+      "time": "30 min"
+    },
+    {
       "day": "Sábado",
       "what": "Bloque fuerte: proyecto StockFlow y, desde la fase 3, postulaciones",
       "time": "3 h"
     },
     {
       "day": "Domingo",
-      "what": "Descanso. En serio: si te quemas en el mes 3, no llegas al 12.",
+      "what": "Descanso. Si quieres, 15 minutos para repasar y planear la semana.",
       "time": "—"
     }
   ],
-  "weekTotal": "Unas 8 a 9 horas por semana. Es exigente, pero se puede.",
+  "weekTotal": "Unas 9 horas por semana. Es exigente, pero se puede; si una semana no da, baja el ritmo en vez de abandonar.",
   "log": {
     "columns": [
       {
@@ -360,6 +452,10 @@
       {
         "key": "usd",
         "label": "USD ganados"
+      },
+      {
+        "key": "applied",
+        "label": "Qué apliqué en el trabajo"
       },
       {
         "key": "notes",
@@ -453,5 +549,12 @@
       }
     ]
   },
-  "reminder": "Ya tienes años de experiencia y un stack que buscan. No estás empezando de cero, solo te falta cambiar de idioma. Un año de constancia puede subir tu sueldo a otro nivel."
+  "reminder": "Ya tienes años de experiencia y un stack que buscan. No estás empezando de cero, solo te falta cambiar de idioma. Un año de constancia puede subir tu sueldo a otro nivel.",
+  "review": [
+    "¿Qué aprendí este mes?",
+    "¿Qué apliqué en el trabajo?",
+    "¿Qué entregable terminé?",
+    "¿Voy al ritmo del plan o necesito ajustarlo?",
+    "¿Cuál es el foco del próximo mes?"
+  ]
 }

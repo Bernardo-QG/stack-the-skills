@@ -15,6 +15,9 @@ const DATA_FILES = {
   fundamentos: "data/fundamentos.json",
   checklist: "data/checklist.json",
   estandares: "data/estandares.json",
+  niveles: "data/niveles.json",
+  oficio: "data/oficio.json",
+  carrera: "data/carrera.json",
   plan: "data/plan.json",
   reglas: "data/reglas.json",
   ingles: "data/ingles.json",
@@ -35,6 +38,7 @@ function store(key, value) {
 let progress = load(STORAGE_KEY);   // casillas marcadas
 let openState = load(OPEN_KEY);     // acordeones abiertos
 let logState = load(LOG_KEY);       // bitácora mensual
+let diagnosticResults = [];         // mensajes según cuántos temas del autodiagnóstico marcaste
 
 /* ---------- utilidades ---------- */
 
@@ -136,6 +140,29 @@ function renderReference(d) {
   })).join("");
 }
 
+function renderLevel(n) {
+  $("matrix").innerHTML = table(["Aspecto", "Junior", "Intermedio", "Senior"],
+    n.matrix.map(([area, ...cols]) => [`<b>${escapeHtml(area)}</b>`, ...cols.map(escapeHtml)]));
+  $("diagStack").innerHTML = renderAccordion({
+    id: n.diagnostic.id, kind: "a", eyebrow: "Checklist de autodiagnóstico", title: "Lo que ya domino",
+    items: n.diagnostic.items,
+    before: `<p class="goal">${escapeHtml(n.diagnostic.rule)}</p>`,
+    after: `<p class="dod"><b>Tu resultado</b><span id="diagResult"></span></p>`,
+  });
+  diagnosticResults = n.diagnostic.results;
+  $("signals").innerHTML = n.signals.map((x) => `<li>${escapeHtml(x)}</li>`).join("");
+}
+
+function renderCraft(o, c) {
+  $("daily").innerHTML = o.daily.map((x) => `<li>${escapeHtml(x)}</li>`).join("");
+  $("growth").innerHTML = o.growth.map((x) => `<li>${escapeHtml(x)}</li>`).join("");
+  $("tshape").textContent = c.tshape;
+  $("spec").innerHTML = table(["Ruta", "Enfoque", "Siguiente paso típico"],
+    c.specializations.map(([a, b, d]) => [`<b>${escapeHtml(a)}</b>`, escapeHtml(b), escapeHtml(d)]));
+  $("certs").innerHTML = c.certifications.map((x) => `<li>${escapeHtml(x)}</li>`).join("");
+  $("community").innerHTML = c.community.map((x) => `<li>${escapeHtml(x)}</li>`).join("");
+}
+
 function renderPlan(p, r) {
   $("planGoal").innerHTML = `<b>Meta:</b> ${escapeHtml(p.goal)}`;
   $("planInsight").textContent = p.insight;
@@ -146,6 +173,8 @@ function renderPlan(p, r) {
     `<div class="rule"><span class="k">${escapeHtml(x.key)}</span><h3>${escapeHtml(x.title)}</h3><p>${escapeHtml(x.text)}</p></div>`).join("");
   $("avoid").innerHTML = r.avoid.map((x) =>
     `<div class="avoid-item"><b>${escapeHtml(x.title)}.</b> ${escapeHtml(x.text)}</div>`).join("");
+  $("habits").innerHTML = r.habits.map((x) => `<li>${escapeHtml(x)}</li>`).join("");
+  $("sustain").textContent = r.sustain;
 
   $("phases").innerHTML = p.phases.map((ph, i) => `
   <div class="layer" data-layer="${ph.id}">
@@ -166,6 +195,7 @@ function renderPlan(p, r) {
     p.budget.map((b) => [escapeHtml(b.item), `<span class="mono">${escapeHtml(b.cost)}</span>`]));
   $("budgetNote").textContent = p.budgetNote;
 
+  $("review").innerHTML = p.review.map((x) => `<li>${escapeHtml(x)}</li>`).join("");
   renderLog(p.log);
   $("reminder").innerHTML = `<b>Para cuando te dé flojera:</b> ${escapeHtml(p.reminder)}`;
 }
@@ -184,6 +214,7 @@ function renderEnglish(e) {
     renderAccordion({ id: e.grammar.id, kind: "i", eyebrow: "Gramática, en orden", title: "Ruta de gramática",
       items: e.grammar.items, before: `<p class="goal">${escapeHtml(e.grammar.rule)}</p>` }) +
     e.stages.map((s, i) => renderAccordion({ id: s.id, kind: "i", eyebrow: stageNames[i] || "Etapa", title: s.title, items: s.items })).join("") +
+    renderAccordion({ id: e.technical.id, kind: "i", eyebrow: "Para el trabajo", title: e.technical.title, items: e.technical.items }) +
     renderPlainAccordion("ing-frases", "Consulta", "Frases útiles",
       `<div class="tablebox"><table class="week">${table(["Inglés", "Español"], e.phrases.map(([en, es]) => [`<b>${escapeHtml(en)}</b>`, escapeHtml(es)]))}</table></div>`) +
     renderPlainAccordion("ing-trucos", "Consulta", "Trucos para el día a día",
@@ -242,14 +273,15 @@ function renderLog(log) {
 
 function updateProgress() {
   let total = 0, done = 0;
-  const byKind = { f: [0, 0], s: [0, 0], p: [0, 0], i: [0, 0], r: [0, 0], t: [0, 0] };
+  const byKind = { a: [0, 0], f: [0, 0], s: [0, 0], p: [0, 0], i: [0, 0], r: [0, 0], t: [0, 0] };
 
   for (const g of groups) {
     let checked = 0;
     if (g.persist) {
       for (let i = 0; i < g.total; i++) if (progress[`${g.id}-${i}`]) checked++;
-      total += g.total; done += checked;
       byKind[g.kind][0] += checked; byKind[g.kind][1] += g.total;
+      // El autodiagnóstico mide dónde estás, no tu avance del plan: no cuenta en el total.
+      if (g.kind !== "a") { total += g.total; done += checked; }
     } else {
       checked = document.querySelectorAll(`input[data-u="${g.id}"]:checked`).length;
     }
@@ -261,6 +293,9 @@ function updateProgress() {
     document.querySelector(`[data-acc="${g.id}"]`)?.classList.toggle("done", complete);
     document.querySelector(`[data-layer="${g.id}"]`)?.classList.toggle("done", complete);
   }
+
+  const result = diagnosticResults.find((r) => byKind.a[0] <= r.max);
+  if ($("diagResult") && result) $("diagResult").textContent = `${byKind.a[0]} de ${byKind.a[1]}. ${result.text}`;
 
   const pct = total ? Math.round((done / total) * 100) : 0;
   $("gPct").textContent = pct + "%";
@@ -388,7 +423,8 @@ function setupReset() {
 
 async function loadData() {
   const entries = await Promise.all(Object.entries(DATA_FILES).map(async ([key, url]) => {
-    const res = await fetch(url);
+    // "no-cache" pide al servidor confirmar si el archivo cambió, así siempre ves el contenido más reciente.
+    const res = await fetch(url, { cache: "no-cache" });
     if (!res.ok) throw new Error(`No se pudo cargar ${url} (${res.status})`);
     return [key, await res.json()];
   }));
@@ -398,14 +434,16 @@ async function loadData() {
 function showLoadError(err) {
   const msg = `<p class="load-error">No se pudo cargar el contenido: ${escapeHtml(err.message)}. ` +
     `Si abriste el archivo con doble clic, usa un servidor local (ver README).</p>`;
-  ["fundStack", "uniStack", "stdStack", "phases", "engStack", "timeline", "temarioStack"].forEach((id) => {
+  ["diagStack", "fundStack", "uniStack", "stdStack", "phases", "engStack", "timeline", "temarioStack"].forEach((id) => {
     $(id).innerHTML = msg;
   });
 }
 
 loadData()
   .then((d) => {
+    renderLevel(d.niveles);
     renderReference(d);
+    renderCraft(d.oficio, d.carrera);
     renderPlan(d.plan, d.reglas);
     renderEnglish(d.ingles);
     renderPractice(d);

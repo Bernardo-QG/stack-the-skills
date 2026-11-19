@@ -149,6 +149,10 @@
       {
         "text": "Caché",
         "note": "Guardar un resultado caro para reutilizarlo. Lo difícil es saber cuándo invalidarlo."
+      },
+      {
+        "text": "Consultas avanzadas con CTEs (WITH)",
+        "note": "Hacen legibles las consultas largas dividiéndolas en pasos con nombre."
       }
     ]
   },
@@ -222,6 +226,13 @@
       {
         "text": "Monolito vs microservicios",
         "note": "Los microservicios resuelven problemas de equipos grandes y crean otros nuevos."
+      },
+      {
+        "text": "Diseño de sistemas: caché, colas de mensajes y balanceo de carga"
+      },
+      {
+        "text": "Migrar sistemas legacy con el patrón Strangler Fig",
+        "note": "Reemplazar el sistema viejo por partes, sin apagarlo de golpe."
       }
     ]
   },
@@ -254,6 +265,17 @@
       {
         "text": "Deuda técnica",
         "note": "Atajos que se pagan con intereses. Anótala y págala a propósito."
+      },
+      {
+        "text": "Pruebas de caracterización antes de refactorizar legacy",
+        "note": "Primero capturas cómo se comporta hoy; después lo cambias sin miedo."
+      },
+      {
+        "text": "Probar código difícil: fechas, aleatoriedad y dependencias externas"
+      },
+      {
+        "text": "Medir antes de optimizar",
+        "note": "Perfila y lee planes de ejecución en lugar de suponer."
       }
     ]
   },
@@ -312,6 +334,10 @@
       {
         "text": "OWASP Top 10",
         "note": "El catálogo de errores de seguridad más comunes."
+      },
+      {
+        "text": "CSRF y control de acceso roto",
+        "note": "Dos categorías del OWASP Top 10 que aparecen mucho en aplicaciones web."
       }
     ]
   },
@@ -345,6 +371,9 @@
       {
         "text": "Monitoreo y alertas",
         "note": "Enterarte de que algo falló antes de que te avise el usuario."
+      },
+      {
+        "text": "Rendimiento en frontend: carga diferida, tamaño del bundle y Core Web Vitals"
       }
     ]
   },
@@ -375,6 +404,50 @@
       {
         "text": "Preguntar bien",
         "note": "Qué intentas hacer, qué esperabas, qué pasó y qué ya probaste."
+      },
+      {
+        "text": "git bisect: encontrar el commit que introdujo un bug"
+      },
+      {
+        "text": "Diseñar antes de programar",
+        "note": "Un documento corto ahorra días de retrabajo."
+      }
+    ]
+  },
+  {
+    "id": "f12",
+    "title": "IA aplicada",
+    "tag": "el oficio en 2026",
+    "items": [
+      {
+        "text": "Cómo funcionan los modelos de lenguaje: tokens, contexto, temperatura y limitaciones"
+      },
+      {
+        "text": "Prompting para programar: contexto, ejemplos y criterios de aceptación",
+        "note": "Di el stack, la versión y las restricciones."
+      },
+      {
+        "text": "Revisar críticamente el código generado: seguridad, casos límite y que compile",
+        "note": "Sin fundamentos no puedes auditar lo que genera la IA."
+      },
+      {
+        "text": "Generar pruebas y documentación con IA, y validarlas"
+      },
+      {
+        "text": "Reglas propias: qué delegas a la IA y qué revisas siempre"
+      },
+      {
+        "text": "Consumir la API de un modelo desde tu backend: errores, costos y límites"
+      },
+      {
+        "text": "RAG: embeddings, bases vectoriales y búsqueda semántica",
+        "note": "Que el modelo responda con tus propios datos."
+      },
+      {
+        "text": "Herramientas (tool use) y agentes: cuándo valen la pena y cuándo no"
+      },
+      {
+        "text": "Privacidad: no pegar código ni datos de la empresa en herramientas no autorizadas"
       }
     ]
   }

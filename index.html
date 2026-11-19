@@ -25,8 +25,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="css/styles.css">
-<script src="js/app.js" defer></script>
+<link rel="stylesheet" href="css/styles.css?v=1.1.0">
+<script src="js/app.js?v=1.1.0" defer></script>
 </head>
 <body>
 <div class="wrap">
@@ -50,19 +50,33 @@
 </header>
 
 <nav aria-label="Secciones"><ul>
+  <li><a href="#nivel">Mi nivel</a></li>
   <li><a href="#fundamentos">Fundamentos</a></li>
   <li><a href="#checklist">Checklist</a></li>
   <li><a href="#estandares">Estándares</a></li>
+  <li><a href="#oficio">Oficio</a></li>
   <li><a href="#plan">Mi plan</a></li>
   <li><a href="#fases">Fases</a></li>
   <li><a href="#ingles">Inglés</a></li>
   <li><a href="#roadmap">Proyecto</a></li>
   <li><a href="#temario">Temario</a></li>
+  <li><a href="#carrera">Carrera</a></li>
   <li><a href="#bitacora">Bitácora</a></li>
   <li><a href="#recursos">Recursos</a></li>
 </ul></nav>
 
 <!-- ================= PRIMER PLANO ================= -->
+
+<section id="nivel">
+  <div class="sec-head">
+    <span class="eyebrow">Autodiagnóstico · empieza aquí</span>
+    <h2>¿En qué nivel estás?</h2>
+    <p class="lead">El salto de junior a senior no está en saber más sintaxis, sino en profundidad, diseño y criterio. Ubícate con honestidad en la tabla y marca el checklist: lo que quede sin marcar es tu lista de prioridades.</p>
+  </div>
+  <div class="tablebox"><table class="week levels-table" id="matrix"></table></div>
+  <div class="stack" id="diagStack"></div>
+  <div class="card"><h3>Señales de que vas pasando a senior</h3><ul class="plain" id="signals"></ul></div>
+</section>
 
 <section id="fundamentos">
   <div class="sec-head">
@@ -94,6 +108,18 @@
   <div class="stack" id="stdStack"></div>
 </section>
 
+<section id="oficio">
+  <div class="sec-head">
+    <span class="eyebrow">Oficio · más allá del código</span>
+    <h2>Cómo trabaja un profesional</h2>
+    <p class="lead">Ser más profesional no es solo saber más tecnología: también es cómo trabajas, cómo comunicas y cómo se ve tu trabajo.</p>
+  </div>
+  <div class="two">
+    <div class="card"><h3>En el día a día</h3><ul class="plain" id="daily"></ul></div>
+    <div class="card"><h3>Lo que más te hace crecer</h3><ul class="plain" id="growth"></ul></div>
+  </div>
+</section>
+
 <!-- ================= SEGUNDO PLANO: EL PLAN ================= -->
 
 <div class="divider" id="plan">
@@ -112,10 +138,11 @@
 </section>
 
 <section id="reglas">
-  <div class="sec-head"><span class="eyebrow">Reglas</span><h2>Cómo no perderte en el camino</h2></div>
+  <div class="sec-head"><span class="eyebrow">Reglas</span><h2>Cómo estudiar para que se quede</h2></div>
   <div class="rules" id="rules"></div>
   <div class="sec-head"><span class="eyebrow">Evita</span></div>
   <div class="avoid" id="avoid"></div>
+  <div class="card"><h3>Hábitos de todo el año</h3><ul class="plain" id="habits"></ul><p class="note" id="sustain"></p></div>
 </section>
 
 <section id="fases">
@@ -156,7 +183,7 @@
 
 <section id="roadmap">
   <div class="sec-head">
-    <span class="eyebrow">Proyecto · un proyecto, ocho capas</span>
+    <span class="eyebrow">Proyecto · un proyecto, diez capas</span>
     <h2>StockFlow: tu inventario de portafolio</h2>
     <p class="lead">Un sistema de inventario con productos, almacenes, movimientos de entrada y salida, y usuarios con roles. Es tu dominio, así que vas a poder hablar de él con seguridad, pero lo escribes desde cero. Cada capa termina con un entregable concreto.</p>
     <div class="toolbar"><button type="button" class="btn-sm" data-open="timeline">Abrir todo</button><button type="button" class="btn-sm" data-close="timeline">Cerrar todo</button></div>
@@ -172,6 +199,19 @@
     <div class="toolbar"><button type="button" class="btn-sm" data-open="temarioStack">Abrir todo</button><button type="button" class="btn-sm" data-close="temarioStack">Cerrar todo</button></div>
   </div>
   <div class="stack" id="temarioStack"></div>
+</section>
+
+<section id="carrera">
+  <div class="sec-head">
+    <span class="eyebrow">Carrera</span>
+    <h2>Hacia dónde crecer</h2>
+    <p class="lead" id="tshape"></p>
+  </div>
+  <div class="tablebox"><table class="week" id="spec"></table></div>
+  <div class="two">
+    <div class="card"><h3>Certificaciones: cuándo valen la pena</h3><ul class="plain" id="certs"></ul></div>
+    <div class="card"><h3>Comunidad y red de contactos</h3><ul class="plain" id="community"></ul></div>
+  </div>
 </section>
 
 <div class="divider" id="seguimiento">
@@ -190,6 +230,7 @@
     <h2>Actualízala cada mes</h2>
     <p class="lead">Escribe directo en la tabla; se guarda sola en este navegador. Los textos en gris son la meta de ese mes.</p>
   </div>
+  <div class="card"><h3>Revisión mensual · 30 minutos</h3><ul class="plain" id="review"></ul></div>
   <div class="tablebox"><table class="log" id="log"></table></div>
 </section>
 

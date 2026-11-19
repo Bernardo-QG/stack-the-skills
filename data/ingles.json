@@ -219,5 +219,23 @@
     "Lee documentación y mensajes de error en inglés: es vocabulario que ya conoces en contexto.",
     "Escucha música en inglés y busca la letra.",
     "Practica con Claude: mini lecciones, ejercicios con corrección y conversaciones en inglés sencillo."
-  ]
+  ],
+  "technical": {
+    "id": "ing-t",
+    "title": "Inglés técnico",
+    "items": [
+      {
+        "text": "Leer documentación oficial, changelogs y artículos en inglés a diario"
+      },
+      {
+        "text": "Escuchar charlas de conferencias y podcasts técnicos"
+      },
+      {
+        "text": "Escribir commits, PRs y documentación en inglés cuando se pueda"
+      },
+      {
+        "text": "Practicar entrevistas técnicas y explicar tu trabajo en inglés"
+      }
+    ]
+  }
 }
