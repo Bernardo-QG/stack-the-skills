@@ -32,6 +32,7 @@ HTML, CSS y JavaScript sin frameworks ni build. El avance y la bitácora se guar
 ```
 ├── index.html          # Estructura de la página
 ├── CHANGELOG.md        # Historial de versiones
+├── docs/               # Decisiones (ADRs), conceptos aplicados y guía de contenido
 ├── img/                # Favicon e imagen para vista previa en redes
 ├── css/styles.css      # Estilos y temas claro/oscuro
 ├── js/app.js           # Carga los datos, dibuja las secciones y guarda el avance
@@ -49,6 +50,10 @@ HTML, CSS y JavaScript sin frameworks ni build. El avance y la bitácora se guar
     ├── temario.json
     └── recursos.json     # Por categoría: programación, inglés y trabajo remoto
 ```
+
+## Documentación
+
+En [`docs/`](docs/README.md) está por qué el proyecto es como es ([decisiones](docs/adr/README.md)) y los conceptos aplicados explicados con el código del proyecto, como material de estudio.
 
 ## Editar el contenido
 

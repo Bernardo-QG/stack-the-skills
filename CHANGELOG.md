@@ -18,6 +18,7 @@ y el proyecto usa [Versionado Semántico](https://semver.org/lang/es/).
 - Sección "Carrera": especializaciones, certificaciones y comunidad.
 - Revisión mensual y columna "Qué apliqué en el trabajo" en la bitácora.
 - Libros recomendados y fuentes de tendencias 2026 en Recursos.
+- Carpeta `docs/` con 12 decisiones de arquitectura (ADRs), 9 guías de conceptos aplicados y la guía de contenido.
 
 ### Removed
 - "IA aplicada al desarrollo" del Temario Java/Angular: ahora es el nivel 12 de Fundamentos.
