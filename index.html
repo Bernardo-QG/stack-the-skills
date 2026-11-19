@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Fundamentos de programación, checklist de revisión y estándares profesionales para cualquier proyecto.">
+<meta name="description" content="Fundamentos de programación, checklist de revisión, estándares profesionales y un plan de 12 meses: inglés, portafolio y trabajo remoto.">
 <title>Stack the Skills</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -12,11 +12,11 @@
 </head>
 <body>
 <div class="wrap">
-<div class="site-nav"><a class="brand" href="./">Stack the Skills</a><nav class="links" aria-label="Páginas"><a href="./" aria-current="page">Skills</a><a href="plan-ingles.html">Inglés</a><a href="plan-usd.html">Plan USD</a></nav></div>
+
 <header>
   <span class="eyebrow">Bernardo Quintino · plan de estudio 2026–2027</span>
   <h1>Stack the Skills</h1>
-  <p class="lead">Tu referencia de cabecera para cualquier proyecto y cualquier lenguaje: fundamentos por niveles, una checklist para revisar tu código y los estándares de los equipos profesionales. Abajo, en segundo plano, está el plan de práctica con Java + Angular. Marca cada punto cuando lo puedas <strong>explicar y hacer sin tutorial</strong>. Tu avance se guarda en este navegador.</p>
+  <p class="lead">Arriba, tu referencia para cualquier proyecto y cualquier lenguaje: fundamentos, una checklist para revisar tu código y los estándares de los equipos profesionales. Abajo, el plan de 12 meses: fases, inglés, proyecto de portafolio y bitácora. Marca cada punto cuando lo puedas <strong>explicar y hacer sin tutorial</strong>. Tu avance se guarda en este navegador.</p>
   <div class="versions" aria-label="Versiones de referencia">
     <span class="chip">Java <b>25 LTS</b></span>
     <span class="chip">Spring Boot <b>4.x</b> · Framework 7</span>
@@ -31,14 +31,20 @@
   </div>
 </header>
 
-
 <nav aria-label="Secciones"><ul>
   <li><a href="#fundamentos">Fundamentos</a></li>
   <li><a href="#checklist">Checklist</a></li>
   <li><a href="#estandares">Estándares</a></li>
-  <li><a href="#practica">Plan de práctica</a></li>
+  <li><a href="#plan">Mi plan</a></li>
+  <li><a href="#fases">Fases</a></li>
+  <li><a href="#ingles">Inglés</a></li>
+  <li><a href="#roadmap">Proyecto</a></li>
+  <li><a href="#temario">Temario</a></li>
+  <li><a href="#bitacora">Bitácora</a></li>
   <li><a href="#recursos">Recursos</a></li>
 </ul></nav>
+
+<!-- ================= PRIMER PLANO ================= -->
 
 <section id="fundamentos">
   <div class="sec-head">
@@ -70,30 +76,73 @@
   <div class="stack" id="stdStack"></div>
 </section>
 
-<div class="divider" id="practica">
-  <span class="eyebrow">Segundo plano</span>
-  <h2>Plan de práctica con Java + Angular</h2>
-  <p class="lead">Opcional. Aquí aplicas lo de arriba en tu stack actual: reglas de estudio, un proyecto guiado por capas y el temario específico de Java y Angular.</p>
+<!-- ================= SEGUNDO PLANO: EL PLAN ================= -->
+
+<div class="divider" id="plan">
+  <span class="eyebrow">Segundo plano · plan de 12 meses</span>
+  <h2>Mi plan: de junior a trabajo remoto</h2>
+  <blockquote class="goal-quote" id="planGoal"></blockquote>
 </div>
 
-<section id="reglas">
-  <div class="sec-head"><span class="eyebrow">Antes de empezar</span><h2>Cinco reglas para no perderte</h2></div>
-  <div class="rules">
-    <div class="rule"><span class="k">70 / 30</span><h3>Construye más de lo que lees</h3><p>70% del tiempo escribiendo código en tu proyecto, 30% en cursos o docs. Si solo ves videos, no se queda.</p></div>
-    <div class="rule"><span class="k">profundidad</span><h3>Un stack, a fondo</h3><p>Java + Spring Boot + Angular + MySQL. Nada de React, Python ni Kubernetes hasta terminar las capas 0 a 7.</p></div>
-    <div class="rule"><span class="k">explícalo</span><h3>Marca solo lo que sabes explicar</h3><p>Si no puedes explicar un tema en voz alta (de preferencia en inglés), todavía no está.</p></div>
-    <div class="rule"><span class="k">trabajo</span><h3>Usa tu trabajo como laboratorio</h3><p>Aprende ahí, pero nunca subas código, datos ni nombres internos de la empresa a tu GitHub.</p></div>
-    <div class="rule"><span class="k">IA</span><h3>La IA te ayuda, no te sustituye</h3><p>Úsala para entender y revisar, y lee todo lo que genera. En una entrevista no vas a tener a nadie que te sople.</p></div>
+<section id="partida">
+  <div class="sec-head">
+    <span class="eyebrow">Punto de partida</span>
+    <h2>Dónde estoy y a dónde voy</h2>
+    <p class="lead" id="planInsight"></p>
   </div>
+  <div class="tablebox"><table class="week" id="startTable"></table></div>
 </section>
+
+<section id="reglas">
+  <div class="sec-head"><span class="eyebrow">Reglas</span><h2>Cómo no perderte en el camino</h2></div>
+  <div class="rules" id="rules"></div>
+  <div class="sec-head"><span class="eyebrow">Evita</span></div>
+  <div class="avoid" id="avoid"></div>
+</section>
+
+<section id="fases">
+  <div class="sec-head">
+    <span class="eyebrow">Fases · noviembre 2026 a octubre 2027</span>
+    <h2>Cuatro fases, un objetivo</h2>
+    <p class="lead">Cada fase junta inglés, proyecto, perfil y postulaciones. Termina cuando cumples su checkpoint.</p>
+    <div class="toolbar"><button type="button" class="btn-sm" data-open="phases">Abrir todo</button><button type="button" class="btn-sm" data-close="phases">Cerrar todo</button></div>
+  </div>
+  <div class="timeline" id="phases"></div>
+</section>
+
+<section id="ingles">
+  <div class="sec-head">
+    <span class="eyebrow">Inglés · lo que más pesa en el plan</span>
+    <h2>Del A1 al B2</h2>
+  </div>
+  <div class="levels" id="levels"></div>
+  <div class="two">
+    <div class="card"><h3>Principios</h3><ul class="plain" id="principles"></ul></div>
+    <div class="card"><h3>Subtítulos: cuándo español y cuándo inglés</h3><ul class="plain" id="subtitles"></ul></div>
+  </div>
+  <div class="sec-head"><span class="eyebrow">Rutina diaria · 45 a 60 minutos</span></div>
+  <div class="tablebox"><table class="week" id="routine"></table></div>
+  <p class="note" id="routineExtra"></p>
+  <div class="sec-head">
+    <span class="eyebrow">Gramática, etapas, frases y trucos</span>
+    <div class="toolbar"><button type="button" class="btn-sm" data-open="engStack">Abrir todo</button><button type="button" class="btn-sm" data-close="engStack">Cerrar todo</button></div>
+  </div>
+  <div class="stack" id="engStack"></div>
+</section>
+
+<div class="divider" id="practica">
+  <span class="eyebrow">Práctica técnica</span>
+  <h2>Proyecto y temario de tu stack</h2>
+  <p class="lead">El proyecto es tu portafolio para las fases 1 a 3, y el temario es lo que vas a repasar para las entrevistas de la fase 3.</p>
+</div>
 
 <section id="roadmap">
   <div class="sec-head">
     <span class="eyebrow">Proyecto · un proyecto, ocho capas</span>
     <h2>StockFlow: tu inventario de portafolio</h2>
-    <p class="lead">Un sistema de inventario con productos, almacenes, movimientos de entrada y salida, y usuarios con roles. Es tu dominio, así que vas a poder hablar de él con seguridad, pero lo escribes desde cero. Calcula de 5 a 6 meses a unas 8 horas por semana. Cada capa termina con un entregable concreto.</p>
+    <p class="lead">Un sistema de inventario con productos, almacenes, movimientos de entrada y salida, y usuarios con roles. Es tu dominio, así que vas a poder hablar de él con seguridad, pero lo escribes desde cero. Cada capa termina con un entregable concreto.</p>
+    <div class="toolbar"><button type="button" class="btn-sm" data-open="timeline">Abrir todo</button><button type="button" class="btn-sm" data-close="timeline">Cerrar todo</button></div>
   </div>
-  <div class="toolbar"><button type="button" class="btn-sm" data-open="timeline">Abrir todo</button><button type="button" class="btn-sm" data-close="timeline">Cerrar todo</button></div>
   <div class="timeline" id="timeline"></div>
 </section>
 
@@ -101,42 +150,51 @@
   <div class="sec-head">
     <span class="eyebrow">Temario · específico de tu stack (Java + Angular)</span>
     <h2>Lo que te van a preguntar en una entrevista</h2>
-    <p class="lead">Estudia esto en paralelo con las capas. La etiqueta indica la prioridad: <span class="pill hot">alta</span> se pregunta en casi todas las entrevistas de backend Java, <span class="pill">media</span> te distingue de otros candidatos.</p>
+    <p class="lead">La etiqueta indica la prioridad: <span class="pill hot">alta</span> se pregunta en casi todas las entrevistas de backend Java, <span class="pill">media</span> te distingue de otros candidatos.</p>
+    <div class="toolbar"><button type="button" class="btn-sm" data-open="temarioStack">Abrir todo</button><button type="button" class="btn-sm" data-close="temarioStack">Cerrar todo</button></div>
   </div>
-  <div class="toolbar"><button type="button" class="btn-sm" data-open="temarioStack">Abrir todo</button><button type="button" class="btn-sm" data-close="temarioStack">Cerrar todo</button></div>
   <div class="stack" id="temarioStack"></div>
 </section>
 
+<div class="divider" id="seguimiento">
+  <span class="eyebrow">Seguimiento</span>
+  <h2>Tu semana, tu bitácora y tu presupuesto</h2>
+</div>
+
 <section id="semana">
+  <div class="sec-head"><span class="eyebrow">Semana tipo</span><h2>Trabajando tiempo completo</h2><p class="lead" id="weekTotal"></p></div>
+  <div class="tablebox"><table class="week" id="week"></table></div>
+</section>
+
+<section id="bitacora">
   <div class="sec-head">
-    <span class="eyebrow">Ritmo</span>
-    <h2>Tu semana tipo</h2>
-    <p class="lead">Encaja con tu plan para ganar en dólares: unas 8 a 9 horas por semana junto con el inglés. El domingo se descansa.</p>
+    <span class="eyebrow">Bitácora mensual</span>
+    <h2>Actualízala cada mes</h2>
+    <p class="lead">Escribe directo en la tabla; se guarda sola en este navegador. Los textos en gris son la meta de ese mes.</p>
   </div>
-  <div class="tablebox"><table class="week">
-    <thead><tr><th>Día</th><th>Bloque</th><th>Tiempo</th></tr></thead>
-    <tbody>
-      <tr><td>Lun · Mié · Vie</td><td>Inglés: conversación o curso. Explica en voz alta lo último que construiste.</td><td class="mono">45 min</td></tr>
-      <tr><td>Mar · Jue</td><td>Temario: un tema, con ejemplo de código propio y notas en tu README de estudio.</td><td class="mono">1 h</td></tr>
-      <tr><td>Sábado</td><td>Capa del roadmap: construir, probar, commit y PR a tu propio repo.</td><td class="mono">3 h</td></tr>
-      <tr><td>Domingo</td><td>Nada. Si te quemas en el mes 3, no llegas al mes 6.</td><td class="mono">—</td></tr>
-    </tbody>
-  </table></div>
+  <div class="tablebox"><table class="log" id="log"></table></div>
+</section>
+
+<section id="presupuesto">
+  <div class="sec-head"><span class="eyebrow">Presupuesto</span><h2>Lo que cuesta al mes</h2><p class="lead" id="budgetNote"></p></div>
+  <div class="tablebox"><table class="week" id="budget"></table></div>
 </section>
 
 <section id="recursos">
   <div class="sec-head">
     <span class="eyebrow">Recursos · gratis primero</span>
-    <h2>Dónde aprender cada cosa</h2>
+    <h2>Dónde aprender y dónde postular</h2>
     <p class="lead">Pocos recursos y buenos. La documentación oficial siempre gana sobre un video viejo.</p>
   </div>
-  <div class="res" id="res"></div>
+  <div id="res"></div>
 </section>
 
 <footer>
-  <div class="reset" id="resetBox"><button type="button" id="resetBtn">Reiniciar mi avance</button></div>
+  <blockquote class="goal-quote" id="reminder"></blockquote>
+  <div class="reset" id="resetBox"></div>
   <p>Versiones de referencia revisadas en noviembre de 2026: Java 25 es la LTS actual, Spring Boot 4.1 salió en junio de 2026 y Angular 22 en 2026. En el trabajo puedes usar versiones anteriores. Aprende lo moderno y entiende lo que ya existe.</p>
 </footer>
+
 </div>
 </body>
 </html>

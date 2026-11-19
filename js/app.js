@@ -3,17 +3,21 @@
  * El contenido vive en /data/*.json; este archivo solo lo carga y lo dibuja.
  *
  * Progreso: cada casilla se guarda en localStorage con la llave "<id de sección>-<posición>".
- * Por eso, al editar un JSON, agrega puntos nuevos AL FINAL de su lista: si los insertas
- * a la mitad o cambias el orden, las marcas guardadas se recorren a otros puntos.
+ * Por eso, al editar un JSON, agrega puntos nuevos AL FINAL de su lista (o del último grupo):
+ * si los insertas a la mitad o cambias el orden, las marcas guardadas se recorren.
  */
 
 const STORAGE_KEY = "ruta-java-angular-v1";
 const OPEN_KEY = STORAGE_KEY + "-open";
+const LOG_KEY = STORAGE_KEY + "-log";
 
 const DATA_FILES = {
   fundamentos: "data/fundamentos.json",
   checklist: "data/checklist.json",
   estandares: "data/estandares.json",
+  plan: "data/plan.json",
+  reglas: "data/reglas.json",
+  ingles: "data/ingles.json",
   roadmap: "data/roadmap.json",
   temario: "data/temario.json",
   recursos: "data/recursos.json",
@@ -30,8 +34,11 @@ function store(key, value) {
 
 let progress = load(STORAGE_KEY);   // casillas marcadas
 let openState = load(OPEN_KEY);     // acordeones abiertos
+let logState = load(LOG_KEY);       // bitácora mensual
 
-/* ---------- utilidades de texto ---------- */
+/* ---------- utilidades ---------- */
+
+const $ = (id) => document.getElementById(id);
 
 const escapeHtml = (s) =>
   String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -40,14 +47,20 @@ const escapeHtml = (s) =>
 const CODE_PATTERN = /(@\w+|\/api\/[\w/?=&;.-]+|V\d__\w+\.sql|ddl-auto=update|mvn verify|docker compose up|git clone|\/health)/g;
 const formatText = (s) => escapeHtml(s).replace(CODE_PATTERN, (m) => `<code>${m}</code>`);
 
+function table(headers, rows) {
+  const head = `<thead><tr>${headers.map((h) => `<th>${escapeHtml(h)}</th>`).join("")}</tr></thead>`;
+  const body = rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("");
+  return head + `<tbody>${body}</tbody>`;
+}
+
 /* ---------- componentes ---------- */
 
-const sections = {};   // id -> { title, items } para copiar como Markdown
+const sections = {};   // id -> { title, groups } para copiar como Markdown
 const groups = [];     // { id, total, kind, persist } para calcular avance
 
-function renderChecklist(sectionId, items, persist) {
+function renderChecklist(sectionId, items, persist, offset = 0) {
   const rows = items.map((item, i) => {
-    const id = `${sectionId}-${i}`;
+    const id = `${sectionId}-${offset + i}`;
     const attr = persist
       ? `data-k="${id}"${progress[id] ? " checked" : ""}`
       : `data-u="${sectionId}"`;
@@ -59,12 +72,23 @@ function renderChecklist(sectionId, items, persist) {
 
 /**
  * Acordeón con avance en la cabecera.
- * @param {object} o  id, kind, eyebrow, title, items, pill?, hot?, before?, after?, persist?
+ * Recibe `items` (una lista) o `groups` ([{ title, items }]) para listas con subtítulos.
+ * @param {object} o  id, kind, eyebrow, title, items|groups, pill?, hot?, before?, after?, persist?
  */
 function renderAccordion(o) {
   const persist = o.persist !== false;
-  sections[o.id] = { title: o.title, items: o.items };
-  groups.push({ id: o.id, total: o.items.length, kind: o.kind, persist });
+  const parts = o.groups || [{ title: null, items: o.items }];
+  const total = parts.reduce((n, g) => n + g.items.length, 0);
+  sections[o.id] = { title: o.title, groups: parts };
+  groups.push({ id: o.id, total, kind: o.kind, persist });
+
+  let offset = 0;
+  const lists = parts.map((g) => {
+    const html = (g.title ? `<h4 class="group">${escapeHtml(g.title)}</h4>` : "") +
+      renderChecklist(o.id, g.items, persist, offset);
+    offset += g.items.length;
+    return html;
+  }).join("");
 
   const pill = o.pill ? `<span class="pill${o.hot ? " hot" : ""}">${escapeHtml(o.pill)}</span>` : "";
   return `
@@ -76,18 +100,28 @@ function renderAccordion(o) {
   </summary>
   <div class="acc-body">
     ${o.before || ""}
-    ${renderChecklist(o.id, o.items, persist)}
+    ${lists}
     ${o.after || ""}
     <div class="toolbar"><button type="button" class="btn-sm" data-copy="${o.id}">Copiar como checklist Markdown</button></div>
   </div>
 </details>`;
 }
 
+// Acordeón sin casillas (tablas o listas de consulta).
+function renderPlainAccordion(id, eyebrow, title, body) {
+  return `
+<details class="acc" data-acc="${id}"${openState[id] ? " open" : ""}>
+  <summary>
+    <div class="sum-main"><span class="eyebrow">${escapeHtml(eyebrow)}</span><h3>${escapeHtml(title)}</h3></div>
+    <div class="sum-side"><span class="chev" aria-hidden="true"></span></div>
+  </summary>
+  <div class="acc-body">${body}</div>
+</details>`;
+}
+
 /* ---------- secciones ---------- */
 
-function renderAll(d) {
-  const $ = (id) => document.getElementById(id);
-
+function renderReference(d) {
   $("fundStack").innerHTML = d.fundamentos.map((f, i) => renderAccordion({
     id: f.id, kind: "f", eyebrow: `Nivel ${i + 1}`, title: f.title, pill: f.tag, items: f.items,
   })).join("");
@@ -100,7 +134,63 @@ function renderAll(d) {
     id: s.id, kind: "s", eyebrow: "Estándar", title: s.title, items: s.items,
     after: s.example ? `<div class="std-ex"><span class="eyebrow">Ejemplo</span><pre>${escapeHtml(s.example)}</pre></div>` : "",
   })).join("");
+}
 
+function renderPlan(p, r) {
+  $("planGoal").innerHTML = `<b>Meta:</b> ${escapeHtml(p.goal)}`;
+  $("planInsight").textContent = p.insight;
+  $("startTable").innerHTML = table(["Área", "Hoy", "Meta en 12 meses"],
+    p.start.map((s) => [`<b>${escapeHtml(s.area)}</b>`, escapeHtml(s.today), escapeHtml(s.goal)]));
+
+  $("rules").innerHTML = r.rules.map((x) =>
+    `<div class="rule"><span class="k">${escapeHtml(x.key)}</span><h3>${escapeHtml(x.title)}</h3><p>${escapeHtml(x.text)}</p></div>`).join("");
+  $("avoid").innerHTML = r.avoid.map((x) =>
+    `<div class="avoid-item"><b>${escapeHtml(x.title)}.</b> ${escapeHtml(x.text)}</div>`).join("");
+
+  $("phases").innerHTML = p.phases.map((ph, i) => `
+  <div class="layer" data-layer="${ph.id}">
+    <div class="num" aria-hidden="true">${i + 1}</div>
+    ${renderAccordion({
+      id: ph.id, kind: "p", eyebrow: `Fase ${i + 1} · ${ph.months}`, title: ph.title,
+      pill: `inglés ${ph.english}`, hot: true, groups: ph.groups,
+      before: `<p class="goal">${escapeHtml(ph.objective)}</p>`,
+      after: `<div class="dod"><b>Checkpoint</b><ul class="plain">${ph.checkpoint.map((c) => `<li>${escapeHtml(c)}</li>`).join("")}</ul></div>`,
+    })}
+  </div>`).join("");
+
+  $("week").innerHTML = table(["Día", "Qué hacer", "Tiempo"],
+    p.week.map((w) => [escapeHtml(w.day), escapeHtml(w.what), `<span class="mono">${escapeHtml(w.time)}</span>`]));
+  $("weekTotal").textContent = p.weekTotal;
+
+  $("budget").innerHTML = table(["Concepto", "Costo mensual aprox."],
+    p.budget.map((b) => [escapeHtml(b.item), `<span class="mono">${escapeHtml(b.cost)}</span>`]));
+  $("budgetNote").textContent = p.budgetNote;
+
+  renderLog(p.log);
+  $("reminder").innerHTML = `<b>Para cuando te dé flojera:</b> ${escapeHtml(p.reminder)}`;
+}
+
+function renderEnglish(e) {
+  $("levels").innerHTML = e.levels.map((l) =>
+    `<div class="level"><span class="eyebrow">${escapeHtml(l.label)}</span><b>${escapeHtml(l.level)}</b><span>${escapeHtml(l.note)}</span></div>`).join("");
+  $("principles").innerHTML = e.principles.map((x) => `<li>${escapeHtml(x)}</li>`).join("");
+  $("subtitles").innerHTML = e.subtitles.map((x) => `<li>${escapeHtml(x)}</li>`).join("");
+  $("routine").innerHTML = table(["Tiempo", "Qué", "Cómo"],
+    e.routine.map((x) => [`<span class="mono">${escapeHtml(x.time)}</span>`, `<b>${escapeHtml(x.what)}</b>`, escapeHtml(x.how)]));
+  $("routineExtra").textContent = e.routineExtra;
+
+  const stageNames = ["Etapa 1", "Etapa 2", "Etapa 3"];
+  $("engStack").innerHTML =
+    renderAccordion({ id: e.grammar.id, kind: "i", eyebrow: "Gramática, en orden", title: "Ruta de gramática",
+      items: e.grammar.items, before: `<p class="goal">${escapeHtml(e.grammar.rule)}</p>` }) +
+    e.stages.map((s, i) => renderAccordion({ id: s.id, kind: "i", eyebrow: stageNames[i] || "Etapa", title: s.title, items: s.items })).join("") +
+    renderPlainAccordion("ing-frases", "Consulta", "Frases útiles",
+      `<div class="tablebox"><table class="week">${table(["Inglés", "Español"], e.phrases.map(([en, es]) => [`<b>${escapeHtml(en)}</b>`, escapeHtml(es)]))}</table></div>`) +
+    renderPlainAccordion("ing-trucos", "Consulta", "Trucos para el día a día",
+      `<ul class="plain">${e.tips.map((t) => `<li>${escapeHtml(t)}</li>`).join("")}</ul>`);
+}
+
+function renderPractice(d) {
   $("timeline").innerHTML = d.roadmap.map((c, i) => `
   <div class="layer" data-layer="${c.id}">
     <div class="num" aria-hidden="true">${i}</div>
@@ -115,19 +205,44 @@ function renderAll(d) {
     id: t.id, kind: "t", eyebrow: "Java + Angular", title: t.title,
     pill: `prioridad ${t.priority}`, hot: t.priority === "alta", items: t.items,
   })).join("");
+}
 
-  $("res").innerHTML = d.recursos.map((r) => {
-    let host = "";
-    try { host = new URL(r.url).hostname.replace("www.", ""); } catch (e) { /* url inválida */ }
-    return `<a href="${escapeHtml(r.url)}" target="_blank" rel="noopener"><strong>${escapeHtml(r.name)}</strong><span>${escapeHtml(r.description)}</span><span class="mono">${escapeHtml(host)}</span></a>`;
+function renderResources(categories) {
+  $("res").innerHTML = categories.map((cat) => `
+    <div class="res-cat">
+      <h3>${escapeHtml(cat.category)}</h3>
+      <div class="res">${cat.items.map((r) => {
+        if (!r.url) return `<div class="res-item"><strong>${escapeHtml(r.name)}</strong><span>${escapeHtml(r.description)}</span></div>`;
+        let host = "";
+        try { host = new URL(r.url).hostname.replace("www.", ""); } catch (e) { /* url inválida */ }
+        return `<a href="${escapeHtml(r.url)}" target="_blank" rel="noopener"><strong>${escapeHtml(r.name)}</strong><span>${escapeHtml(r.description)}</span><span class="mono">${escapeHtml(host)}</span></a>`;
+      }).join("")}</div>
+    </div>`).join("");
+}
+
+/* ---------- bitácora ---------- */
+
+function renderLog(log) {
+  const head = `<thead><tr><th>Mes</th>${log.columns.map((c) => `<th>${escapeHtml(c.label)}</th>`).join("")}</tr></thead>`;
+  const rows = log.months.map((m) => {
+    const cells = log.columns.map((c) => {
+      const key = `${m.id}.${c.key}`;
+      const saved = logState[key];
+      const value = saved !== undefined ? saved : (m.values && m.values[c.key]) || "";
+      const target = (m.targets && m.targets[c.key]) || "";
+      const cls = c.key === "notes" ? "log-in wide" : "log-in";
+      return `<td><input class="${cls}" data-log="${key}" value="${escapeHtml(value)}" placeholder="${escapeHtml(target)}" aria-label="${escapeHtml(m.label + " · " + c.label)}"></td>`;
+    }).join("");
+    return `<tr><th scope="row">${escapeHtml(m.label)}</th>${cells}</tr>`;
   }).join("");
+  $("log").innerHTML = head + `<tbody>${rows}</tbody>`;
 }
 
 /* ---------- avance ---------- */
 
 function updateProgress() {
   let total = 0, done = 0;
-  const byKind = { f: [0, 0], r: [0, 0], t: [0, 0], s: [0, 0] };
+  const byKind = { f: [0, 0], s: [0, 0], p: [0, 0], i: [0, 0], r: [0, 0], t: [0, 0] };
 
   for (const g of groups) {
     let checked = 0;
@@ -148,19 +263,23 @@ function updateProgress() {
   }
 
   const pct = total ? Math.round((done / total) * 100) : 0;
-  document.getElementById("gPct").textContent = pct + "%";
-  document.getElementById("gBar").style.width = pct + "%";
-  document.getElementById("gStats").innerHTML =
-    `<span>Fundamentos: <b>${byKind.f[0]}/${byKind.f[1]}</b></span>` +
-    `<span>Estándares: <b>${byKind.s[0]}/${byKind.s[1]}</b></span>` +
-    `<span>Temario Java/Angular: ${byKind.t[0]}/${byKind.t[1]}</span>` +
-    `<span>Proyecto: ${byKind.r[0]}/${byKind.r[1]}</span>`;
+  $("gPct").textContent = pct + "%";
+  $("gBar").style.width = pct + "%";
+  const stat = (label, k, strong) =>
+    `<span>${label}: ${strong ? "<b>" : ""}${byKind[k][0]}/${byKind[k][1]}${strong ? "</b>" : ""}</span>`;
+  $("gStats").innerHTML =
+    stat("Fundamentos", "f", true) + stat("Estándares", "s", true) +
+    stat("Fases", "p") + stat("Inglés", "i") + stat("Proyecto", "r") + stat("Temario", "t");
 }
 
 /* ---------- copiar como Markdown ---------- */
 
-const toMarkdown = (id) =>
-  `### ${sections[id].title}\n` + sections[id].items.map((it) => `- [ ] ${it.text}`).join("\n") + "\n";
+function toMarkdown(id) {
+  const s = sections[id];
+  const body = s.groups.map((g) =>
+    (g.title ? `#### ${g.title}\n` : "") + g.items.map((it) => `- [ ] ${it.text}`).join("\n")).join("\n\n");
+  return `### ${s.title}\n${body}\n`;
+}
 
 function copyText(button, text) {
   const label = button.textContent;
@@ -201,6 +320,14 @@ function bindEvents(d) {
     if (t.dataset.k || t.dataset.u) updateProgress();
   });
 
+  // La bitácora se guarda mientras escribes.
+  document.addEventListener("input", (e) => {
+    const key = e.target.dataset?.log;
+    if (!key) return;
+    logState[key] = e.target.value;
+    store(LOG_KEY, logState);
+  });
+
   // "toggle" no burbujea; se escucha en fase de captura.
   document.addEventListener("toggle", (e) => {
     const acc = e.target.dataset?.acc;
@@ -218,7 +345,7 @@ function bindEvents(d) {
       copyText(b, "## Checklist de revisión\n\n" + d.checklist.map((c) => toMarkdown(c.id)).join("\n"));
     } else if (b.dataset.open || b.dataset.close) {
       const open = Boolean(b.dataset.open);
-      const container = document.getElementById(b.dataset.open || b.dataset.close);
+      const container = $(b.dataset.open || b.dataset.close);
       container.querySelectorAll("details.acc").forEach((det) => {
         det.open = open;
         if (open) openState[det.dataset.acc] = 1; else delete openState[det.dataset.acc];
@@ -227,7 +354,7 @@ function bindEvents(d) {
     }
   });
 
-  document.getElementById("uniClear").addEventListener("click", () => {
+  $("uniClear").addEventListener("click", () => {
     document.querySelectorAll("input[data-u]").forEach((i) => (i.checked = false));
     updateProgress();
   });
@@ -236,23 +363,23 @@ function bindEvents(d) {
 }
 
 function setupReset() {
-  const box = document.getElementById("resetBox");
+  const box = $("resetBox");
   const idle = () => {
     box.innerHTML = '<button type="button" id="resetBtn">Reiniciar mi avance</button>';
-    document.getElementById("resetBtn").onclick = ask;
+    $("resetBtn").onclick = ask;
   };
   const ask = () => {
-    box.innerHTML = '<span>¿Borrar todas las casillas marcadas?</span>' +
+    box.innerHTML = '<span>¿Borrar todas las casillas marcadas? La bitácora no se borra.</span>' +
       '<button type="button" class="danger" id="resetYes">Sí, borrar</button>' +
       '<button type="button" id="resetNo">Cancelar</button>';
-    document.getElementById("resetYes").onclick = () => {
+    $("resetYes").onclick = () => {
       progress = {};
       store(STORAGE_KEY, progress);
       document.querySelectorAll("input[data-k]").forEach((i) => (i.checked = false));
       updateProgress();
       idle();
     };
-    document.getElementById("resetNo").onclick = idle;
+    $("resetNo").onclick = idle;
   };
   idle();
 }
@@ -271,11 +398,19 @@ async function loadData() {
 function showLoadError(err) {
   const msg = `<p class="load-error">No se pudo cargar el contenido: ${escapeHtml(err.message)}. ` +
     `Si abriste el archivo con doble clic, usa un servidor local (ver README).</p>`;
-  ["fundStack", "uniStack", "stdStack", "timeline", "temarioStack"].forEach((id) => {
-    document.getElementById(id).innerHTML = msg;
+  ["fundStack", "uniStack", "stdStack", "phases", "engStack", "timeline", "temarioStack"].forEach((id) => {
+    $(id).innerHTML = msg;
   });
 }
 
 loadData()
-  .then((d) => { renderAll(d); bindEvents(d); updateProgress(); })
+  .then((d) => {
+    renderReference(d);
+    renderPlan(d.plan, d.reglas);
+    renderEnglish(d.ingles);
+    renderPractice(d);
+    renderResources(d.recursos);
+    bindEvents(d);
+    updateProgress();
+  })
   .catch(showLoadError);

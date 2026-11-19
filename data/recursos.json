@@ -1,62 +1,179 @@
 [
   {
-    "name": "roadmap.sh",
-    "description": "Rutas visuales de Java, Spring Boot y Angular",
-    "url": "https://roadmap.sh/spring-boot"
+    "category": "Programación",
+    "items": [
+      {
+        "name": "roadmap.sh",
+        "description": "Rutas visuales de Java, Spring Boot y Angular",
+        "url": "https://roadmap.sh/spring-boot"
+      },
+      {
+        "name": "Spring Guides",
+        "description": "Guías oficiales cortas y prácticas",
+        "url": "https://spring.io/guides"
+      },
+      {
+        "name": "Baeldung",
+        "description": "La referencia de Java y Spring para cualquier duda",
+        "url": "https://www.baeldung.com"
+      },
+      {
+        "name": "dev.java",
+        "description": "Tutoriales oficiales de Java moderno",
+        "url": "https://dev.java/learn/"
+      },
+      {
+        "name": "angular.dev",
+        "description": "Docs y tutorial oficial de Angular actual",
+        "url": "https://angular.dev"
+      },
+      {
+        "name": "Refactoring Guru",
+        "description": "Patrones de diseño explicados, en español",
+        "url": "https://refactoring.guru/es/design-patterns"
+      },
+      {
+        "name": "Testcontainers Guides",
+        "description": "Tests de integración con bases de datos reales",
+        "url": "https://testcontainers.com/guides/"
+      },
+      {
+        "name": "NeetCode",
+        "description": "Lista de problemas y explicaciones para entrevistas",
+        "url": "https://neetcode.io"
+      },
+      {
+        "name": "OWASP Top 10",
+        "description": "Las 10 vulnerabilidades web más comunes",
+        "url": "https://owasp.org/Top10/"
+      },
+      {
+        "name": "Conventional Commits",
+        "description": "La especificación, en español",
+        "url": "https://www.conventionalcommits.org/es/v1.0.0/"
+      },
+      {
+        "name": "The Twelve-Factor App",
+        "description": "Principios para apps en la nube, en español",
+        "url": "https://12factor.net/es/"
+      },
+      {
+        "name": "Effective Java (libro)",
+        "description": "Joshua Bloch. El libro que más te sube el nivel en Java",
+        "url": "https://www.oreilly.com/library/view/effective-java-3rd/9780134686097/"
+      }
+    ]
   },
   {
-    "name": "Spring Guides",
-    "description": "Guías oficiales cortas y prácticas",
-    "url": "https://spring.io/guides"
+    "category": "Inglés",
+    "items": [
+      {
+        "name": "BBC Learning English",
+        "description": "Lecciones gratis e incluye el podcast 6 Minute English",
+        "url": "https://www.bbc.co.uk/learningenglish"
+      },
+      {
+        "name": "Easy English y English with Lucy",
+        "description": "Canales de YouTube para escuchar inglés real"
+      },
+      {
+        "name": "Pacho8a",
+        "description": "Gramática explicada en español, en YouTube"
+      },
+      {
+        "name": "ESL Pod",
+        "description": "Podcast para estudiantes de inglés",
+        "url": "https://www.eslpod.com"
+      },
+      {
+        "name": "Series para empezar",
+        "description": "Friends, Modern Family, Bluey y Peppa Pig (ideales para tu nivel)"
+      },
+      {
+        "name": "Anki",
+        "description": "Tarjetas con repetición espaciada, gratis en PC y Android",
+        "url": "https://apps.ankiweb.net"
+      },
+      {
+        "name": "Tandem",
+        "description": "Intercambio de idioma gratis: tú enseñas español",
+        "url": "https://www.tandem.net"
+      },
+      {
+        "name": "HelloTalk",
+        "description": "Intercambio de idioma por chat y voz",
+        "url": "https://www.hellotalk.com"
+      },
+      {
+        "name": "italki",
+        "description": "Clases 1 a 1 con tutores, desde unos 5–10 USD",
+        "url": "https://www.italki.com"
+      },
+      {
+        "name": "Preply",
+        "description": "Clases 1 a 1 con tutores",
+        "url": "https://preply.com"
+      },
+      {
+        "name": "Cambly",
+        "description": "Conversación con nativos",
+        "url": "https://www.cambly.com"
+      },
+      {
+        "name": "EF SET",
+        "description": "Mide tu nivel cada 3 meses, gratis",
+        "url": "https://www.efset.org"
+      }
+    ]
   },
   {
-    "name": "Baeldung",
-    "description": "La referencia de Java y Spring para cualquier duda",
-    "url": "https://www.baeldung.com"
-  },
-  {
-    "name": "dev.java",
-    "description": "Tutoriales oficiales de Java moderno",
-    "url": "https://dev.java/learn/"
-  },
-  {
-    "name": "angular.dev",
-    "description": "Docs y tutorial oficial de Angular actual",
-    "url": "https://angular.dev"
-  },
-  {
-    "name": "Refactoring Guru",
-    "description": "Patrones de diseño explicados, en español",
-    "url": "https://refactoring.guru/es/design-patterns"
-  },
-  {
-    "name": "Testcontainers Guides",
-    "description": "Tests de integración con bases de datos reales",
-    "url": "https://testcontainers.com/guides/"
-  },
-  {
-    "name": "NeetCode",
-    "description": "Lista de problemas y explicaciones para entrevistas",
-    "url": "https://neetcode.io"
-  },
-  {
-    "name": "OWASP Top 10",
-    "description": "Las 10 vulnerabilidades web más comunes",
-    "url": "https://owasp.org/Top10/"
-  },
-  {
-    "name": "Conventional Commits",
-    "description": "La especificación, en español",
-    "url": "https://www.conventionalcommits.org/es/v1.0.0/"
-  },
-  {
-    "name": "The Twelve-Factor App",
-    "description": "Principios para apps en la nube, en español",
-    "url": "https://12factor.net/es/"
-  },
-  {
-    "name": "Effective Java (libro)",
-    "description": "Joshua Bloch. El libro que más te sube el nivel en Java",
-    "url": "https://www.oreilly.com/library/view/effective-java-3rd/9780134686097/"
+    "category": "Trabajo remoto",
+    "items": [
+      {
+        "name": "Get on Board",
+        "description": "Vacantes tech en LATAM, muchas en USD y algunas en español",
+        "url": "https://www.getonbrd.com"
+      },
+      {
+        "name": "Torre",
+        "description": "Perfil profesional y vacantes remotas",
+        "url": "https://torre.ai"
+      },
+      {
+        "name": "Revelo",
+        "description": "Conecta desarrolladores de LATAM con empresas de EE. UU.",
+        "url": "https://www.revelo.com"
+      },
+      {
+        "name": "Turing",
+        "description": "Empleos remotos con empresas de EE. UU.; prueba técnica exigente",
+        "url": "https://www.turing.com"
+      },
+      {
+        "name": "Arc.dev",
+        "description": "Empleos remotos para desarrolladores",
+        "url": "https://arc.dev"
+      },
+      {
+        "name": "Toptal",
+        "description": "Freelance de alto nivel; filtro muy estricto",
+        "url": "https://www.toptal.com"
+      },
+      {
+        "name": "Upwork",
+        "description": "Proyectos freelance para juntar clientes y reseñas",
+        "url": "https://www.upwork.com"
+      },
+      {
+        "name": "LinkedIn Jobs",
+        "description": "Busca “Remote LATAM” o “Remote Mexico”",
+        "url": "https://www.linkedin.com/jobs/"
+      },
+      {
+        "name": "Guía salarial LaPieza 2026",
+        "description": "Cuánto pagan las empresas de EE. UU. por desarrolladores en LATAM",
+        "url": "https://blog.lapieza.io/the-2026-latam-developer-salary-guide-what-us-canadian-companies-pay-to-hire-in-latin-america/"
+      }
+    ]
   }
 ]

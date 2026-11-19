@@ -1,0 +1,57 @@
+{
+  "rules": [
+    {
+      "key": "70 / 30",
+      "title": "Construye más de lo que lees",
+      "text": "70% del tiempo escribiendo código, 30% en cursos o docs. Si solo ves videos, no se queda."
+    },
+    {
+      "key": "profundidad",
+      "title": "Un stack, a fondo",
+      "text": "Java + Spring Boot + Angular + MySQL. Nada de React, Python ni Kubernetes hasta terminar el proyecto."
+    },
+    {
+      "key": "explícalo",
+      "title": "Marca solo lo que sabes explicar",
+      "text": "Si no puedes explicar un tema en voz alta, de preferencia en inglés, todavía no está."
+    },
+    {
+      "key": "constancia",
+      "title": "Constancia antes que intensidad",
+      "text": "40 minutos diarios rinden más que 4 horas un solo día. Vale para el inglés y para el código."
+    },
+    {
+      "key": "habla",
+      "title": "Equivocarte es parte del proceso",
+      "text": "Habla inglés aunque salga mal y postula aunque no te sientas listo. Nunca te vas a sentir listo."
+    },
+    {
+      "key": "trabajo",
+      "title": "Usa tu trabajo como laboratorio",
+      "text": "Aprende ahí, pero nunca subas código, datos ni nombres internos de la empresa a tu GitHub."
+    },
+    {
+      "key": "IA",
+      "title": "La IA te ayuda, no te sustituye",
+      "text": "Úsala para entender y revisar, y lee todo lo que genera. En una entrevista no vas a tener a nadie que te sople."
+    }
+  ],
+  "avoid": [
+    {
+      "title": "Estudiar inglés solo con apps",
+      "text": "Duolingo no te prepara para una entrevista. Hablar con personas, sí."
+    },
+    {
+      "title": "Renunciar antes de tiempo",
+      "text": "El trabajo actual es tu colchón hasta tener la oferta firmada."
+    },
+    {
+      "title": "Aceptar la primera oferta sin negociar",
+      "text": "Siempre hay margen."
+    },
+    {
+      "title": "Ignorar al SAT",
+      "text": "Cobrar en dólares sin declarar te puede salir carísimo."
+    }
+  ]
+}

@@ -1,0 +1,457 @@
+{
+  "goal": "Conseguir un trabajo remoto pagado en USD (nivel medio, $3,800–$6,000 USD al mes según la guía salarial de LaPieza 2026) en 12 meses, sin soltar la chamba actual hasta tener la oferta firmada.",
+  "insight": "Tu parte técnica ya está. Lo que te separa de los dólares es el inglés hablado y saber venderte. Por eso el inglés atraviesa las cuatro fases.",
+  "start": [
+    {
+      "area": "Experiencia",
+      "today": "~6 años (PHP, Angular, Spring Boot, MySQL, Pascal)",
+      "goal": "La misma, pero bien contada en inglés"
+    },
+    {
+      "area": "Inglés",
+      "today": "A1–A2",
+      "goal": "B2 conversacional: aguantar una entrevista de 45 min"
+    },
+    {
+      "area": "Portafolio",
+      "today": "Página personal",
+      "goal": "2 proyectos sólidos en GitHub y LinkedIn en inglés"
+    },
+    {
+      "area": "Entrevistas",
+      "today": "En español",
+      "goal": "En inglés, con historias listas"
+    }
+  ],
+  "budget": [
+    {
+      "item": "Clases de conversación (12 al mes)",
+      "cost": "$1,500–3,000 MXN"
+    },
+    {
+      "item": "Apps (Anki gratis en Android; Duolingo opcional)",
+      "cost": "$0–200 MXN"
+    },
+    {
+      "item": "Hosting del portafolio",
+      "cost": "$0 (planes gratuitos)"
+    },
+    {
+      "item": "Contador, cuando ya cobres en USD",
+      "cost": "Variable"
+    }
+  ],
+  "budgetNote": "Si te contratan, recuperas esa inversión en la primera quincena.",
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Cimientos",
+      "months": "Nov 2026 – Ene 2027",
+      "english": "A2 sólido",
+      "objective": "Que el inglés sea un hábito diario, no algo que haces cuando te acuerdas.",
+      "groups": [
+        {
+          "title": "Inglés",
+          "items": [
+            {
+              "text": "Rutina diaria de 45–60 min, sin fallar",
+              "note": "Detalle en la sección Inglés."
+            },
+            {
+              "text": "Terminar el curso de Udemy que traes a medias",
+              "note": "Ya está pagado: sácale jugo."
+            },
+            {
+              "text": "Agregar a Anki vocabulario de tu chamba",
+              "note": "deploy, pull request, requirement, legacy system, migration, inventory, purchase order, stakeholder, deadline, blocker"
+            },
+            {
+              "text": "Grabarte 2 minutos diarios explicando qué hiciste hoy en el trabajo",
+              "note": "Se siente raro. Hazlo igual."
+            }
+          ]
+        },
+        {
+          "title": "Perfil",
+          "items": [
+            {
+              "text": "GitHub con foto, bio en inglés y README de perfil"
+            },
+            {
+              "text": "Perfiles en LinkedIn, Get on Board, Torre y Revelo",
+              "note": "Por ahora solo llénalos; todavía no postules."
+            }
+          ]
+        },
+        {
+          "title": "Técnico",
+          "items": [
+            {
+              "text": "Fundamentos: niveles 1 a 4"
+            },
+            {
+              "text": "Proyecto StockFlow: capas 0 y 1"
+            }
+          ]
+        }
+      ],
+      "checkpoint": [
+        "60 o más días seguidos de rutina",
+        "Puedes describir tu trabajo en inglés durante 2 minutos sin trabarte feo"
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Subir nivel",
+      "months": "Feb – Abr 2027",
+      "english": "B1",
+      "objective": "Pasar a B1 y tener algo que enseñar.",
+      "groups": [
+        {
+          "title": "Inglés",
+          "items": [
+            {
+              "text": "Clases de conversación 1 a 1, 3 veces por semana, 30 min",
+              "note": "italki, Preply o Cambly. Es la inversión que más rinde de todo el plan."
+            },
+            {
+              "text": "Practicar tech talk con el tutor",
+              "note": "Explicar arquitectura, contar un bug que resolviste, decir “no entendí, ¿me lo repites?”."
+            },
+            {
+              "text": "Celular, VS Code e IDE en inglés"
+            },
+            {
+              "text": "Repetir el EF SET a fin de abril"
+            }
+          ]
+        },
+        {
+          "title": "Portafolio",
+          "items": [
+            {
+              "text": "Pulir la alerta de oro y plata (Supabase)",
+              "note": "README en inglés, diagrama, capturas y demo en vivo. Un proyecto real que usas tú mismo vale más que mil to-do lists."
+            },
+            {
+              "text": "Proyecto StockFlow: capas 2 a 5",
+              "note": "Tu proyecto espejo con Angular + Spring Boot + MySQL, sin código ni datos de la empresa."
+            }
+          ]
+        },
+        {
+          "title": "CV y LinkedIn",
+          "items": [
+            {
+              "text": "CV en inglés, formato Harvard, con logros y números"
+            },
+            {
+              "text": "LinkedIn en inglés",
+              "note": "Titular tipo: Full Stack Developer | Angular · Java Spring Boot · Legacy Migration"
+            }
+          ]
+        },
+        {
+          "title": "Técnico",
+          "items": [
+            {
+              "text": "Fundamentos: niveles 5 a 8"
+            }
+          ]
+        }
+      ],
+      "checkpoint": [
+        "EF SET en B1",
+        "2 repos públicos con README decente",
+        "CV en inglés listo"
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Entrar al ring",
+      "months": "May – Jul 2027",
+      "english": "B1+ / B2-",
+      "objective": "Empezar a postular y perderle el miedo a las entrevistas.",
+      "groups": [
+        {
+          "title": "Postulaciones",
+          "items": [
+            {
+              "text": "10 postulaciones por semana",
+              "note": "Es un juego de números."
+            },
+            {
+              "text": "Hoja de seguimiento: empresa, fecha, plataforma, estado y qué te preguntaron"
+            },
+            {
+              "text": "Empezar por empresas que pagan en USD con equipos en español",
+              "note": "Startups latinas, Get on Board y nearshore como BairesDev, EPAM o Encora."
+            },
+            {
+              "text": "1 o 2 proyectos chicos en Upwork (PHP o Angular)",
+              "note": "Tus primeros dólares y tus primeras reseñas."
+            }
+          ]
+        },
+        {
+          "title": "Preparación técnica",
+          "items": [
+            {
+              "text": "3 a 4 problemas easy/medium por semana",
+              "note": "Ver Temario → Algoritmos para entrevistas."
+            },
+            {
+              "text": "Repasar las preguntas típicas de Spring Boot, Angular y SQL",
+              "note": "Ver Temario Java/Angular."
+            },
+            {
+              "text": "Proyecto StockFlow: capas 6 y 7, desplegado con link público"
+            },
+            {
+              "text": "Fundamentos: niveles 9 a 11"
+            }
+          ]
+        },
+        {
+          "title": "Historias STAR, en inglés y ensayadas",
+          "items": [
+            {
+              "text": "Migración del sistema: de legacy a Angular + Spring Boot",
+              "note": "Situación → Tarea → Acción → Resultado"
+            },
+            {
+              "text": "Plataforma: un proyecto nuevo con hardware de por medio"
+            },
+            {
+              "text": "Módulos: software regulado, donde la seguridad importa"
+            },
+            {
+              "text": "Optimización de procedimientos",
+              "note": "Pon números si los tienes."
+            },
+            {
+              "text": "Un reto con un cliente o compañero y cómo lo resolviste"
+            }
+          ]
+        }
+      ],
+      "checkpoint": [
+        "100 o más postulaciones enviadas",
+        "5 o más entrevistas hechas, aunque las truenes",
+        "Primer ingreso en USD, aunque sea de Upwork"
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Cerrar el trato",
+      "months": "Ago – Oct 2027",
+      "english": "B2",
+      "objective": "Convertir entrevistas en ofertas.",
+      "groups": [
+        {
+          "title": "Postulaciones",
+          "items": [
+            {
+              "text": "Postular a las grandes: Turing, Arc.dev, Toptal y vacantes “Remote LATAM” en LinkedIn"
+            }
+          ]
+        },
+        {
+          "title": "Negociación",
+          "items": [
+            {
+              "text": "Nunca dar tu número primero"
+            },
+            {
+              "text": "Si te presionan, pedir en el rango alto",
+              "note": "Para nivel medio en México, alrededor de $5,000 USD al mes. La guía de LaPieza recomienda a las empresas ofrecer entre el percentil 60 y 75."
+            }
+          ]
+        },
+        {
+          "title": "Antes de firmar",
+          "items": [
+            {
+              "text": "¿Contrato directo o por Deel, Remote u Oyster?"
+            },
+            {
+              "text": "¿Cómo te pagan? Wise, Payoneer o transferencia"
+            },
+            {
+              "text": "¿Vacaciones pagadas? ¿Festivos de EE. UU. o de México?"
+            },
+            {
+              "text": "¿Horario? ¿Zona del Pacífico o del Este?"
+            }
+          ]
+        },
+        {
+          "title": "Cierre",
+          "items": [
+            {
+              "text": "Alta en el SAT con actividad propia",
+              "note": "Mucha gente usa RESICO. Ve con un contador antes del primer pago grande, no después."
+            },
+            {
+              "text": "Renunciar solo con la oferta firmada, sin quemar puentes"
+            }
+          ]
+        }
+      ],
+      "checkpoint": [
+        "Oferta firmada 🎯"
+      ]
+    }
+  ],
+  "week": [
+    {
+      "day": "Lun – Vie",
+      "what": "Rutina de inglés: Anki, escuchar, gramática y grabarte",
+      "time": "45 min"
+    },
+    {
+      "day": "Lun · Mié · Vie",
+      "what": "Clase de conversación (desde la fase 2)",
+      "time": "30 min"
+    },
+    {
+      "day": "Mar · Jue",
+      "what": "Fundamentos o Temario: un tema con ejemplo de código propio",
+      "time": "1 h"
+    },
+    {
+      "day": "Sábado",
+      "what": "Bloque fuerte: proyecto StockFlow y, desde la fase 3, postulaciones",
+      "time": "3 h"
+    },
+    {
+      "day": "Domingo",
+      "what": "Descanso. En serio: si te quemas en el mes 3, no llegas al 12.",
+      "time": "—"
+    }
+  ],
+  "weekTotal": "Unas 8 a 9 horas por semana. Es exigente, pero se puede.",
+  "log": {
+    "columns": [
+      {
+        "key": "streak",
+        "label": "Racha inglés (días)"
+      },
+      {
+        "key": "efset",
+        "label": "EF SET"
+      },
+      {
+        "key": "anki",
+        "label": "Palabras Anki"
+      },
+      {
+        "key": "repos",
+        "label": "Repos"
+      },
+      {
+        "key": "apps",
+        "label": "Postulaciones"
+      },
+      {
+        "key": "interviews",
+        "label": "Entrevistas"
+      },
+      {
+        "key": "usd",
+        "label": "USD ganados"
+      },
+      {
+        "key": "notes",
+        "label": "Notas"
+      }
+    ],
+    "months": [
+      {
+        "id": "2026-09",
+        "label": "Sep 26",
+        "values": {
+          "efset": "A1–A2",
+          "anki": "0",
+          "notes": "Inicio del plan de inglés"
+        }
+      },
+      {
+        "id": "2026-10",
+        "label": "Oct 26"
+      },
+      {
+        "id": "2026-11",
+        "label": "Nov 26",
+        "values": {
+          "repos": "0",
+          "apps": "0",
+          "interviews": "0",
+          "usd": "$0",
+          "notes": "Inicio del plan de 12 meses"
+        }
+      },
+      {
+        "id": "2026-12",
+        "label": "Dic 26"
+      },
+      {
+        "id": "2027-01",
+        "label": "Ene 27",
+        "targets": {
+          "streak": "60+",
+          "efset": "A2"
+        }
+      },
+      {
+        "id": "2027-02",
+        "label": "Feb 27"
+      },
+      {
+        "id": "2027-03",
+        "label": "Mar 27"
+      },
+      {
+        "id": "2027-04",
+        "label": "Abr 27",
+        "targets": {
+          "efset": "B1",
+          "repos": "2"
+        }
+      },
+      {
+        "id": "2027-05",
+        "label": "May 27"
+      },
+      {
+        "id": "2027-06",
+        "label": "Jun 27"
+      },
+      {
+        "id": "2027-07",
+        "label": "Jul 27",
+        "targets": {
+          "apps": "100+",
+          "interviews": "5+"
+        }
+      },
+      {
+        "id": "2027-08",
+        "label": "Ago 27"
+      },
+      {
+        "id": "2027-09",
+        "label": "Sep 27"
+      },
+      {
+        "id": "2027-10",
+        "label": "Oct 27",
+        "targets": {
+          "efset": "B2",
+          "notes": "Oferta firmada"
+        }
+      }
+    ]
+  },
+  "reminder": "Ya tienes años de experiencia y un stack que buscan. No estás empezando de cero, solo te falta cambiar de idioma. Un año de constancia puede subir tu sueldo a otro nivel."
+}
