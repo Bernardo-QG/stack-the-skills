@@ -1,6 +1,6 @@
 # Stack the Skills
 
-![Versión](https://img.shields.io/badge/versión-2.0.0-B4441C) ![Licencia MIT](https://img.shields.io/badge/licencia-MIT-16202C)
+![Versión](https://img.shields.io/badge/versión-2.1.0-9B2A62) ![Licencia MIT](https://img.shields.io/badge/licencia-MIT-1C1B2B)
 
 Mapa de habilidades para llegar a **desarrollador senior y bilingüe**: habilidades, herramientas, conceptos y metodologías, con lo que se espera en cada nivel.
 

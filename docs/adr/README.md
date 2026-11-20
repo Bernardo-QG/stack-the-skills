@@ -15,12 +15,13 @@ Los ADR no se borran: si una decisión cambia, se escribe uno nuevo y el anterio
 | 0007 | [Versionado semántico y CHANGELOG](0007-semver-y-changelog.md) |
 | 0008 | [Evitar que el navegador use archivos viejos](0008-evitar-cache-viejo.md) |
 | 0009 | [Licencia MIT](0009-licencia-mit.md) |
-| 0010 | [Logo de escalera y paleta salvia y terracota](0010-identidad-visual.md) |
+| 0010 | [Logo de escalera y paleta salvia y terracota](0010-identidad-visual.md) · *paleta reemplazada por 0016* |
 | 0011 | [No publicar datos internos del trabajo](0011-contenido-publico-anonimo.md) |
 | 0012 | [El autodiagnóstico no cuenta en el avance total](0012-autodiagnostico-fuera-del-total.md) · *reemplazada por 0014* |
 | 0013 | [Stack the Skills es solo el mapa de habilidades](0013-mapa-de-habilidades.md) |
 | 0014 | [Marcar el nivel de cada habilidad, guardado por su ID](0014-nivel-por-habilidad.md) |
 | 0015 | [Dos modos de vista: por nivel y por complejidad y utilidad](0015-dos-modos-de-vista.md) |
+| 0016 | [Paleta "Evolución"](0016-paleta-evolucion.md) |
 
 ## Plantilla para una decisión nueva
 

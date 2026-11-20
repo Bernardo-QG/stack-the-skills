@@ -1,7 +1,9 @@
 # ADR 0010: Logo de escalera y paleta salvia y terracota
 
-- **Estado:** Aceptada
+- **Estado:** Reemplazada por ADR 0016 (solo la paleta; el logo de escalera se mantiene)
 - **Fecha:** 2026-11-18
+
+> Desde la versión 2.1.0 la paleta es "Evolución". Se conserva como historia de la decisión.
 
 ## Contexto
 

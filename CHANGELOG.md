@@ -7,6 +7,13 @@ y el proyecto usa [Versionado Semántico](https://semver.org/lang/es/).
 
 ## [Unreleased]
 
+## [2.1.0] - 2026-11-19
+
+### Changed
+- Nueva paleta "Evolución": cada escalón del logo cambia de color, de azul profundo a violeta y magenta (ADR 0016).
+- Los niveles de cada habilidad usan los mismos colores: junior azul, intermedio violeta, senior magenta.
+- Favicon, ícono del celular e imagen para redes con la nueva paleta.
+
 ## [2.0.0] - 2026-11-19
 
 Stack the Skills pasa a ser **solo el mapa de habilidades** para llegar a desarrollador senior y bilingüe (ADR 0013). Es un cambio incompatible: el avance de la versión 1.x no se conserva.
@@ -70,5 +77,6 @@ Stack the Skills pasa a ser **solo el mapa de habilidades** para llegar a desarr
 - Favicon, imagen de vista previa para redes y metadatos Open Graph.
 - Licencia MIT y `.editorconfig`.
 
-[Unreleased]: https://github.com/Bernardo-QG/stack-the-skills/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/Bernardo-QG/stack-the-skills/compare/v2.1.0...HEAD
+[2.1.0]: https://github.com/Bernardo-QG/stack-the-skills/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/Bernardo-QG/stack-the-skills/releases/tag/v2.0.0

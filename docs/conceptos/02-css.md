@@ -6,7 +6,7 @@ Todos los colores y fuentes están definidos una sola vez en `:root`:
 
 ```css
 :root{
-  --bg:#F4F5F2; --ink:#1E2A23; --accent:#A9542F; …
+  --bg:#F3F2F6; --ink:#1C1B2B; --accent:#9B2A62; …
   --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
 }
 body{ background:var(--bg); color:var(--ink) }
@@ -18,7 +18,7 @@ Los componentes nunca usan un color directo, siempre `var(--algo)`. Cambiar la p
 
 ```css
 @media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){ --bg:#121714; --ink:#E6EBE7; …; color-scheme:dark }
+  :root:not([data-theme="light"]){ --bg:#141320; --ink:#E9E8F2; …; color-scheme:dark }
 }
 ```
 
