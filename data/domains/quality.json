@@ -1,0 +1,177 @@
+{
+  "id": "quality",
+  "name": "Calidad y testing",
+  "description": "Cambiar el código con confianza: pruebas, revisiones y prácticas que evitan errores.",
+  "skills": [
+    {
+      "id": "quality-unit-testing",
+      "name": "Pruebas unitarias",
+      "what": "JUnit 5, AssertJ y estructura Arrange-Act-Assert.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Escribe pruebas siguiendo ejemplos.",
+        "mid": "Prueba cada regla de negocio con pruebas claras y rápidas.",
+        "senior": "Define qué y cómo se prueba en el equipo."
+      },
+      "resources": [
+        {
+          "name": "JUnit 5 User Guide",
+          "url": "https://junit.org/junit5/docs/current/user-guide/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "quality-mocking",
+      "name": "Dobles de prueba",
+      "what": "Mocks, stubs y fakes con Mockito; cuándo usarlos y cuándo no.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Usa mocks copiados de otras pruebas.",
+        "mid": "Aísla dependencias con Mockito sin acoplar las pruebas a la implementación.",
+        "senior": "Diseña código fácil de probar y evita el exceso de mocks."
+      },
+      "resources": [
+        {
+          "name": "Mockito",
+          "url": "https://site.mockito.org"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "quality-integration-testing",
+      "name": "Pruebas de integración",
+      "what": "Probar con base de datos real, @SpringBootTest, @WebMvcTest y Testcontainers.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Corre las pruebas de integración existentes.",
+        "mid": "Escribe pruebas de integración con Testcontainers.",
+        "senior": "Equilibra la pirámide de pruebas para que sea confiable y rápida."
+      },
+      "resources": [
+        {
+          "name": "Testcontainers",
+          "url": "https://testcontainers.com/guides/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "quality-e2e-testing",
+      "name": "Pruebas end-to-end",
+      "what": "Probar flujos completos desde el navegador con Playwright o Cypress.",
+      "complexity": "media",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Sabe que existen.",
+        "mid": "Automatiza los flujos críticos de punta a punta.",
+        "senior": "Mantiene una suite end-to-end estable y útil."
+      },
+      "resources": [
+        {
+          "name": "Playwright",
+          "url": "https://playwright.dev"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "quality-tdd",
+      "name": "Desarrollo guiado por pruebas (TDD)",
+      "what": "Escribir la prueba antes del código: rojo, verde, refactorizar.",
+      "complexity": "media",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Conoce el ciclo.",
+        "mid": "Usa TDD en lógica de negocio compleja.",
+        "senior": "Sabe cuándo TDD aporta y cuándo no, y lo enseña."
+      },
+      "resources": [
+        {
+          "name": "Test-Driven Development by Example (Kent Beck)"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "quality-code-review",
+      "name": "Revisión de código",
+      "what": "Revisar y recibir revisiones con criterio, claridad y respeto.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Recibe comentarios y los corrige.",
+        "mid": "Revisa PRs de otros encontrando problemas reales.",
+        "senior": "Define el estándar de revisión y mejora al equipo con sus comentarios."
+      },
+      "resources": [
+        {
+          "name": "Google: guía de code review",
+          "url": "https://google.github.io/eng-practices/review/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "quality-debugging",
+      "name": "Depuración",
+      "what": "Reproducir, aislar, formular hipótesis y usar el depurador.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Depura con prueba y error y prints.",
+        "mid": "Depura con método, breakpoints y lectura de stack traces.",
+        "senior": "Diagnostica errores intermitentes y de producción con logs, métricas y trazas."
+      },
+      "resources": [
+        {
+          "name": "IntelliJ IDEA: depuración",
+          "url": "https://www.jetbrains.com/help/idea/debugging-code.html"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "quality-static-analysis",
+      "name": "Análisis estático y linters",
+      "what": "Checkstyle, ESLint, SonarQube y formateo automático.",
+      "complexity": "baja",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Corrige lo que marca el IDE.",
+        "mid": "Configura linters y formateo automático en sus proyectos.",
+        "senior": "Define las reglas del equipo y las integra en CI."
+      },
+      "resources": [
+        {
+          "name": "SonarQube",
+          "url": "https://docs.sonarsource.com/sonarqube-server/latest/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "quality-coverage",
+      "name": "Cobertura útil",
+      "what": "Medir cobertura con JaCoCo y enfocarla en rutas críticas.",
+      "complexity": "baja",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Conoce el porcentaje de cobertura.",
+        "mid": "Usa la cobertura para encontrar código crítico sin pruebas.",
+        "senior": "Evita perseguir un número y mide lo que importa."
+      },
+      "resources": [
+        {
+          "name": "JaCoCo",
+          "url": "https://www.jacoco.org/jacoco/trunk/doc/"
+        }
+      ],
+      "evidence": []
+    }
+  ]
+}

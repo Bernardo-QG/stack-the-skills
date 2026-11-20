@@ -193,56 +193,6 @@
     ]
   },
   {
-    "category": "Trabajo remoto",
-    "items": [
-      {
-        "name": "Get on Board",
-        "description": "Vacantes tech en LATAM, muchas en USD y algunas en español",
-        "url": "https://www.getonbrd.com"
-      },
-      {
-        "name": "Torre",
-        "description": "Perfil profesional y vacantes remotas",
-        "url": "https://torre.ai"
-      },
-      {
-        "name": "Revelo",
-        "description": "Conecta desarrolladores de LATAM con empresas de EE. UU.",
-        "url": "https://www.revelo.com"
-      },
-      {
-        "name": "Turing",
-        "description": "Empleos remotos con empresas de EE. UU.; prueba técnica exigente",
-        "url": "https://www.turing.com"
-      },
-      {
-        "name": "Arc.dev",
-        "description": "Empleos remotos para desarrolladores",
-        "url": "https://arc.dev"
-      },
-      {
-        "name": "Toptal",
-        "description": "Freelance de alto nivel; filtro muy estricto",
-        "url": "https://www.toptal.com"
-      },
-      {
-        "name": "Upwork",
-        "description": "Proyectos freelance para juntar clientes y reseñas",
-        "url": "https://www.upwork.com"
-      },
-      {
-        "name": "LinkedIn Jobs",
-        "description": "Busca “Remote LATAM” o “Remote Mexico”",
-        "url": "https://www.linkedin.com/jobs/"
-      },
-      {
-        "name": "Guía salarial LaPieza 2026",
-        "description": "Cuánto pagan las empresas de EE. UU. por desarrolladores en LATAM",
-        "url": "https://blog.lapieza.io/the-2026-latam-developer-salary-guide-what-us-canadian-companies-pay-to-hire-in-latin-america/"
-      }
-    ]
-  },
-  {
     "category": "Tendencias 2026",
     "items": [
       {

@@ -1,0 +1,22 @@
+{
+  "order": [
+    "fundamentals",
+    "languages",
+    "backend",
+    "frontend",
+    "data",
+    "architecture",
+    "quality",
+    "devops",
+    "security",
+    "ai",
+    "tools",
+    "methodologies",
+    "professional",
+    "english"
+  ],
+  "criteria": {
+    "complexity": "Tiempo y esfuerzo para llegar a nivel intermedio.",
+    "usefulness": "Qué tanto se usa en el día a día y qué tanto la piden las vacantes de backend y full stack."
+  }
+}

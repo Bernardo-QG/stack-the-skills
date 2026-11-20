@@ -19,17 +19,25 @@ Todos los acordeones son HTML nativo, sin librerías:
 
 `<details>` ya sabe abrirse y cerrarse con clic, con teclado (Enter o Espacio) y lo anuncia a los lectores de pantalla. Hacer lo mismo con `<div>` y JavaScript obliga a programar todo eso a mano.
 
-### Casillas con `<label for>`
+### Selector de nivel con `radio` y `<label for>`
 
 ```html
-<label for="f1-0"><input type="checkbox" id="f1-0"><span>Tipos de datos…</span></label>
+<div class="picker" role="radiogroup" aria-label="Mi nivel en Índices y planes de ejecución">
+  <input type="radio" id="lv-data-indexes-2" name="lv-data-indexes" value="2">
+  <label for="lv-data-indexes-2" title="Intermedio">Int</label>
+  …
+</div>
 ```
 
-El `<label>` conectado al `id` del input hace que todo el texto sea clicable, no solo el cuadrito.
+Son radios nativos escondidos con CSS: el `<label>` conectado al `id` es lo que se ve y se toca. Al compartir el mismo `name`, solo uno puede estar marcado, y se pueden recorrer con las flechas del teclado sin programar nada.
+
+### Botones que dicen su estado
+
+Los botones de modo y de nivel objetivo usan `aria-pressed="true"` o `"false"`, así un lector de pantalla anuncia cuál está activo.
 
 ### Otros detalles
 
-- `aria-label` en la navegación y en los campos de la bitácora, que no tienen un texto visible al lado.
+- `aria-label` en la navegación y en cada selector de nivel, que no tiene un texto visible que lo describa.
 - `aria-hidden="true"` en elementos decorativos (los números de las capas, la flecha del acordeón).
 - `:focus-visible` en CSS para que al navegar con Tab se vea dónde estás.
 - `prefers-reduced-motion` para quitar animaciones a quien lo pidió en su sistema.

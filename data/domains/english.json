@@ -1,0 +1,167 @@
+{
+  "id": "english",
+  "name": "Inglés",
+  "description": "El inglés abre las vacantes remotas y la mejor documentación. Niveles según el Marco Común Europeo (MCER).",
+  "skills": [
+    {
+      "id": "english-reading-docs",
+      "name": "Leer documentación técnica",
+      "what": "Documentación oficial, changelogs, issues y artículos en inglés.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "A2: lee documentación con ayuda de traductor.",
+        "mid": "B1: lee documentación sin traductor y entiende la mayoría.",
+        "senior": "B2+: lee cualquier texto técnico con fluidez, incluidos RFCs y libros."
+      },
+      "resources": [
+        {
+          "name": "MDN en inglés",
+          "url": "https://developer.mozilla.org/en-US/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "english-listening",
+      "name": "Comprensión auditiva",
+      "what": "Entender reuniones, charlas y videos técnicos.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "A2: entiende videos con subtítulos.",
+        "mid": "B1: entiende charlas técnicas sin subtítulos con esfuerzo.",
+        "senior": "B2+: entiende reuniones con nativos y distintos acentos."
+      },
+      "resources": [
+        {
+          "name": "BBC Learning English",
+          "url": "https://www.bbc.co.uk/learningenglish"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "english-technical-writing",
+      "name": "Escritura técnica",
+      "what": "Commits, PRs, issues, documentación y mensajes en inglés.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "A2: escribe commits y mensajes cortos.",
+        "mid": "B1: escribe PRs y documentación clara.",
+        "senior": "B2+: escribe propuestas técnicas y documentos de diseño."
+      },
+      "resources": [
+        {
+          "name": "Google Technical Writing",
+          "url": "https://developers.google.com/tech-writing"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "english-speaking-meetings",
+      "name": "Hablar en reuniones",
+      "what": "Daily, reportar avances, preguntar y explicar problemas.",
+      "complexity": "alta",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "A2: da un reporte corto preparado.",
+        "mid": "B1: participa en dailies y explica un problema técnico.",
+        "senior": "B2+: discute soluciones, negocia y presenta con naturalidad."
+      },
+      "resources": [
+        {
+          "name": "italki",
+          "url": "https://www.italki.com"
+        },
+        {
+          "name": "Preply",
+          "url": "https://preply.com"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "english-interviews",
+      "name": "Entrevistas en inglés",
+      "what": "Hablar de tu experiencia, historias STAR y resolver problemas en voz alta.",
+      "complexity": "alta",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "A2: presenta su experiencia con un guion.",
+        "mid": "B1: responde preguntas de comportamiento con historias preparadas.",
+        "senior": "B2+: hace entrevistas técnicas completas y negocia condiciones."
+      },
+      "resources": [],
+      "evidence": []
+    },
+    {
+      "id": "english-vocabulary",
+      "name": "Vocabulario técnico",
+      "what": "El vocabulario del día a día en software y negocio.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "A2: conoce los términos técnicos más comunes.",
+        "mid": "B1: usa vocabulario técnico y de negocio con naturalidad.",
+        "senior": "B2+: maneja expresiones idiomáticas del medio."
+      },
+      "resources": [
+        {
+          "name": "Anki",
+          "url": "https://apps.ankiweb.net"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "english-grammar",
+      "name": "Gramática",
+      "what": "Tiempos verbales, preguntas, modales y estructuras para comunicar con claridad.",
+      "complexity": "media",
+      "usefulness": "media",
+      "levels": {
+        "junior": "A2: presente, pasado y futuro simples.",
+        "mid": "B1: presente perfecto, condicionales y modales.",
+        "senior": "B2+: estructuras complejas y matices."
+      },
+      "resources": [],
+      "evidence": []
+    },
+    {
+      "id": "english-pronunciation",
+      "name": "Pronunciación",
+      "what": "Hacerse entender: sonidos, acento y entonación.",
+      "complexity": "media",
+      "usefulness": "media",
+      "levels": {
+        "junior": "A2: se le entiende con esfuerzo.",
+        "mid": "B1: se le entiende sin esfuerzo en conversaciones técnicas.",
+        "senior": "B2+: habla con claridad y naturalidad."
+      },
+      "resources": [],
+      "evidence": []
+    },
+    {
+      "id": "english-level-certification",
+      "name": "Medición del nivel",
+      "what": "Medir el nivel cada pocos meses con un examen estándar.",
+      "complexity": "baja",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Conoce su nivel aproximado.",
+        "mid": "Mide su nivel cada 3 meses (por ejemplo, EF SET).",
+        "senior": "Tiene una certificación reconocida si el empleo lo pide."
+      },
+      "resources": [
+        {
+          "name": "EF SET",
+          "url": "https://www.efset.org"
+        }
+      ],
+      "evidence": []
+    }
+  ]
+}

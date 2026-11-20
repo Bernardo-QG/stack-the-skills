@@ -1,0 +1,213 @@
+{
+  "id": "devops",
+  "name": "DevOps y nube",
+  "description": "Llevar el código a producción de forma automática, repetible y observable.",
+  "skills": [
+    {
+      "id": "devops-docker",
+      "name": "Docker",
+      "what": "Imágenes, contenedores, volúmenes, redes y Dockerfile multi-stage.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Levanta contenedores con comandos dados.",
+        "mid": "Escribe Dockerfiles y docker-compose desde cero.",
+        "senior": "Optimiza imágenes en tamaño y seguridad para producción."
+      },
+      "resources": [
+        {
+          "name": "Documentación de Docker",
+          "url": "https://docs.docker.com"
+        },
+        {
+          "name": "roadmap.sh: docker",
+          "url": "https://roadmap.sh/docker"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "devops-ci-cd",
+      "name": "CI/CD",
+      "what": "Pipelines que compilan, prueban y despliegan en cada cambio.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Entiende que el pipeline corre al hacer push.",
+        "mid": "Crea pipelines con build, pruebas y despliegue en GitHub Actions o GitLab CI.",
+        "senior": "Diseña la estrategia de despliegue del equipo con ambientes y aprobaciones."
+      },
+      "resources": [
+        {
+          "name": "GitHub Actions",
+          "url": "https://docs.github.com/es/actions"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "devops-cloud-fundamentals",
+      "name": "Fundamentos de nube (AWS)",
+      "what": "Cómputo, base de datos administrada, almacenamiento, redes e IAM.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Conoce los servicios principales.",
+        "mid": "Despliega una aplicación con base de datos en la nube.",
+        "senior": "Diseña la infraestructura con seguridad, costos y alta disponibilidad."
+      },
+      "resources": [
+        {
+          "name": "AWS Skill Builder",
+          "url": "https://skillbuilder.aws"
+        },
+        {
+          "name": "roadmap.sh: aws",
+          "url": "https://roadmap.sh/aws"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "devops-linux-servers",
+      "name": "Servidores Linux",
+      "what": "Administración básica, SSH, servicios, logs y permisos.",
+      "complexity": "media",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Se conecta a un servidor y revisa logs.",
+        "mid": "Configura servicios, permisos y despliegues manuales.",
+        "senior": "Endurece servidores y automatiza su configuración."
+      },
+      "resources": [
+        {
+          "name": "Linux Journey",
+          "url": "https://linuxjourney.com"
+        },
+        {
+          "name": "roadmap.sh: linux",
+          "url": "https://roadmap.sh/linux"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "devops-observability",
+      "name": "Observabilidad",
+      "what": "Logs estructurados, métricas, trazas y alertas.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Revisa logs cuando algo falla.",
+        "mid": "Agrega logs útiles, métricas y health checks.",
+        "senior": "Define la estrategia de observabilidad con trazas distribuidas y alertas accionables."
+      },
+      "resources": [
+        {
+          "name": "OpenTelemetry",
+          "url": "https://opentelemetry.io/docs/"
+        },
+        {
+          "name": "Prometheus",
+          "url": "https://prometheus.io/docs/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "devops-configuration",
+      "name": "Configuración y secretos",
+      "what": "Variables de entorno, configuración por ambiente y gestores de secretos.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Usa archivos de configuración dados.",
+        "mid": "Separa configuración del código y no deja secretos en Git.",
+        "senior": "Gestiona secretos con herramientas dedicadas y rotación."
+      },
+      "resources": [
+        {
+          "name": "The Twelve-Factor App",
+          "url": "https://12factor.net/es/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "devops-web-servers",
+      "name": "Servidores web y proxies",
+      "what": "Nginx, proxy inverso, balanceo y certificados HTTPS.",
+      "complexity": "media",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Sabe que hay un servidor delante de la aplicación.",
+        "mid": "Configura un proxy inverso con HTTPS.",
+        "senior": "Diseña balanceo, caché y seguridad en la capa de entrada."
+      },
+      "resources": [
+        {
+          "name": "Documentación de Nginx",
+          "url": "https://nginx.org/en/docs/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "devops-kubernetes",
+      "name": "Kubernetes",
+      "what": "Pods, deployments, services y configuración para orquestar contenedores.",
+      "complexity": "alta",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Sabe qué problema resuelve.",
+        "mid": "Despliega y depura aplicaciones en un clúster existente.",
+        "senior": "Diseña despliegues, escalamiento y recursos en Kubernetes."
+      },
+      "resources": [
+        {
+          "name": "Documentación de Kubernetes",
+          "url": "https://kubernetes.io/es/docs/home/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "devops-infrastructure-as-code",
+      "name": "Infraestructura como código",
+      "what": "Terraform u otras herramientas para crear infraestructura con código.",
+      "complexity": "alta",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Sabe que existe.",
+        "mid": "Crea infraestructura sencilla con Terraform.",
+        "senior": "Gestiona toda la infraestructura como código con módulos y revisiones."
+      },
+      "resources": [
+        {
+          "name": "Terraform",
+          "url": "https://developer.hashicorp.com/terraform/docs"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "devops-deployment-strategies",
+      "name": "Estrategias de despliegue",
+      "what": "Blue-green, canary, feature flags y rollback.",
+      "complexity": "media",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Despliega siguiendo un procedimiento.",
+        "mid": "Hace despliegues con rollback rápido y feature flags.",
+        "senior": "Elige la estrategia de despliegue según el riesgo del cambio."
+      },
+      "resources": [
+        {
+          "name": "Martin Fowler: BlueGreenDeployment",
+          "url": "https://martinfowler.com/bliki/BlueGreenDeployment.html"
+        }
+      ],
+      "evidence": []
+    }
+  ]
+}

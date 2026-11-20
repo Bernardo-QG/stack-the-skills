@@ -1,0 +1,163 @@
+{
+  "id": "tools",
+  "name": "Herramientas",
+  "description": "Dominar las herramientas del día a día hace todo lo demás más rápido.",
+  "skills": [
+    {
+      "id": "tools-git",
+      "name": "Git",
+      "what": "Commits, ramas, merge, rebase, conflictos, cherry-pick y bisect.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Hace commit, pull y push.",
+        "mid": "Usa ramas, rebase y resuelve conflictos sin miedo.",
+        "senior": "Diseña el flujo de ramas del equipo y recupera repositorios en problemas."
+      },
+      "resources": [
+        {
+          "name": "Pro Git",
+          "url": "https://git-scm.com/book/es/v2"
+        },
+        {
+          "name": "roadmap.sh: git-github",
+          "url": "https://roadmap.sh/git-github"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "tools-github",
+      "name": "GitHub y GitLab",
+      "what": "Pull requests, revisiones, issues, Actions y protección de ramas.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Abre pull requests.",
+        "mid": "Gestiona PRs, issues, plantillas y Actions.",
+        "senior": "Configura la organización: permisos, reglas de ramas y automatizaciones."
+      },
+      "resources": [
+        {
+          "name": "GitHub Docs",
+          "url": "https://docs.github.com/es"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "tools-ide",
+      "name": "IDE",
+      "what": "IntelliJ IDEA y VS Code: atajos, refactorizaciones automáticas, depurador.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Edita y ejecuta código.",
+        "mid": "Usa atajos, refactorizaciones automáticas y el depurador a diario.",
+        "senior": "Personaliza su entorno para ser mucho más rápido y lo comparte."
+      },
+      "resources": [
+        {
+          "name": "IntelliJ IDEA",
+          "url": "https://www.jetbrains.com/help/idea/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "tools-terminal",
+      "name": "Terminal",
+      "what": "Navegar, buscar, filtrar y automatizar desde la línea de comandos.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Ejecuta comandos básicos.",
+        "mid": "Usa grep, find, tuberías y redirecciones con soltura.",
+        "senior": "Automatiza su flujo de trabajo con scripts y alias."
+      },
+      "resources": [
+        {
+          "name": "Linux Journey",
+          "url": "https://linuxjourney.com"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "tools-build-tools",
+      "name": "Herramientas de build",
+      "what": "Maven o Gradle, npm y el Angular CLI.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Ejecuta los comandos de build.",
+        "mid": "Entiende dependencias, perfiles y el ciclo de vida del build.",
+        "senior": "Optimiza builds y resuelve conflictos de dependencias."
+      },
+      "resources": [
+        {
+          "name": "Maven",
+          "url": "https://maven.apache.org/guides/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "tools-api-clients",
+      "name": "Clientes de API",
+      "what": "Postman, Insomnia o archivos .http para probar APIs.",
+      "complexity": "baja",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Prueba un endpoint.",
+        "mid": "Organiza colecciones con variables y autenticación.",
+        "senior": "Automatiza pruebas de API y las comparte con el equipo."
+      },
+      "resources": [
+        {
+          "name": "Postman",
+          "url": "https://learning.postman.com/docs/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "tools-database-tools",
+      "name": "Clientes de base de datos",
+      "what": "DBeaver, DataGrip o Workbench para consultar y analizar.",
+      "complexity": "baja",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Ejecuta consultas en un cliente.",
+        "mid": "Analiza planes de ejecución y compara esquemas.",
+        "senior": "Usa las herramientas para diagnosticar problemas de producción."
+      },
+      "resources": [
+        {
+          "name": "DBeaver",
+          "url": "https://dbeaver.io"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "tools-markdown-diagrams",
+      "name": "Markdown y diagramas como código",
+      "what": "Documentar en Markdown y dibujar diagramas con Mermaid.",
+      "complexity": "baja",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Escribe un README.",
+        "mid": "Documenta con tablas, código y diagramas Mermaid.",
+        "senior": "Mantiene documentación viva junto al código."
+      },
+      "resources": [
+        {
+          "name": "Mermaid",
+          "url": "https://mermaid.js.org/intro/"
+        }
+      ],
+      "evidence": []
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "id": "methodologies",
+  "name": "Metodologías",
+  "description": "Cómo se organiza el trabajo en equipos de software profesionales.",
+  "skills": [
+    {
+      "id": "methodologies-agile-scrum",
+      "name": "Agile y Scrum",
+      "what": "Sprints, roles, ceremonias y el porqué detrás de ellas.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Participa en las ceremonias.",
+        "mid": "Entiende el propósito de cada ceremonia y aporta en planeación y retrospectivas.",
+        "senior": "Mejora el proceso del equipo con base en resultados, no en la ceremonia."
+      },
+      "resources": [
+        {
+          "name": "La Guía de Scrum",
+          "url": "https://scrumguides.org/download.html"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "methodologies-kanban",
+      "name": "Kanban",
+      "what": "Flujo continuo, límites de trabajo en curso y métricas de flujo.",
+      "complexity": "baja",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Mueve tarjetas en un tablero.",
+        "mid": "Respeta límites de WIP y detecta cuellos de botella.",
+        "senior": "Usa métricas de flujo para mejorar la entrega del equipo."
+      },
+      "resources": [
+        {
+          "name": "Kanban Guide",
+          "url": "https://kanbanguides.org"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "methodologies-user-stories",
+      "name": "Historias de usuario y requerimientos",
+      "what": "Entender el problema, criterios de aceptación y dividir el trabajo.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Trabaja con tareas ya definidas.",
+        "mid": "Escribe historias con criterios de aceptación y las divide en entregas pequeñas.",
+        "senior": "Traduce necesidades del negocio en planes técnicos claros."
+      },
+      "resources": [
+        {
+          "name": "User Story Mapping (Jeff Patton)"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "methodologies-estimation",
+      "name": "Estimación",
+      "what": "Estimar con rangos, puntos o tiempo, y comunicar la incertidumbre.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Estima con ayuda.",
+        "mid": "Estima sus tareas con precisión razonable y avisa a tiempo los retrasos.",
+        "senior": "Estima proyectos completos y comunica riesgos."
+      },
+      "resources": [
+        {
+          "name": "Software Estimation (Steve McConnell)"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "methodologies-branching",
+      "name": "Flujos de ramas",
+      "what": "GitHub Flow, GitFlow y trunk-based development.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Sigue el flujo del equipo.",
+        "mid": "Explica las diferencias y trabaja en cualquiera.",
+        "senior": "Elige el flujo adecuado para el equipo y el tipo de entregas."
+      },
+      "resources": [
+        {
+          "name": "trunkbaseddevelopment.com",
+          "url": "https://trunkbaseddevelopment.com"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "methodologies-conventions",
+      "name": "Convenciones de equipo",
+      "what": "Conventional Commits, versionado semántico y CHANGELOG.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Escribe mensajes de commit descriptivos.",
+        "mid": "Aplica Conventional Commits, SemVer y mantiene el CHANGELOG.",
+        "senior": "Define y automatiza las convenciones del equipo."
+      },
+      "resources": [
+        {
+          "name": "Conventional Commits",
+          "url": "https://www.conventionalcommits.org/es/v1.0.0/"
+        },
+        {
+          "name": "SemVer",
+          "url": "https://semver.org/lang/es/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "methodologies-devops-culture",
+      "name": "Cultura DevOps",
+      "what": "Responsabilidad compartida del desarrollo a producción, métricas DORA.",
+      "complexity": "media",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Entrega código para que otros lo desplieguen.",
+        "mid": "Se hace responsable de su código en producción.",
+        "senior": "Mejora las métricas de entrega y estabilidad del equipo."
+      },
+      "resources": [
+        {
+          "name": "DORA",
+          "url": "https://dora.dev"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "methodologies-incident-management",
+      "name": "Manejo de incidentes",
+      "what": "Responder a fallas en producción, postmortems sin culpas y mejoras.",
+      "complexity": "media",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Reporta fallas.",
+        "mid": "Participa en la resolución y escribe postmortems.",
+        "senior": "Lidera incidentes y define el proceso de guardias y postmortems."
+      },
+      "resources": [
+        {
+          "name": "Google SRE Book",
+          "url": "https://sre.google/sre-book/table-of-contents/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "methodologies-documentation",
+      "name": "Documentación técnica",
+      "what": "READMEs, guías de uso, documentación de APIs y de decisiones.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Documenta cuando se lo piden.",
+        "mid": "Documenta como parte de cada entrega.",
+        "senior": "Define qué se documenta y dónde, y lo mantiene vivo."
+      },
+      "resources": [
+        {
+          "name": "Diátaxis",
+          "url": "https://diataxis.fr"
+        }
+      ],
+      "evidence": []
+    }
+  ]
+}

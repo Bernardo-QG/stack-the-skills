@@ -1,4 +1,21 @@
 {
+  "definitions": [
+    {
+      "id": "junior",
+      "name": "Junior",
+      "summary": "Hace que funcione con guía. Resuelve tareas pequeñas y bien definidas."
+    },
+    {
+      "id": "mid",
+      "name": "Intermedio",
+      "summary": "Trabaja sin supervisión, escribe código mantenible y entrega funcionalidades completas."
+    },
+    {
+      "id": "senior",
+      "name": "Senior",
+      "summary": "Diseña sistemas, anticipa problemas, toma decisiones técnicas y eleva el nivel del equipo."
+    }
+  ],
   "matrix": [
     [
       "Código",
@@ -74,69 +91,5 @@
     "Simplificas soluciones en lugar de complicarlas.",
     "Piensas en el impacto para el negocio y el usuario, no solo en lo técnico."
   ],
-  "diagnostic": {
-    "id": "a1",
-    "rule": "Un tema cuenta como dominado solo si lo usaste en un proyecto real y podrías explicárselo a otra persona.",
-    "items": [
-      {
-        "text": "Explico la complejidad (Big O) de mis propias funciones"
-      },
-      {
-        "text": "Uso Git con ramas, rebase y resolución de conflictos sin miedo"
-      },
-      {
-        "text": "Escribo pruebas unitarias y de integración de forma habitual"
-      },
-      {
-        "text": "Refactorizo código existente sin romperlo"
-      },
-      {
-        "text": "Leo un plan de ejecución (EXPLAIN) y sé cuándo crear un índice"
-      },
-      {
-        "text": "Entiendo transacciones y niveles de aislamiento"
-      },
-      {
-        "text": "Diseño una API REST con paginación, versionado y errores consistentes"
-      },
-      {
-        "text": "Implemento autenticación con JWT u OAuth correctamente"
-      },
-      {
-        "text": "Conozco el OWASP Top 10 y reviso mi código contra él"
-      },
-      {
-        "text": "Creo un Dockerfile y un docker-compose desde cero"
-      },
-      {
-        "text": "Configuro un pipeline de CI/CD que prueba y despliega"
-      },
-      {
-        "text": "Despliego y monitoreo una aplicación en la nube"
-      },
-      {
-        "text": "Uso asistentes de IA y reviso críticamente lo que generan"
-      },
-      {
-        "text": "Integro un modelo de lenguaje en una aplicación"
-      },
-      {
-        "text": "Documento decisiones técnicas y diseño antes de programar"
-      }
-    ],
-    "results": [
-      {
-        "max": 5,
-        "text": "Construye la base: sigue Fundamentos en orden y el proyecto capa por capa, sin saltarte nada."
-      },
-      {
-        "max": 11,
-        "text": "Nivel intermedio: repasa solo lo que no marcaste y pon el foco en los grupos “En el trabajo” de cada fase."
-      },
-      {
-        "max": 15,
-        "text": "Cerca de senior: enfócate en arquitectura, IA aplicada y en la sección Carrera."
-      }
-    ]
-  }
+  "rule": "Marca un nivel solo si ya lo aplicaste en un proyecto real y podrías explicárselo a otra persona."
 }

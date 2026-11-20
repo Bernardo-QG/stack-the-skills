@@ -1,0 +1,159 @@
+{
+  "id": "professional",
+  "name": "Habilidades profesionales",
+  "description": "Lo que distingue a un senior más allá del código: comunicación, criterio y trabajo con otros.",
+  "skills": [
+    {
+      "id": "professional-communication",
+      "name": "Comunicación técnica",
+      "what": "Explicar problemas y soluciones a técnicos y no técnicos, por escrito y en voz alta.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Explica su trabajo a su equipo.",
+        "mid": "Explica decisiones técnicas con claridad y sin jerga a personas no técnicas.",
+        "senior": "Influye en decisiones técnicas y de negocio con argumentos claros."
+      },
+      "resources": [],
+      "evidence": []
+    },
+    {
+      "id": "professional-problem-solving",
+      "name": "Resolución de problemas",
+      "what": "Dividir problemas grandes, priorizar y avanzar con información incompleta.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Resuelve problemas bien definidos.",
+        "mid": "Divide problemas ambiguos en pasos entregables.",
+        "senior": "Resuelve problemas sin precedente y ayuda a otros a pensar."
+      },
+      "resources": [],
+      "evidence": []
+    },
+    {
+      "id": "professional-business-understanding",
+      "name": "Entender el negocio",
+      "what": "Saber qué problema resuelve el sistema, para quién y cuánto vale.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Conoce lo que hace su módulo.",
+        "mid": "Entiende los procesos del negocio que automatiza.",
+        "senior": "Propone soluciones técnicas con impacto medible en el negocio."
+      },
+      "resources": [],
+      "evidence": []
+    },
+    {
+      "id": "professional-ownership",
+      "name": "Responsabilidad y autonomía",
+      "what": "Hacerse cargo de algo de punta a punta, incluido su comportamiento en producción.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Termina las tareas asignadas.",
+        "mid": "Se hace responsable de funcionalidades completas sin supervisión.",
+        "senior": "Es dueño de módulos o sistemas completos y anticipa problemas."
+      },
+      "resources": [],
+      "evidence": []
+    },
+    {
+      "id": "professional-prioritization",
+      "name": "Priorización y manejo del tiempo",
+      "what": "Distinguir lo urgente de lo importante y negociar alcance.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Trabaja en lo que se le asigna.",
+        "mid": "Prioriza su trabajo y negocia alcance cuando hace falta.",
+        "senior": "Ayuda al equipo a priorizar con base en impacto."
+      },
+      "resources": [
+        {
+          "name": "Deep Work (Cal Newport)"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "professional-feedback",
+      "name": "Dar y recibir retroalimentación",
+      "what": "Recibir críticas sin tomarlo personal y dar comentarios útiles.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Acepta comentarios.",
+        "mid": "Pide retroalimentación y da comentarios constructivos.",
+        "senior": "Crea un ambiente donde la retroalimentación fluye en el equipo."
+      },
+      "resources": [],
+      "evidence": []
+    },
+    {
+      "id": "professional-mentoring",
+      "name": "Mentoría",
+      "what": "Enseñar, acompañar y hacer crecer a otros desarrolladores.",
+      "complexity": "media",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Aprende de otros.",
+        "mid": "Ayuda a compañeros con dudas y revisiones.",
+        "senior": "Mentorea de forma constante y eleva el nivel del equipo."
+      },
+      "resources": [],
+      "evidence": []
+    },
+    {
+      "id": "professional-learning",
+      "name": "Aprender a aprender",
+      "what": "Aprender tecnologías nuevas rápido y con método.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Aprende con tutoriales.",
+        "mid": "Aprende con documentación oficial, práctica y repaso espaciado.",
+        "senior": "Evalúa tecnologías nuevas con criterio y guía su adopción."
+      },
+      "resources": [
+        {
+          "name": "Ultralearning (Scott Young)"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "professional-career",
+      "name": "Carrera y marca personal",
+      "what": "CV, LinkedIn, portafolio, entrevistas y negociación.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Tiene CV actualizado.",
+        "mid": "Tiene portafolio con proyectos documentados y se prepara para entrevistas.",
+        "senior": "Gestiona su carrera de forma estratégica y negocia con información."
+      },
+      "resources": [
+        {
+          "name": "The Tech Resume Inside Out (Gergely Orosz)"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "professional-remote-work",
+      "name": "Trabajo remoto",
+      "what": "Comunicación asíncrona, autonomía, zonas horarias y visibilidad del trabajo.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Trabaja desde casa con su equipo local.",
+        "mid": "Se comunica bien por escrito y hace visible su avance.",
+        "senior": "Colabora con equipos distribuidos en varias zonas horarias."
+      },
+      "resources": [],
+      "evidence": []
+    }
+  ]
+}

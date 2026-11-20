@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Fundamentos de programación, checklist de revisión, estándares profesionales y un plan de 12 meses: inglés, portafolio y trabajo remoto.">
+<meta name="description" content="Mapa de habilidades para llegar a desarrollador senior y bilingüe: 141 habilidades en 14 dominios, por nivel y por complejidad y utilidad.">
 <title>Stack the Skills</title>
 <meta name="theme-color" content="#F4F5F2" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#121714" media="(prefers-color-scheme: dark)">
@@ -16,243 +16,104 @@
 <meta property="og:locale" content="es_MX">
 <meta property="og:site_name" content="Stack the Skills">
 <meta property="og:title" content="Stack the Skills">
-<meta property="og:description" content="Fundamentos, checklist y estándares para programar mejor en cualquier lenguaje, y un plan de 12 meses para crecer como desarrollador.">
+<meta property="og:description" content="Mapa de habilidades para llegar a desarrollador senior y bilingüe: 141 habilidades en 14 dominios, por nivel y por complejidad y utilidad.">
 <meta property="og:url" content="https://bernardo-qg.github.io/stack-the-skills/">
 <meta property="og:image" content="https://bernardo-qg.github.io/stack-the-skills/img/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Stack the Skills: fundamentos, checklist y estándares">
+<meta property="og:image:alt" content="Stack the Skills: mapa de habilidades de junior a senior">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="css/styles.css?v=1.1.0">
-<script src="js/app.js?v=1.1.0" defer></script>
+<link rel="stylesheet" href="css/styles.css?v=2.0.0">
+<script src="js/app.js?v=2.0.0" defer></script>
 </head>
 <body>
 <div class="wrap">
 
 <header>
-  <span class="eyebrow">Bernardo Quintino · plan de estudio 2026–2027</span>
+  <span class="eyebrow">Mapa de habilidades · de junior a senior y bilingüe</span>
   <h1>Stack the Skills</h1>
-  <p class="lead">Arriba, tu referencia para cualquier proyecto y cualquier lenguaje: fundamentos, una checklist para revisar tu código y los estándares de los equipos profesionales. Abajo, el plan de 12 meses: fases, inglés, proyecto de portafolio y bitácora. Marca cada punto cuando lo puedas <strong>explicar y hacer sin tutorial</strong>. Tu avance se guarda en este navegador.</p>
-  <div class="versions" aria-label="Versiones de referencia">
-    <span class="chip">Java <b>25 LTS</b></span>
-    <span class="chip">Spring Boot <b>4.x</b> · Framework 7</span>
-    <span class="chip">Angular <b>22</b></span>
-    <span class="chip">TypeScript <b>6</b></span>
-    <span class="chip">MySQL <b>8</b></span>
-  </div>
-  <div class="global">
-    <div class="global-top"><span class="eyebrow">Avance total</span><span class="big" id="gPct">0%</span></div>
-    <div class="bar"><i id="gBar"></i></div>
-    <div class="stats" id="gStats"></div>
-  </div>
+  <p class="lead">Todo lo que necesita saber un desarrollador profesional para llegar a senior y trabajar en inglés: habilidades, herramientas, conceptos y metodologías, con lo que se espera en cada nivel. En cada habilidad marca tu nivel actual y la página te dice qué te falta. Tu avance se guarda en este navegador.</p>
+  <div class="summary" id="summary" aria-live="polite"></div>
 </header>
 
 <nav aria-label="Secciones"><ul>
-  <li><a href="#nivel">Mi nivel</a></li>
-  <li><a href="#fundamentos">Fundamentos</a></li>
-  <li><a href="#checklist">Checklist</a></li>
-  <li><a href="#estandares">Estándares</a></li>
-  <li><a href="#oficio">Oficio</a></li>
-  <li><a href="#plan">Mi plan</a></li>
-  <li><a href="#fases">Fases</a></li>
-  <li><a href="#ingles">Inglés</a></li>
-  <li><a href="#roadmap">Proyecto</a></li>
-  <li><a href="#temario">Temario</a></li>
-  <li><a href="#carrera">Carrera</a></li>
-  <li><a href="#bitacora">Bitácora</a></li>
+  <li><a href="#niveles">Qué significa cada nivel</a></li>
+  <li><a href="#mapa">Mapa</a></li>
   <li><a href="#recursos">Recursos</a></li>
 </ul></nav>
 
-<!-- ================= PRIMER PLANO ================= -->
-
-<section id="nivel">
+<section id="niveles">
   <div class="sec-head">
-    <span class="eyebrow">Autodiagnóstico · empieza aquí</span>
-    <h2>¿En qué nivel estás?</h2>
-    <p class="lead">El salto de junior a senior no está en saber más sintaxis, sino en profundidad, diseño y criterio. Ubícate con honestidad en la tabla y marca el checklist: lo que quede sin marcar es tu lista de prioridades.</p>
+    <span class="eyebrow">Niveles</span>
+    <h2>Qué significa cada nivel</h2>
+    <p class="lead" id="levelRule"></p>
   </div>
-  <div class="tablebox"><table class="week levels-table" id="matrix"></table></div>
-  <div class="stack" id="diagStack"></div>
-  <div class="card"><h3>Señales de que vas pasando a senior</h3><ul class="plain" id="signals"></ul></div>
+  <div class="level-cards" id="levelCards"></div>
+  <details class="acc" data-acc="matrix">
+    <summary>
+      <div class="sum-main"><span class="eyebrow">Comparativa</span><h3>Junior, intermedio y senior en 11 aspectos</h3></div>
+      <div class="sum-side"><span class="chev" aria-hidden="true"></span></div>
+    </summary>
+    <div class="acc-body">
+      <div class="tablebox"><table class="week levels-table" id="matrix"></table></div>
+      <div><h4 class="group">Señales de que vas pasando a senior</h4><ul class="plain" id="signals"></ul></div>
+    </div>
+  </details>
 </section>
 
-<section id="fundamentos">
+<section id="mapa">
   <div class="sec-head">
-    <span class="eyebrow">Fundamentos · sirven en cualquier lenguaje</span>
-    <h2>Lo elemental, por niveles</h2>
-    <p class="lead">Conceptos que no dependen de un lenguaje, un framework ni un proyecto: los usas igual en Java, SQL, TypeScript, Python o Pascal. Van en orden, porque cada nivel se apoya en el anterior. Cada punto trae una explicación corta para consultarla cuando la necesites.</p>
-    <div class="toolbar"><button type="button" class="btn-sm" data-open="fundStack">Abrir todo</button><button type="button" class="btn-sm" data-close="fundStack">Cerrar todo</button></div>
+    <span class="eyebrow">Mapa</span>
+    <h2>Habilidades por dominio</h2>
+    <p class="lead">Elige cómo quieres verlo: <b>por nivel</b> para saber qué te falta para el siguiente, o <b>por complejidad y utilidad</b> para decidir por dónde empezar.</p>
   </div>
-  <div class="stack" id="fundStack"></div>
-</section>
 
-<section id="checklist">
-  <div class="sec-head">
-    <span class="eyebrow">Checklist universal · para cualquier código</span>
-    <h2>Antes de dar algo por terminado</h2>
-    <p class="lead">Repásala con cualquier cosa que programes. Estas casillas no se guardan: márcalas en cada revisión y luego límpialas. Copia la checklist en Markdown para pegarla en la plantilla de PR o en el README de cualquier proyecto.</p>
-    <div class="toolbar"><button type="button" class="btn-sm" data-open="uniStack">Abrir todo</button><button type="button" class="btn-sm" data-close="uniStack">Cerrar todo</button><button type="button" class="btn-sm" data-copyall="uni">Copiar checklist completa</button><button type="button" class="btn-sm" id="uniClear">Limpiar</button></div>
+  <div class="modebar" role="group" aria-label="Modo de vista">
+    <button type="button" class="mode" data-mode="level" aria-pressed="true">Por nivel</button>
+    <button type="button" class="mode" data-mode="matrix" aria-pressed="false">Por complejidad y utilidad</button>
   </div>
-  <div class="stack" id="uniStack"></div>
-</section>
 
-<section id="estandares">
-  <div class="sec-head">
-    <span class="eyebrow">Estándares · aplican a cualquier proyecto</span>
-    <h2>Las reglas del juego</h2>
-    <p class="lead">Las convenciones que una empresa espera que ya conozcas. Aplícalas en todo lo que programes; un reclutador técnico las nota en tu GitHub en los primeros 30 segundos.</p>
-    <div class="toolbar"><button type="button" class="btn-sm" data-open="stdStack">Abrir todo</button><button type="button" class="btn-sm" data-close="stdStack">Cerrar todo</button></div>
+  <div id="levelMode">
+    <div class="filters">
+      <div class="target" role="group" aria-label="Nivel objetivo">
+        <span class="eyebrow">Ver lo que se espera en</span>
+        <button type="button" class="chip-btn" data-target="junior" aria-pressed="false">Junior</button>
+        <button type="button" class="chip-btn" data-target="mid" aria-pressed="true">Intermedio</button>
+        <button type="button" class="chip-btn" data-target="senior" aria-pressed="false">Senior</button>
+      </div>
+      <label class="toggle"><input type="checkbox" id="onlyMissing"> Solo lo que me falta</label>
+      <div class="toolbar"><button type="button" class="btn-sm" data-open="domainStack">Abrir todo</button><button type="button" class="btn-sm" data-close="domainStack">Cerrar todo</button></div>
+    </div>
+    <div class="stack" id="domainStack"></div>
   </div>
-  <div class="stack" id="stdStack"></div>
-</section>
 
-<section id="oficio">
-  <div class="sec-head">
-    <span class="eyebrow">Oficio · más allá del código</span>
-    <h2>Cómo trabaja un profesional</h2>
-    <p class="lead">Ser más profesional no es solo saber más tecnología: también es cómo trabajas, cómo comunicas y cómo se ve tu trabajo.</p>
+  <div id="matrixMode" hidden>
+    <div class="filters">
+      <label class="select"><span class="eyebrow">Dominio</span>
+        <select id="domainFilter"><option value="">Todos los dominios</option></select>
+      </label>
+      <p class="note" id="criteria"></p>
+    </div>
+    <div class="tablebox"><div class="grid9" id="grid9"></div></div>
+    <div id="skillDetail" class="skill-detail" hidden></div>
   </div>
-  <div class="two">
-    <div class="card"><h3>En el día a día</h3><ul class="plain" id="daily"></ul></div>
-    <div class="card"><h3>Lo que más te hace crecer</h3><ul class="plain" id="growth"></ul></div>
-  </div>
-</section>
-
-<!-- ================= SEGUNDO PLANO: EL PLAN ================= -->
-
-<div class="divider" id="plan">
-  <span class="eyebrow">Segundo plano · plan de 12 meses</span>
-  <h2>Mi plan: de junior a trabajo remoto</h2>
-  <blockquote class="goal-quote" id="planGoal"></blockquote>
-</div>
-
-<section id="partida">
-  <div class="sec-head">
-    <span class="eyebrow">Punto de partida</span>
-    <h2>Dónde estoy y a dónde voy</h2>
-    <p class="lead" id="planInsight"></p>
-  </div>
-  <div class="tablebox"><table class="week" id="startTable"></table></div>
-</section>
-
-<section id="reglas">
-  <div class="sec-head"><span class="eyebrow">Reglas</span><h2>Cómo estudiar para que se quede</h2></div>
-  <div class="rules" id="rules"></div>
-  <div class="sec-head"><span class="eyebrow">Evita</span></div>
-  <div class="avoid" id="avoid"></div>
-  <div class="card"><h3>Hábitos de todo el año</h3><ul class="plain" id="habits"></ul><p class="note" id="sustain"></p></div>
-</section>
-
-<section id="fases">
-  <div class="sec-head">
-    <span class="eyebrow">Fases · noviembre 2026 a octubre 2027</span>
-    <h2>Cuatro fases, un objetivo</h2>
-    <p class="lead">Cada fase junta inglés, proyecto, perfil y postulaciones. Termina cuando cumples su checkpoint.</p>
-    <div class="toolbar"><button type="button" class="btn-sm" data-open="phases">Abrir todo</button><button type="button" class="btn-sm" data-close="phases">Cerrar todo</button></div>
-  </div>
-  <div class="timeline" id="phases"></div>
-</section>
-
-<section id="ingles">
-  <div class="sec-head">
-    <span class="eyebrow">Inglés · lo que más pesa en el plan</span>
-    <h2>Del A1 al B2</h2>
-  </div>
-  <div class="levels" id="levels"></div>
-  <div class="two">
-    <div class="card"><h3>Principios</h3><ul class="plain" id="principles"></ul></div>
-    <div class="card"><h3>Subtítulos: cuándo español y cuándo inglés</h3><ul class="plain" id="subtitles"></ul></div>
-  </div>
-  <div class="sec-head"><span class="eyebrow">Rutina diaria · 45 a 60 minutos</span></div>
-  <div class="tablebox"><table class="week" id="routine"></table></div>
-  <p class="note" id="routineExtra"></p>
-  <div class="sec-head">
-    <span class="eyebrow">Gramática, etapas, frases y trucos</span>
-    <div class="toolbar"><button type="button" class="btn-sm" data-open="engStack">Abrir todo</button><button type="button" class="btn-sm" data-close="engStack">Cerrar todo</button></div>
-  </div>
-  <div class="stack" id="engStack"></div>
-</section>
-
-<div class="divider" id="practica">
-  <span class="eyebrow">Práctica técnica</span>
-  <h2>Proyecto y temario de tu stack</h2>
-  <p class="lead">El proyecto es tu portafolio para las fases 1 a 3, y el temario es lo que vas a repasar para las entrevistas de la fase 3.</p>
-</div>
-
-<section id="roadmap">
-  <div class="sec-head">
-    <span class="eyebrow">Proyecto · un proyecto, diez capas</span>
-    <h2>StockFlow: tu inventario de portafolio</h2>
-    <p class="lead">Un sistema de inventario con productos, almacenes, movimientos de entrada y salida, y usuarios con roles. Es tu dominio, así que vas a poder hablar de él con seguridad, pero lo escribes desde cero. Cada capa termina con un entregable concreto.</p>
-    <div class="toolbar"><button type="button" class="btn-sm" data-open="timeline">Abrir todo</button><button type="button" class="btn-sm" data-close="timeline">Cerrar todo</button></div>
-  </div>
-  <div class="timeline" id="timeline"></div>
-</section>
-
-<section id="temario">
-  <div class="sec-head">
-    <span class="eyebrow">Temario · específico de tu stack (Java + Angular)</span>
-    <h2>Lo que te van a preguntar en una entrevista</h2>
-    <p class="lead">La etiqueta indica la prioridad: <span class="pill hot">alta</span> se pregunta en casi todas las entrevistas de backend Java, <span class="pill">media</span> te distingue de otros candidatos.</p>
-    <div class="toolbar"><button type="button" class="btn-sm" data-open="temarioStack">Abrir todo</button><button type="button" class="btn-sm" data-close="temarioStack">Cerrar todo</button></div>
-  </div>
-  <div class="stack" id="temarioStack"></div>
-</section>
-
-<section id="carrera">
-  <div class="sec-head">
-    <span class="eyebrow">Carrera</span>
-    <h2>Hacia dónde crecer</h2>
-    <p class="lead" id="tshape"></p>
-  </div>
-  <div class="tablebox"><table class="week" id="spec"></table></div>
-  <div class="two">
-    <div class="card"><h3>Certificaciones: cuándo valen la pena</h3><ul class="plain" id="certs"></ul></div>
-    <div class="card"><h3>Comunidad y red de contactos</h3><ul class="plain" id="community"></ul></div>
-  </div>
-</section>
-
-<div class="divider" id="seguimiento">
-  <span class="eyebrow">Seguimiento</span>
-  <h2>Tu semana, tu bitácora y tu presupuesto</h2>
-</div>
-
-<section id="semana">
-  <div class="sec-head"><span class="eyebrow">Semana tipo</span><h2>Trabajando tiempo completo</h2><p class="lead" id="weekTotal"></p></div>
-  <div class="tablebox"><table class="week" id="week"></table></div>
-</section>
-
-<section id="bitacora">
-  <div class="sec-head">
-    <span class="eyebrow">Bitácora mensual</span>
-    <h2>Actualízala cada mes</h2>
-    <p class="lead">Escribe directo en la tabla; se guarda sola en este navegador. Los textos en gris son la meta de ese mes.</p>
-  </div>
-  <div class="card"><h3>Revisión mensual · 30 minutos</h3><ul class="plain" id="review"></ul></div>
-  <div class="tablebox"><table class="log" id="log"></table></div>
-</section>
-
-<section id="presupuesto">
-  <div class="sec-head"><span class="eyebrow">Presupuesto</span><h2>Lo que cuesta al mes</h2><p class="lead" id="budgetNote"></p></div>
-  <div class="tablebox"><table class="week" id="budget"></table></div>
 </section>
 
 <section id="recursos">
   <div class="sec-head">
     <span class="eyebrow">Recursos · gratis primero</span>
-    <h2>Dónde aprender y dónde postular</h2>
-    <p class="lead">Pocos recursos y buenos. La documentación oficial siempre gana sobre un video viejo.</p>
+    <h2>Dónde aprender</h2>
+    <p class="lead">Cada habilidad trae sus propios recursos. Aquí están los generales: documentación, libros y tendencias.</p>
   </div>
   <div id="res"></div>
 </section>
 
 <footer>
-  <blockquote class="goal-quote" id="reminder"></blockquote>
   <div class="reset" id="resetBox"></div>
-  <p class="version"><a href="https://github.com/Bernardo-QG/stack-the-skills/blob/main/CHANGELOG.md" target="_blank" rel="noopener">v1.0.0</a> · noviembre 2026 · <a href="https://github.com/Bernardo-QG/stack-the-skills" target="_blank" rel="noopener">código en GitHub</a> · licencia MIT</p>
-  <p>Versiones de referencia revisadas en noviembre de 2026: Java 25 es la LTS actual, Spring Boot 4.1 salió en junio de 2026 y Angular 22 en 2026. En el trabajo puedes usar versiones anteriores. Aprende lo moderno y entiende lo que ya existe.</p>
+  <p class="version"><a href="https://github.com/Bernardo-QG/stack-the-skills/blob/main/CHANGELOG.md" target="_blank" rel="noopener">v2.0.0</a> · noviembre 2026 · <a href="https://github.com/Bernardo-QG/stack-the-skills" target="_blank" rel="noopener">código en GitHub</a> · licencia MIT</p>
+  <p>Versiones de referencia revisadas en noviembre de 2026: Java 25 LTS, Spring Boot 4.x, Angular 22. Niveles de inglés según el Marco Común Europeo (MCER).</p>
 </footer>
 
 </div>

@@ -1,73 +1,53 @@
 # Stack the Skills
 
-![Versión](https://img.shields.io/badge/versión-1.0.0-B4441C) ![Licencia MIT](https://img.shields.io/badge/licencia-MIT-16202C)
+![Versión](https://img.shields.io/badge/versión-2.0.0-B4441C) ![Licencia MIT](https://img.shields.io/badge/licencia-MIT-16202C)
 
-Mi referencia personal para programar mejor en cualquier lenguaje y en cualquier proyecto.
+Mapa de habilidades para llegar a **desarrollador senior y bilingüe**: habilidades, herramientas, conceptos y metodologías, con lo que se espera en cada nivel.
 
 **Ver en vivo:** https://bernardo-qg.github.io/stack-the-skills/
 
 ## Qué contiene
 
-**Referencia (primer plano)**
-- **Mi nivel:** tabla junior, intermedio y senior y checklist de autodiagnóstico.
-- **Fundamentos:** 12 niveles de conceptos universales, cada uno con una explicación corta.
-- **Checklist universal:** preguntas para revisar cualquier código. Se copia como Markdown para PRs o issues.
-- **Estándares:** convenciones de equipos profesionales (Conventional Commits, diseño de APIs, OWASP, testing, migraciones).
-- **Oficio:** profesionalismo en el día a día y lo que más te hace crecer.
+- **14 dominios y 141 habilidades:** fundamentos de computación, lenguajes, backend, frontend, datos, arquitectura, calidad, DevOps y nube, seguridad, IA aplicada, herramientas, metodologías, habilidades profesionales e inglés.
+- **Niveles por habilidad:** qué se espera en junior, intermedio y senior (en inglés, A2, B1 y B2+ del MCER).
+- **Dos modos de vista:**
+  - **Por nivel:** qué te falta para el siguiente nivel, dominio por dominio.
+  - **Por complejidad y utilidad:** una matriz de 3 × 3 para decidir por dónde empezar.
+- **Tu nivel en cada habilidad**, guardado en el navegador (localStorage), y un resumen de tu avance.
 
-**Plan de 12 meses (segundo plano)**
-- **Punto de partida, reglas y errores a evitar.**
-- **Fases:** cuatro fases de noviembre 2026 a octubre 2027 que juntan inglés, portafolio, perfil y postulaciones.
-- **Inglés:** niveles, rutina diaria, ruta de gramática, etapas, frases útiles y trucos.
-- **Proyecto StockFlow:** proyecto de portafolio por capas con Java + Spring Boot + Angular.
-- **Temario:** lo que se pregunta en entrevistas de Java y Angular.
-- **Carrera:** especializaciones, certificaciones y comunidad.
-- **Semana tipo, bitácora mensual editable y presupuesto.**
-- **Recursos:** programación, inglés y trabajo remoto.
+HTML, CSS y JavaScript sin frameworks ni build.
 
-HTML, CSS y JavaScript sin frameworks ni build. El avance y la bitácora se guardan en el navegador (localStorage).
+## Proyectos relacionados
+
+| Repo | Pregunta |
+|---|---|
+| `engineering-handbook` | ¿Cómo trabajo? Reglas y principios para cualquier proyecto |
+| **`stack-the-skills`** | ¿Qué tengo que aprender? |
+| `growth-plan` (privado) | ¿Hacia dónde voy? Mi plan personal |
 
 ## Estructura
 
 ```
-├── index.html          # Estructura de la página
-├── CHANGELOG.md        # Historial de versiones
-├── docs/               # Decisiones (ADRs), conceptos aplicados y guía de contenido
-├── img/                # Favicon e imagen para vista previa en redes
-├── css/styles.css      # Estilos y temas claro/oscuro
-├── js/app.js           # Carga los datos, dibuja las secciones y guarda el avance
-└── data/               # Todo el contenido editable
-    ├── niveles.json      # Tabla junior/intermedio/senior y autodiagnóstico
-    ├── fundamentos.json
-    ├── checklist.json
-    ├── estandares.json
-    ├── oficio.json       # Profesionalismo y crecimiento
-    ├── carrera.json      # Especializaciones, certificaciones y comunidad
-    ├── plan.json         # Meta, fases, semana, bitácora y presupuesto
-    ├── reglas.json       # Reglas y errores a evitar
-    ├── ingles.json       # Niveles, rutina, gramática, etapas, frases y trucos
-    ├── roadmap.json      # Proyecto StockFlow
-    ├── temario.json
-    └── recursos.json     # Por categoría: programación, inglés y trabajo remoto
+├── index.html            # Estructura de la página
+├── CHANGELOG.md          # Historial de versiones
+├── css/styles.css        # Estilos y temas claro/oscuro
+├── js/app.js             # Carga los datos, dibuja el mapa y guarda tu nivel
+├── img/                  # Favicon e imagen para vista previa en redes
+├── docs/                 # Decisiones (ADRs), conceptos aplicados y guía de contenido
+└── data/
+    ├── domains.json      # Orden de los dominios y criterios de complejidad y utilidad
+    ├── domains/          # Un archivo por dominio con sus habilidades
+    ├── levels.json       # Qué significa cada nivel y la comparativa
+    └── resources.json    # Recursos generales
 ```
+
+## Editar el contenido
+
+Cada habilidad es un objeto en `data/domains/<dominio>.json`. La regla más importante: **nunca cambies el `id` de una habilidad existente**, porque tu nivel se guarda con él. Todo lo demás está en la [guía de contenido](docs/guia-de-contenido.md).
 
 ## Documentación
 
 En [`docs/`](docs/README.md) está por qué el proyecto es como es ([decisiones](docs/adr/README.md)) y los conceptos aplicados explicados con el código del proyecto, como material de estudio.
-
-## Editar el contenido
-
-Todo el texto está en `data/`. Cada punto es un objeto con `text` y, opcionalmente, `note`:
-
-```json
-{ "text": "Inyección SQL y consultas parametrizadas", "note": "Aplica en cualquier lenguaje." }
-```
-
-- **Agrega puntos nuevos al final de su lista.** El avance se guarda por posición, así que reordenar o insertar a la mitad recorre las marcas.
-- No cambies los `id` de las secciones existentes, por la misma razón.
-- Para una sección nueva, usa un `id` que no exista (por ejemplo `f12`).
-- En las fases, los puntos se cuentan a través de todos sus grupos: agrega los nuevos en el último grupo.
-- La bitácora se guarda por mes y columna (`2027-01.efset`), así que puedes agregar meses sin perder lo escrito.
 
 ## Correr localmente
 
@@ -85,19 +65,19 @@ También sirve la extensión **Live Server** de VS Code.
 
 El proyecto usa [Versionado Semántico](https://semver.org/lang/es/):
 
-- **PATCH** (`1.0.1`): correcciones de texto o de errores.
-- **MINOR** (`1.1.0`): contenido o funciones nuevas.
-- **MAJOR** (`2.0.0`): cambios que rompen el avance guardado, como reordenar puntos o cambiar ids.
+- **PATCH** (`2.0.1`): correcciones de texto o de errores.
+- **MINOR** (`2.1.0`): habilidades, dominios o funciones nuevas.
+- **MAJOR** (`3.0.0`): cambios que rompen el avance guardado, como cambiar IDs.
 
 Pasos:
 
 1. Mueve lo que está en `[Unreleased]` del `CHANGELOG.md` a una sección nueva con el número y la fecha.
-2. Actualiza el número en el footer de `index.html`, en el badge de este README y en el `?v=` de `css/styles.css` y `js/app.js` dentro de `index.html`. Ese `?v=` obliga al navegador a descargar los archivos nuevos en vez de usar los que tiene en caché.
+2. Actualiza el número en el footer de `index.html`, en el badge de este README y en el `?v=` de `css/styles.css` y `js/app.js` dentro de `index.html`.
 3. Haz commit, crea el tag y súbelo:
 
 ```bash
-git commit -am "chore: release v1.1.0"
-git tag -a v1.1.0 -m "v1.1.0"
+git commit -am "chore: release v2.1.0"
+git tag -a v2.1.0 -m "v2.1.0"
 git push && git push --tags
 ```
 

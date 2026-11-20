@@ -1,0 +1,303 @@
+{
+  "id": "data",
+  "name": "Datos",
+  "description": "Diseñar, consultar, optimizar y proteger los datos de un sistema. Casi todo problema de rendimiento termina aquí.",
+  "skills": [
+    {
+      "id": "data-modeling",
+      "name": "Modelado relacional",
+      "what": "Diseñar tablas, llaves y relaciones que representen bien el negocio y no dupliquen datos.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Crea tablas con llave primaria y foráneas siguiendo un diseño dado.",
+        "mid": "Normaliza hasta 3FN, elige tipos de datos correctos y modela relaciones uno a muchos y muchos a muchos sin ayuda.",
+        "senior": "Decide cuándo desnormalizar, modela para cambios futuros y revisa los modelos de otros."
+      },
+      "resources": [
+        {
+          "name": "Database Design for Mere Mortals (Michael J. Hernandez)"
+        },
+        {
+          "name": "Documentación de PostgreSQL",
+          "url": "https://www.postgresql.org/docs/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "data-sql-fundamentals",
+      "name": "SQL esencial",
+      "what": "Consultar y modificar datos: SELECT, JOIN, GROUP BY, subconsultas, INSERT, UPDATE y DELETE.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Escribe consultas con filtros y JOIN simples.",
+        "mid": "Domina todos los tipos de JOIN, agregaciones con HAVING y subconsultas correlacionadas.",
+        "senior": "Escribe consultas complejas legibles y enseña a otros a hacerlo."
+      },
+      "resources": [
+        {
+          "name": "SQLBolt",
+          "url": "https://sqlbolt.com"
+        },
+        {
+          "name": "MySQL Reference Manual",
+          "url": "https://dev.mysql.com/doc/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "data-sql-advanced",
+      "name": "SQL avanzado",
+      "what": "CTEs (WITH), funciones de ventana (ROW_NUMBER, RANK, SUM OVER) y consultas recursivas.",
+      "complexity": "media",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Sabe que existen y entiende una consulta que las usa.",
+        "mid": "Resuelve rankings, acumulados y comparaciones entre filas con funciones de ventana.",
+        "senior": "Elige entre CTE, subconsulta o tabla temporal según rendimiento y legibilidad."
+      },
+      "resources": [
+        {
+          "name": "Documentación de PostgreSQL",
+          "url": "https://www.postgresql.org/docs/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "data-indexes",
+      "name": "Índices y planes de ejecución",
+      "what": "Cómo funcionan los índices (árboles B), cuándo ayudan, cuándo estorban y cómo leer un EXPLAIN.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Sabe que un índice acelera las búsquedas.",
+        "mid": "Crea índices compuestos en el orden correcto y lee un EXPLAIN para saber si se usan.",
+        "senior": "Diseña la estrategia de índices de un sistema y equilibra lecturas contra escrituras."
+      },
+      "resources": [
+        {
+          "name": "Use The Index, Luke",
+          "url": "https://use-the-index-luke.com/es"
+        },
+        {
+          "name": "MySQL Reference Manual",
+          "url": "https://dev.mysql.com/doc/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "data-transactions",
+      "name": "Transacciones y concurrencia",
+      "what": "ACID, niveles de aislamiento, bloqueos, deadlocks y bloqueo optimista o pesimista.",
+      "complexity": "alta",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Sabe qué es una transacción y usa commit y rollback.",
+        "mid": "Entiende los niveles de aislamiento y sus anomalías (lecturas sucias, fantasmas) y evita deadlocks comunes.",
+        "senior": "Diseña flujos concurrentes correctos (por ejemplo, movimientos de inventario) y diagnostica bloqueos en producción."
+      },
+      "resources": [
+        {
+          "name": "Designing Data-Intensive Applications (Martin Kleppmann)"
+        },
+        {
+          "name": "MySQL Reference Manual",
+          "url": "https://dev.mysql.com/doc/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "data-query-optimization",
+      "name": "Optimización de consultas",
+      "what": "Encontrar y corregir consultas lentas: N+1, escaneos completos, funciones sobre columnas indexadas.",
+      "complexity": "alta",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Nota que una consulta es lenta y pide ayuda.",
+        "mid": "Encuentra consultas lentas con el log o EXPLAIN y las corrige; detecta el problema N+1.",
+        "senior": "Mide antes de optimizar, establece monitoreo de consultas lentas y evita los problemas desde el diseño."
+      },
+      "resources": [
+        {
+          "name": "Use The Index, Luke",
+          "url": "https://use-the-index-luke.com/es"
+        },
+        {
+          "name": "Vlad Mihalcea: rendimiento con JPA e Hibernate",
+          "url": "https://vladmihalcea.com"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "data-orm",
+      "name": "ORM: JPA e Hibernate",
+      "what": "Mapear objetos a tablas sin perder el control del SQL que se genera.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Usa entidades y repositorios de Spring Data para un CRUD.",
+        "mid": "Mapea relaciones, entiende LAZY y EAGER, usa fetch join y revisa el SQL generado.",
+        "senior": "Decide cuándo usar el ORM y cuándo SQL nativo, y resuelve problemas de rendimiento del ORM."
+      },
+      "resources": [
+        {
+          "name": "Documentación de Hibernate ORM",
+          "url": "https://hibernate.org/orm/documentation/"
+        },
+        {
+          "name": "Vlad Mihalcea",
+          "url": "https://vladmihalcea.com"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "data-migrations",
+      "name": "Migraciones de esquema",
+      "what": "Cambiar la estructura de la base de datos con scripts versionados (Flyway o Liquibase), nunca a mano.",
+      "complexity": "baja",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Ejecuta las migraciones que existen.",
+        "mid": "Escribe migraciones versionadas que funcionan igual en todos los ambientes.",
+        "senior": "Planea migraciones sin tiempo fuera de servicio en tablas grandes (expandir y contraer)."
+      },
+      "resources": [
+        {
+          "name": "Flyway"
+        },
+        {
+          "name": "Liquibase"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "data-stored-procedures",
+      "name": "Procedimientos, vistas y triggers",
+      "what": "Lógica dentro de la base de datos: cuándo conviene y cuándo complica el mantenimiento.",
+      "complexity": "media",
+      "usefulness": "baja",
+      "levels": {
+        "junior": "Lee y ejecuta procedimientos almacenados existentes.",
+        "mid": "Escribe procedimientos y vistas eficientes y sabe cuándo evitar los triggers.",
+        "senior": "Decide qué lógica va en la base de datos y cuál en la aplicación, y migra lógica legacy fuera de la base cuando conviene."
+      },
+      "resources": [
+        {
+          "name": "MySQL Reference Manual",
+          "url": "https://dev.mysql.com/doc/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "data-nosql",
+      "name": "Bases de datos NoSQL",
+      "what": "Documentos (MongoDB), clave-valor (Redis) y otras: qué problema resuelve cada una.",
+      "complexity": "media",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Sabe que existen y en qué se diferencian de una relacional.",
+        "mid": "Usa una base de documentos o clave-valor en un proyecto y modela pensando en cómo se consulta.",
+        "senior": "Elige el tipo de base correcto para cada caso y entiende sus garantías de consistencia."
+      },
+      "resources": [
+        {
+          "name": "MongoDB University",
+          "url": "https://learn.mongodb.com"
+        },
+        {
+          "name": "Designing Data-Intensive Applications (Martin Kleppmann)"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "data-caching",
+      "name": "Caché",
+      "what": "Guardar resultados costosos para responder más rápido, y saber cuándo invalidarlos.",
+      "complexity": "media",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Entiende qué es una caché.",
+        "mid": "Implementa caché con Redis o la de Spring y define tiempos de expiración.",
+        "senior": "Diseña estrategias de invalidación y evita datos viejos y efectos de estampida."
+      },
+      "resources": [
+        {
+          "name": "Documentación de Redis",
+          "url": "https://redis.io/docs/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "data-backup-recovery",
+      "name": "Respaldos y recuperación",
+      "what": "Respaldos, restauración probada, réplicas y alta disponibilidad.",
+      "complexity": "media",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Sabe que existen respaldos y dónde están.",
+        "mid": "Hace y restaura respaldos, y entiende las réplicas de lectura.",
+        "senior": "Define RPO y RTO, prueba la recuperación ante desastres y diseña la replicación."
+      },
+      "resources": [
+        {
+          "name": "MySQL Reference Manual",
+          "url": "https://dev.mysql.com/doc/"
+        },
+        {
+          "name": "Documentación de PostgreSQL",
+          "url": "https://www.postgresql.org/docs/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "data-scaling",
+      "name": "Escalamiento de datos",
+      "what": "Réplicas de lectura, particionamiento y sharding cuando una base ya no alcanza.",
+      "complexity": "alta",
+      "usefulness": "baja",
+      "levels": {
+        "junior": "Sabe que una base de datos tiene límites.",
+        "mid": "Usa réplicas de lectura y particiona tablas grandes por fecha.",
+        "senior": "Diseña el escalamiento de datos de un sistema y conoce los costos del sharding."
+      },
+      "resources": [
+        {
+          "name": "Designing Data-Intensive Applications (Martin Kleppmann)"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "data-security",
+      "name": "Seguridad de datos",
+      "what": "Permisos mínimos, consultas parametrizadas, cifrado y manejo de datos personales.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Usa consultas parametrizadas y no guarda contraseñas en texto plano.",
+        "mid": "Aplica mínimo privilegio en usuarios de base de datos y cifra datos sensibles.",
+        "senior": "Define políticas de acceso, auditoría y retención, y cumple la regulación de datos personales."
+      },
+      "resources": [
+        {
+          "name": "OWASP: SQL Injection Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "evidence": []
+    }
+  ]
+}

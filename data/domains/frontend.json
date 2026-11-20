@@ -1,0 +1,240 @@
+{
+  "id": "frontend",
+  "name": "Frontend",
+  "description": "Construir interfaces rápidas, accesibles y fáciles de mantener.",
+  "skills": [
+    {
+      "id": "frontend-html-css",
+      "name": "HTML y CSS",
+      "what": "HTML semántico, CSS moderno, Flexbox, Grid, variables y diseño responsivo.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Maqueta pantallas con ayuda de un framework de estilos.",
+        "mid": "Construye layouts responsivos con Flexbox y Grid y HTML semántico.",
+        "senior": "Define sistemas de diseño y resuelve problemas complejos de layout y rendimiento de CSS."
+      },
+      "resources": [
+        {
+          "name": "MDN: aprende desarrollo web",
+          "url": "https://developer.mozilla.org/es/docs/Learn"
+        },
+        {
+          "name": "web.dev",
+          "url": "https://web.dev/learn"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "frontend-angular-core",
+      "name": "Angular: componentes y plantillas",
+      "what": "Componentes standalone, plantillas, control de flujo, inputs, outputs y ciclo de vida.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Crea componentes siguiendo los existentes.",
+        "mid": "Diseña componentes reutilizables y estructura features por carpetas.",
+        "senior": "Define la arquitectura de una aplicación Angular grande."
+      },
+      "resources": [
+        {
+          "name": "angular.dev",
+          "url": "https://angular.dev"
+        },
+        {
+          "name": "roadmap.sh: angular",
+          "url": "https://roadmap.sh/angular"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "frontend-angular-signals",
+      "name": "Angular: signals y estado",
+      "what": "signal, computed, effect, linkedSignal y manejo de estado de la aplicación.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Usa signals simples.",
+        "mid": "Maneja el estado de una feature con signals y servicios.",
+        "senior": "Diseña la estrategia de estado global y decide cuándo usar una librería de estado."
+      },
+      "resources": [
+        {
+          "name": "angular.dev",
+          "url": "https://angular.dev"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "frontend-rxjs",
+      "name": "RxJS",
+      "what": "Observables, operadores (switchMap, mergeMap, debounceTime) y manejo de suscripciones.",
+      "complexity": "alta",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Se suscribe a un observable de HttpClient.",
+        "mid": "Combina operadores y evita fugas con takeUntilDestroyed.",
+        "senior": "Diseña flujos reactivos complejos y sabe cuándo usar signals en su lugar."
+      },
+      "resources": [
+        {
+          "name": "rxjs.dev",
+          "url": "https://rxjs.dev"
+        },
+        {
+          "name": "Learn RxJS",
+          "url": "https://www.learnrxjs.io"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "frontend-angular-forms",
+      "name": "Formularios",
+      "what": "Reactive Forms y Signal Forms, validaciones síncronas y asíncronas.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Crea formularios simples.",
+        "mid": "Construye formularios dinámicos con validaciones personalizadas.",
+        "senior": "Diseña formularios complejos reutilizables y accesibles."
+      },
+      "resources": [
+        {
+          "name": "angular.dev",
+          "url": "https://angular.dev"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "frontend-routing-http",
+      "name": "Ruteo y comunicación HTTP",
+      "what": "Rutas, lazy loading, guards, resolvers, interceptors y manejo de errores.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Agrega rutas y llama a una API.",
+        "mid": "Usa lazy loading, guards e interceptors para autenticación y errores.",
+        "senior": "Diseña la navegación y la capa de datos de toda la aplicación."
+      },
+      "resources": [
+        {
+          "name": "angular.dev",
+          "url": "https://angular.dev"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "frontend-ui-libraries",
+      "name": "Librerías de componentes y estilos",
+      "what": "PrimeNG, Angular Material y Tailwind CSS.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Usa componentes de una librería.",
+        "mid": "Personaliza temas y combina librería y utilidades de estilo con criterio.",
+        "senior": "Elige y gobierna la librería de UI y el sistema de diseño de un producto."
+      },
+      "resources": [
+        {
+          "name": "PrimeNG",
+          "url": "https://primeng.org"
+        },
+        {
+          "name": "Tailwind CSS",
+          "url": "https://tailwindcss.com/docs"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "frontend-accessibility",
+      "name": "Accesibilidad",
+      "what": "Teclado, lectores de pantalla, contraste y WCAG.",
+      "complexity": "media",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Pone texto alternativo a las imágenes.",
+        "mid": "Construye pantallas navegables con teclado y con buen contraste.",
+        "senior": "Audita aplicaciones contra WCAG y define estándares del equipo."
+      },
+      "resources": [
+        {
+          "name": "web.dev: accesibilidad",
+          "url": "https://web.dev/learn/accessibility"
+        },
+        {
+          "name": "WCAG",
+          "url": "https://www.w3.org/WAI/standards-guidelines/wcag/es"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "frontend-web-performance",
+      "name": "Rendimiento web",
+      "what": "Core Web Vitals, tamaño del bundle, carga diferida y OnPush.",
+      "complexity": "media",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Nota que una pantalla es lenta.",
+        "mid": "Mide con Lighthouse, aplica lazy loading y reduce el bundle.",
+        "senior": "Define presupuestos de rendimiento y los vigila en CI."
+      },
+      "resources": [
+        {
+          "name": "web.dev: rendimiento",
+          "url": "https://web.dev/learn/performance"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "frontend-frontend-testing",
+      "name": "Pruebas de frontend",
+      "what": "Pruebas de componentes y servicios, y pruebas end-to-end.",
+      "complexity": "media",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Corre las pruebas existentes.",
+        "mid": "Escribe pruebas de componentes y servicios, y algunas end-to-end.",
+        "senior": "Define la estrategia de pruebas del frontend."
+      },
+      "resources": [
+        {
+          "name": "angular.dev",
+          "url": "https://angular.dev"
+        },
+        {
+          "name": "Playwright",
+          "url": "https://playwright.dev"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "frontend-browser-devtools",
+      "name": "Herramientas del navegador",
+      "what": "Consola, red, rendimiento, almacenamiento y depuración en el navegador.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Revisa la consola cuando algo falla.",
+        "mid": "Depura con breakpoints, analiza peticiones de red y el almacenamiento.",
+        "senior": "Diagnostica problemas de rendimiento y memoria con el perfilador."
+      },
+      "resources": [
+        {
+          "name": "Chrome DevTools",
+          "url": "https://developer.chrome.com/docs/devtools"
+        }
+      ],
+      "evidence": []
+    }
+  ]
+}

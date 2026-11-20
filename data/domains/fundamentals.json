@@ -1,0 +1,214 @@
+{
+  "id": "fundamentals",
+  "name": "Fundamentos de computación",
+  "description": "Lo que está debajo de cualquier lenguaje o framework: cómo se guardan y procesan los datos, y cómo se comunican las máquinas.",
+  "skills": [
+    {
+      "id": "fundamentals-big-o",
+      "name": "Complejidad algorítmica (Big O)",
+      "what": "Medir cuánto crece el tiempo y la memoria de un algoritmo según el tamaño de los datos.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Sabe que un ciclo dentro de otro es más lento.",
+        "mid": "Calcula el Big O de su propio código y elige la alternativa más eficiente.",
+        "senior": "Detecta cuellos de botella por complejidad en sistemas reales y decide cuándo optimizar."
+      },
+      "resources": [
+        {
+          "name": "Grokking Algorithms (Aditya Bhargava)"
+        },
+        {
+          "name": "NeetCode",
+          "url": "https://neetcode.io"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "fundamentals-data-structures",
+      "name": "Estructuras de datos",
+      "what": "Arreglos, listas, mapas, conjuntos, pilas, colas, árboles y grafos: cuándo usar cada una.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Usa listas y mapas del lenguaje.",
+        "mid": "Elige la estructura correcta según el acceso que necesita y conoce su costo.",
+        "senior": "Diseña estructuras para problemas específicos y entiende su implementación interna."
+      },
+      "resources": [
+        {
+          "name": "roadmap.sh: datastructures-and-algorithms",
+          "url": "https://roadmap.sh/datastructures-and-algorithms"
+        },
+        {
+          "name": "NeetCode",
+          "url": "https://neetcode.io"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "fundamentals-algorithms",
+      "name": "Algoritmos clásicos",
+      "what": "Búsqueda, ordenamiento, recursión, dos punteros, ventana deslizante, BFS y DFS.",
+      "complexity": "media",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Resuelve problemas sencillos con ciclos.",
+        "mid": "Resuelve problemas de nivel medio tipo LeetCode explicando su razonamiento.",
+        "senior": "Reconoce el patrón de un problema nuevo y lo aplica en código de producción."
+      },
+      "resources": [
+        {
+          "name": "NeetCode 150",
+          "url": "https://neetcode.io"
+        },
+        {
+          "name": "Exercism",
+          "url": "https://exercism.org"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "fundamentals-memory",
+      "name": "Memoria y ejecución",
+      "what": "Stack y heap, valor y referencia, recolección de basura y fugas de memoria.",
+      "complexity": "media",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Sabe que pasar un objeto a una función puede modificar el original.",
+        "mid": "Entiende stack, heap y garbage collection, y evita fugas comunes.",
+        "senior": "Diagnostica problemas de memoria en producción con herramientas de perfilado."
+      },
+      "resources": [
+        {
+          "name": "dev.java",
+          "url": "https://dev.java/learn/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "fundamentals-concurrency",
+      "name": "Concurrencia y paralelismo",
+      "what": "Hilos, procesos, condiciones de carrera, locks, deadlocks y programación asíncrona.",
+      "complexity": "alta",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Sabe que dos hilos pueden pisarse los datos.",
+        "mid": "Usa ejecutores y estructuras concurrentes, y evita condiciones de carrera.",
+        "senior": "Diseña sistemas concurrentes correctos y diagnostica deadlocks y contención."
+      },
+      "resources": [
+        {
+          "name": "Java Concurrency in Practice (Brian Goetz)"
+        },
+        {
+          "name": "dev.java",
+          "url": "https://dev.java/learn/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "fundamentals-networking",
+      "name": "Redes",
+      "what": "TCP/IP, DNS, puertos, latencia y qué pasa entre el navegador y el servidor.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Sabe qué es una IP, un puerto y un dominio.",
+        "mid": "Explica qué pasa al abrir una URL y diagnostica problemas de conexión básicos.",
+        "senior": "Diseña la comunicación entre servicios considerando latencia, fallas y seguridad de red."
+      },
+      "resources": [
+        {
+          "name": "MDN: cómo funciona la web",
+          "url": "https://developer.mozilla.org/es/docs/Learn"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "fundamentals-http",
+      "name": "HTTP y la web",
+      "what": "Métodos, códigos de estado, headers, cookies, caché, HTTPS y CORS.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Usa GET y POST y conoce los códigos 200, 404 y 500.",
+        "mid": "Domina métodos, códigos, headers, caché y CORS, y diagnostica con las herramientas del navegador.",
+        "senior": "Diseña APIs y estrategias de caché aprovechando HTTP a fondo."
+      },
+      "resources": [
+        {
+          "name": "MDN: HTTP",
+          "url": "https://developer.mozilla.org/es/docs/Web/HTTP"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "fundamentals-operating-systems",
+      "name": "Sistemas operativos",
+      "what": "Procesos, archivos, permisos, variables de entorno y señales.",
+      "complexity": "media",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Navega archivos y ejecuta programas desde la terminal.",
+        "mid": "Entiende procesos, permisos y variables de entorno, y los usa para diagnosticar.",
+        "senior": "Ajusta el sistema para rendimiento y seguridad en servidores de producción."
+      },
+      "resources": [
+        {
+          "name": "roadmap.sh: linux",
+          "url": "https://roadmap.sh/linux"
+        },
+        {
+          "name": "Linux Journey",
+          "url": "https://linuxjourney.com"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "fundamentals-encoding",
+      "name": "Representación de datos",
+      "what": "Binario, UTF-8, zonas horarias, números decimales y fechas.",
+      "complexity": "baja",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Sabe que existen distintas codificaciones de texto.",
+        "mid": "Maneja UTF-8, fechas con zona horaria (ISO 8601) y decimales sin errores de redondeo.",
+        "senior": "Define cómo un sistema guarda fechas, monedas y texto para evitar errores entre países."
+      },
+      "resources": [
+        {
+          "name": "MDN: Date",
+          "url": "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "fundamentals-distributed-systems",
+      "name": "Sistemas distribuidos",
+      "what": "Consistencia, disponibilidad, fallas parciales, reintentos e idempotencia.",
+      "complexity": "alta",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Sabe que un servicio remoto puede fallar o tardar.",
+        "mid": "Aplica reintentos, timeouts e idempotencia al llamar a otros servicios.",
+        "senior": "Diseña sistemas que toleran fallas y entiende los compromisos del teorema CAP."
+      },
+      "resources": [
+        {
+          "name": "Designing Data-Intensive Applications (Martin Kleppmann)"
+        }
+      ],
+      "evidence": []
+    }
+  ]
+}

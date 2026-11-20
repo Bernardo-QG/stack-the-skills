@@ -6,7 +6,7 @@ Son etiquetas `<meta>` que leen WhatsApp, LinkedIn, Slack o Discord para mostrar
 
 ```html
 <meta property="og:title" content="Stack the Skills">
-<meta property="og:description" content="Fundamentos, checklist y estándares…">
+<meta property="og:description" content="Mapa de habilidades para llegar a desarrollador senior…">
 <meta property="og:image" content="https://bernardo-qg.github.io/stack-the-skills/img/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">

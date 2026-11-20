@@ -20,11 +20,13 @@ function store(key, value) {
 - `localStorage` solo guarda texto: los objetos se convierten con `JSON.stringify` y se leen con `JSON.parse`.
 - **Siempre con `try/catch`:** en modo privado, con el almacenamiento lleno o bloqueado, `localStorage` puede lanzar error. Sin el `try`, la página entera dejaría de funcionar.
 
-Las casillas se guardan como un objeto con solo las marcadas:
+Tu nivel en cada habilidad se guarda como un objeto con solo las habilidades marcadas, por su ID (ADR 0014):
 
 ```json
-{ "f1-0": 1, "f1-3": 1, "p1-2": 1 }
+{ "data-indexes": 2, "data-sql-fundamentals": 3, "tools-git": 2 }
 ```
+
+`0` es "aún no" y no se guarda; `1`, `2` y `3` son junior, intermedio y senior.
 
 ## Limitaciones
 

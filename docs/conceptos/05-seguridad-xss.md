@@ -18,7 +18,7 @@ Así `<script>` se muestra como texto y no se ejecuta.
 Cuando no hace falta HTML, se usa `textContent`, que nunca interpreta etiquetas:
 
 ```js
-$("planInsight").textContent = p.insight;
+$("levelRule").textContent = lv.rule;
 ```
 
 ## ¿Por qué cuidarlo si el contenido es mío?

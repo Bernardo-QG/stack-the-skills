@@ -10,7 +10,7 @@ Por qué el proyecto es como es: [índice de decisiones](adr/README.md).
 
 | # | Tema | Qué vas a aprender |
 |---|---|---|
-| 1 | [HTML semántico y accesibilidad](conceptos/01-html-y-accesibilidad.md) | `<details>`, labels, navegación con teclado |
+| 1 | [HTML semántico y accesibilidad](conceptos/01-html-y-accesibilidad.md) | `<details>`, radios con label, `aria-pressed`, teclado |
 | 2 | [CSS: tokens, temas y layout](conceptos/02-css.md) | Variables, modo oscuro, Grid y el bug de `minmax(0,1fr)` |
 | 3 | [JavaScript: datos y eventos](conceptos/03-javascript-datos-y-eventos.md) | `fetch`, `Promise.all`, delegación de eventos |
 | 4 | [localStorage](conceptos/04-localstorage.md) | Guardar estado sin servidor y sus límites |

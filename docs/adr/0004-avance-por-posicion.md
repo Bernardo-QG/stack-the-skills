@@ -1,7 +1,9 @@
 # ADR 0004: Identificar cada casilla por su posición en la lista
 
-- **Estado:** Aceptada
+- **Estado:** Reemplazada por ADR 0014
 - **Fecha:** 2026-11-18
+
+> Desde la versión 2.0.0 el avance se guarda por ID de habilidad. Se conserva como historia de la decisión.
 
 ## Contexto
 

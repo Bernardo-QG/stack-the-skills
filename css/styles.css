@@ -184,3 +184,84 @@ table.log tbody th{font-family:var(--f-mono);font-weight:500;white-space:nowrap;
 .levels-table{min-width:720px}
 .levels-table td:nth-child(2){color:var(--muted)}
 #nivel>.card,#reglas>.card,#bitacora>.card{margin:0}
+
+/* ===== v2: mapa de habilidades ===== */
+:root{ --lv1:#E3B59B; --lv2:#8FB09A; --lv3:#3F7A57; --lv0:#D9DED8; }
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){ --lv1:#9C5A3A; --lv2:#5E8A6C; --lv3:#7FC49A; --lv0:#2C362F; }}
+:root[data-theme="dark"]{ --lv1:#9C5A3A; --lv2:#5E8A6C; --lv3:#7FC49A; --lv0:#2C362F; }
+
+/* resumen */
+.summary{display:grid;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.summary .big small{font-family:var(--f-body);font-size:.9rem;font-weight:400;color:var(--muted)}
+.dist{display:flex;height:10px;border-radius:999px;overflow:hidden;background:var(--lv0)}
+.dist i{display:block;height:100%}
+.s3{background:var(--lv3)}.s2{background:var(--lv2)}.s1{background:var(--lv1)}.s0{background:var(--lv0)}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:baseline}
+
+/* niveles */
+.level-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px}
+.level-card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:grid;gap:4px}
+
+/* barra de modos y filtros */
+.modebar{display:inline-flex;flex-wrap:wrap;gap:4px;background:var(--code);border-radius:10px;padding:4px;justify-self:start;max-width:100%}
+.mode{border:0;background:transparent;font-weight:500;padding:8px 14px;border-radius:7px}
+.mode[aria-pressed="true"]{background:var(--surface);color:var(--accent);box-shadow:0 1px 2px rgb(0 0 0 / .08)}
+.filters{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-bottom:12px}
+.target{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.chip-btn{border-radius:999px;padding:5px 12px;font-size:.85rem}
+.chip-btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.toggle{display:flex;gap:8px;align-items:center;font-size:.9rem;cursor:pointer}
+.select{display:flex;gap:8px;align-items:center}
+.select select{font:inherit;font-size:.9rem;padding:6px 10px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+
+/* habilidades */
+ul.skills{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.skill{border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:grid;gap:8px;min-width:0;background:var(--bg)}
+.skill.meets{border-color:var(--lv2)}
+.skill.meets .expect{color:var(--muted)}
+.skill-top{display:flex;flex-wrap:wrap;gap:8px 14px;justify-content:space-between;align-items:flex-start}
+.skill-name{display:grid;gap:6px;min-width:0;flex:1 1 220px}
+.skill-name h4{margin:0;font-family:var(--f-display);font-size:1rem;font-weight:600;text-wrap:balance}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.rate-alta{background:var(--accent-soft);color:var(--accent)}
+.rate-media{background:var(--ok-soft);color:var(--ok)}
+.rate-baja{background:var(--code);color:var(--muted)}
+.expect{margin:0;font-size:.93rem}
+.expect .eyebrow{margin-right:6px;color:var(--accent)}
+details.more>summary{cursor:pointer;font-size:.85rem;color:var(--accent);width:max-content}
+details.more[open]{display:grid;gap:10px}
+details.more p{margin:0}
+.lv3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:8px}
+.lv{border:1px dashed var(--line);border-radius:8px;padding:8px 10px;display:grid;gap:2px;font-size:.9rem}
+.lv.on{border-style:solid;border-color:var(--accent);background:var(--accent-soft)}
+.links{font-size:.88rem;overflow-wrap:anywhere}
+.links b{font-family:var(--f-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-right:6px}
+.skill-id{font-size:.78rem;color:var(--muted)}
+
+/* selector de mi nivel */
+.picker{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;flex:none}
+.picker input{position:absolute;opacity:0;width:1px;height:1px}
+.picker label{font-family:var(--f-mono);font-size:.78rem;padding:6px 10px;cursor:pointer;color:var(--muted);border-left:1px solid var(--line);min-width:38px;text-align:center}
+.picker label:first-of-type{border-left:0}
+.picker label:hover{background:var(--code)}
+.picker input:checked+label{color:var(--surface);background:var(--muted)}
+.picker input[value="1"]:checked+label{background:var(--lv1);color:var(--ink)}
+.picker input[value="2"]:checked+label{background:var(--lv2);color:var(--ink)}
+.picker input[value="3"]:checked+label{background:var(--lv3);color:var(--surface)}
+.picker input:focus-visible+label{outline:2px solid var(--accent);outline-offset:-2px}
+
+/* matriz 3 × 3 */
+.grid9{display:grid;grid-template-columns:110px repeat(3,minmax(200px,1fr));gap:6px;padding:8px;min-width:740px}
+.g-head,.g-side{font-family:var(--f-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);display:flex;align-items:center}
+.g-head{justify-content:center;padding:4px}
+.g-cell{border:1px solid var(--line);border-radius:8px;padding:8px;display:grid;gap:6px;align-content:start;background:var(--bg);min-height:90px}
+.g-cell.u-alta.c-baja{border-color:var(--accent);background:var(--accent-soft)}
+.g-tag{font-family:var(--f-mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent)}
+.g-chips{display:flex;flex-wrap:wrap;gap:4px}
+.skill-chip{font-size:.78rem;padding:3px 9px;border-radius:999px;border:1px solid var(--line);background:var(--surface);text-align:left}
+.skill-chip.lvl-1{border-color:var(--lv1);box-shadow:inset 3px 0 0 var(--lv1)}
+.skill-chip.lvl-2{border-color:var(--lv2);box-shadow:inset 3px 0 0 var(--lv2)}
+.skill-chip.lvl-3{border-color:var(--lv3);box-shadow:inset 3px 0 0 var(--lv3)}
+.skill-detail{margin-top:14px;background:var(--surface);border:1px solid var(--accent);border-radius:10px;padding:16px 18px;display:grid;gap:10px}
+.skill-detail p{margin:0}
+section>*,#levelMode,#matrixMode{min-width:0}

@@ -1,0 +1,211 @@
+{
+  "id": "languages",
+  "name": "Lenguajes",
+  "description": "Dominar a fondo los lenguajes de tu stack y tener nociones de otros para no depender de uno solo.",
+  "skills": [
+    {
+      "id": "languages-java",
+      "name": "Java",
+      "what": "El lenguaje principal del backend: POO, colecciones, excepciones, genéricos, streams y Java moderno.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Escribe clases y métodos y usa colecciones básicas.",
+        "mid": "Domina colecciones, excepciones, genéricos, streams, records y Optional.",
+        "senior": "Conoce la JVM, escribe código idiomático y eficiente, y guía a otros en buenas prácticas."
+      },
+      "resources": [
+        {
+          "name": "dev.java",
+          "url": "https://dev.java/learn/"
+        },
+        {
+          "name": "Effective Java (Joshua Bloch)"
+        },
+        {
+          "name": "roadmap.sh: java",
+          "url": "https://roadmap.sh/java"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "languages-java-modern",
+      "name": "Java moderno (17–25)",
+      "what": "Records, sealed classes, pattern matching, text blocks y virtual threads.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Conoce que hay versiones nuevas de Java.",
+        "mid": "Usa records, switch con pattern matching y text blocks en su código.",
+        "senior": "Decide cuándo migrar de versión y aprovecha virtual threads donde aportan."
+      },
+      "resources": [
+        {
+          "name": "dev.java",
+          "url": "https://dev.java/learn/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "languages-typescript",
+      "name": "TypeScript",
+      "what": "Tipos, interfaces, genéricos, uniones y modo estricto para JavaScript con seguridad.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Agrega tipos básicos a variables y funciones.",
+        "mid": "Usa genéricos, uniones, tipos utilitarios y modo estricto sin recurrir a any.",
+        "senior": "Diseña tipos que hacen imposibles los estados inválidos y configura proyectos grandes."
+      },
+      "resources": [
+        {
+          "name": "TypeScript Handbook",
+          "url": "https://www.typescriptlang.org/docs/handbook/intro.html"
+        },
+        {
+          "name": "roadmap.sh: typescript",
+          "url": "https://roadmap.sh/typescript"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "languages-javascript",
+      "name": "JavaScript",
+      "what": "El lenguaje del navegador: closures, promesas, async/await, event loop y módulos.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Manipula el DOM y escribe funciones.",
+        "mid": "Entiende closures, promesas, async/await y el event loop.",
+        "senior": "Explica el comportamiento interno del motor y evita problemas de rendimiento y memoria."
+      },
+      "resources": [
+        {
+          "name": "javascript.info",
+          "url": "https://es.javascript.info"
+        },
+        {
+          "name": "MDN JavaScript",
+          "url": "https://developer.mozilla.org/es/docs/Web/JavaScript"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "languages-sql",
+      "name": "SQL como lenguaje",
+      "what": "SQL estándar y diferencias entre motores (MySQL, PostgreSQL, SQL Server).",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Escribe consultas básicas en un motor.",
+        "mid": "Escribe SQL portable y conoce las diferencias principales entre motores.",
+        "senior": "Aprovecha funciones avanzadas de cada motor sabiendo su costo de portabilidad."
+      },
+      "resources": [
+        {
+          "name": "SQLBolt",
+          "url": "https://sqlbolt.com"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "languages-python",
+      "name": "Python",
+      "what": "Segundo lenguaje para scripts, automatización, datos e IA.",
+      "complexity": "baja",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Escribe scripts simples.",
+        "mid": "Automatiza tareas y consume APIs con Python.",
+        "senior": "Construye servicios o herramientas de IA y datos en Python."
+      },
+      "resources": [
+        {
+          "name": "Tutorial oficial de Python",
+          "url": "https://docs.python.org/es/3/tutorial/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "languages-legacy-languages",
+      "name": "Lenguajes legacy",
+      "what": "PHP, Pascal/Delphi u otros de sistemas existentes que hay que mantener o migrar.",
+      "complexity": "media",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Lee y corrige código legacy con ayuda.",
+        "mid": "Mantiene y extiende código legacy con seguridad.",
+        "senior": "Planea y ejecuta la migración de sistemas legacy a tecnologías actuales."
+      },
+      "resources": [
+        {
+          "name": "Working Effectively with Legacy Code (Michael Feathers)"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "languages-paradigms",
+      "name": "Paradigmas de programación",
+      "what": "Orientado a objetos, funcional, imperativo y reactivo.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Programa con clases y funciones.",
+        "mid": "Combina POO y estilo funcional, y entiende la programación reactiva.",
+        "senior": "Elige el paradigma adecuado para cada problema y lo enseña."
+      },
+      "resources": [
+        {
+          "name": "Refactoring Guru",
+          "url": "https://refactoring.guru/es"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "languages-regex",
+      "name": "Expresiones regulares",
+      "what": "Buscar, validar y extraer texto con patrones.",
+      "complexity": "baja",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Usa expresiones copiadas de internet.",
+        "mid": "Escribe expresiones para validar y extraer datos comunes.",
+        "senior": "Sabe cuándo una regex se vuelve inmantenible o insegura (ReDoS)."
+      },
+      "resources": [
+        {
+          "name": "RegexOne",
+          "url": "https://regexone.com"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "languages-shell-scripting",
+      "name": "Scripts de terminal",
+      "what": "Bash o PowerShell para automatizar tareas repetitivas.",
+      "complexity": "baja",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Ejecuta comandos sueltos.",
+        "mid": "Escribe scripts con variables, ciclos y manejo de errores.",
+        "senior": "Automatiza procesos de despliegue y operación de forma confiable."
+      },
+      "resources": [
+        {
+          "name": "Linux Journey",
+          "url": "https://linuxjourney.com"
+        }
+      ],
+      "evidence": []
+    }
+  ]
+}

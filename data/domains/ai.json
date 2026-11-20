@@ -1,0 +1,167 @@
+{
+  "id": "ai",
+  "name": "IA aplicada",
+  "description": "Usar la IA para trabajar mejor y construir productos que la integran.",
+  "skills": [
+    {
+      "id": "ai-ai-assistants",
+      "name": "Asistentes de código",
+      "what": "Usar Claude Code, Copilot o Cursor en el día a día con buen criterio.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Pide código a un asistente y lo pega.",
+        "mid": "Da contexto claro, itera y revisa todo lo que genera.",
+        "senior": "Define cómo el equipo usa asistentes de IA de forma segura y productiva."
+      },
+      "resources": [
+        {
+          "name": "Claude Docs",
+          "url": "https://docs.claude.com"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "ai-ai-code-review",
+      "name": "Revisión crítica de código generado",
+      "what": "Detectar errores sutiles, casos límite y fallas de seguridad en código generado.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Confía en que el código funciona si compila.",
+        "mid": "Revisa y prueba el código generado como si fuera de otra persona.",
+        "senior": "Establece controles de calidad para el código generado con IA."
+      },
+      "resources": [],
+      "evidence": []
+    },
+    {
+      "id": "ai-prompting",
+      "name": "Prompting efectivo",
+      "what": "Dar contexto, ejemplos, restricciones y criterios de aceptación.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Escribe instrucciones cortas.",
+        "mid": "Estructura prompts con contexto, ejemplos y formato de salida.",
+        "senior": "Diseña prompts para productos y los evalúa de forma sistemática."
+      },
+      "resources": [
+        {
+          "name": "Guía de prompting de Anthropic",
+          "url": "https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "ai-llm-fundamentals",
+      "name": "Fundamentos de modelos de lenguaje",
+      "what": "Tokens, ventana de contexto, temperatura, alucinaciones y limitaciones.",
+      "complexity": "media",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Sabe que el modelo puede equivocarse.",
+        "mid": "Entiende tokens, contexto y por qué el modelo alucina.",
+        "senior": "Elige modelos y parámetros según costo, calidad y latencia."
+      },
+      "resources": [
+        {
+          "name": "DeepLearning.AI",
+          "url": "https://www.deeplearning.ai/short-courses/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "ai-llm-apis",
+      "name": "Integrar APIs de modelos",
+      "what": "Llamar a un modelo desde el backend con manejo de errores, costos y límites.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Hace una llamada de prueba a una API.",
+        "mid": "Integra un modelo en una funcionalidad real con reintentos y control de costos.",
+        "senior": "Diseña funcionalidades con IA confiables, medibles y económicas."
+      },
+      "resources": [
+        {
+          "name": "Claude Docs",
+          "url": "https://docs.claude.com"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "ai-rag",
+      "name": "RAG y búsqueda semántica",
+      "what": "Embeddings, bases vectoriales y respuestas basadas en tus propios datos.",
+      "complexity": "alta",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Sabe qué es RAG.",
+        "mid": "Construye un RAG pequeño sobre documentos propios.",
+        "senior": "Optimiza la recuperación y evalúa la calidad de las respuestas."
+      },
+      "resources": [
+        {
+          "name": "DeepLearning.AI",
+          "url": "https://www.deeplearning.ai/short-courses/"
+        },
+        {
+          "name": "roadmap.sh: ai-engineer",
+          "url": "https://roadmap.sh/ai-engineer"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "ai-agents-tools",
+      "name": "Herramientas y agentes",
+      "what": "Tool use, flujos con agentes y cuándo valen la pena.",
+      "complexity": "alta",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Sabe que un modelo puede llamar funciones.",
+        "mid": "Implementa un flujo con herramientas para una tarea concreta.",
+        "senior": "Diseña agentes confiables con límites, supervisión y evaluación."
+      },
+      "resources": [
+        {
+          "name": "Claude Docs: tool use",
+          "url": "https://docs.claude.com/en/docs/agents-and-tools/tool-use/overview"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "ai-ai-evaluation",
+      "name": "Evaluación de funciones con IA",
+      "what": "Medir si la IA responde bien: conjuntos de prueba, métricas y regresiones.",
+      "complexity": "alta",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Prueba a mano algunos ejemplos.",
+        "mid": "Arma un conjunto de casos de prueba para su funcionalidad.",
+        "senior": "Automatiza evaluaciones y las usa para decidir cambios de modelo o prompt."
+      },
+      "resources": [],
+      "evidence": []
+    },
+    {
+      "id": "ai-ai-responsible-use",
+      "name": "Uso responsable de la IA",
+      "what": "Privacidad, datos de la empresa, licencias y sesgos.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Sabe que no debe pegar contraseñas.",
+        "mid": "No comparte código ni datos de la empresa en herramientas no autorizadas.",
+        "senior": "Define las políticas de uso de IA del equipo."
+      },
+      "resources": [],
+      "evidence": []
+    }
+  ]
+}

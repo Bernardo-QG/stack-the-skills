@@ -1,7 +1,9 @@
 # ADR 0005: Fusionar los planes en una sola página
 
-- **Estado:** Aceptada
+- **Estado:** Reemplazada por ADR 0013
 - **Fecha:** 2026-11-18
+
+> Desde la versión 2.0.0 el plan personal vive en el repo privado growth-plan. Se conserva como historia de la decisión.
 
 ## Contexto
 

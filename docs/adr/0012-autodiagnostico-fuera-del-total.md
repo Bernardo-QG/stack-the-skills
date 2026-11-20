@@ -1,7 +1,9 @@
 # ADR 0012: El autodiagnóstico no cuenta en el avance total
 
-- **Estado:** Aceptada
+- **Estado:** Reemplazada por ADR 0014
 - **Fecha:** 2026-11-18
+
+> Desde la versión 2.0.0 el autodiagnóstico se reemplazó por el nivel que marcas en cada habilidad.
 
 ## Contexto
 

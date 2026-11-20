@@ -1,58 +1,69 @@
 # Guía de contenido
 
-Todo el texto de la página vive en `data/`. Esta guía explica qué hay en cada archivo y cómo editarlo sin perder el avance guardado.
-
-## Reglas de oro
-
-1. **Agrega los puntos nuevos al final de su lista.** El avance se guarda por posición (ADR 0004).
-2. **No cambies los `id`** de las secciones existentes.
-3. Para una sección nueva, usa un `id` que no exista (`f13`, `c10`, `p5`…).
-4. En las fases, agrega puntos en el **último grupo** o crea un grupo nuevo al final.
-5. Después de editar, abre la página con un servidor local y revisa la consola. Un JSON inválido muestra un aviso en la página.
-
-## Forma de un punto
-
-```json
-{ "text": "Texto del punto", "note": "Explicación corta opcional" }
-```
+Todo el contenido vive en `data/`. Esta guía explica qué hay en cada archivo y cómo editarlo sin perder tu avance.
 
 ## Archivos
 
-| Archivo | Sección | Forma |
-|---|---|---|
-| `niveles.json` | Mi nivel | `matrix` (filas `[aspecto, junior, intermedio, senior]`), `signals`, `diagnostic` |
-| `fundamentos.json` | Fundamentos | lista de `{ id, title, tag, items }` |
-| `checklist.json` | Checklist universal | lista de `{ id, title, items }`; estas casillas no se guardan |
-| `estandares.json` | Estándares | lista de `{ id, title, items, example? }` |
-| `oficio.json` | Oficio | `daily`, `growth`: listas de texto |
-| `plan.json` | Mi plan, fases y seguimiento | `goal`, `start`, `phases`, `week`, `review`, `log`, `budget`, `reminder` |
-| `reglas.json` | Reglas | `rules`, `avoid`, `habits`, `sustain` |
-| `ingles.json` | Inglés | `levels`, `principles`, `subtitles`, `routine`, `grammar`, `stages`, `technical`, `phrases`, `tips` |
-| `roadmap.json` | Proyecto StockFlow | lista de `{ id, title, duration, tags, goal, items, done }` |
-| `temario.json` | Temario | lista de `{ id, title, priority, items }`; `priority` es `alta` o `media` |
-| `carrera.json` | Carrera | `specializations`, `tshape`, `certifications`, `community` |
-| `recursos.json` | Recursos | lista de `{ category, items }`; cada recurso es `{ name, description, url? }` |
+| Archivo | Qué contiene |
+|---|---|
+| `domains.json` | El orden en que aparecen los dominios y los criterios de complejidad y utilidad |
+| `domains/<id>.json` | Un dominio con sus habilidades (por ejemplo `domains/data.json`) |
+| `levels.json` | Qué significa cada nivel, la comparativa junior/intermedio/senior y las señales de senior |
+| `resources.json` | Recursos generales por categoría |
 
-## Una fase
+## Reglas de oro
+
+1. **Nunca cambies el `id` de una habilidad existente.** Tu nivel se guarda con ese ID (ADR 0014). El nombre visible (`name`) sí se puede cambiar.
+2. Los IDs nuevos siguen el formato `<dominio>-<nombre-en-ingles>` en kebab-case, sin números: `backend-rest-api`, `english-interviews`.
+3. Puedes reordenar y mover habilidades libremente.
+4. Después de editar, abre la página con un servidor local y revisa la consola. Un JSON inválido muestra un aviso en la página.
+
+## Un dominio
 
 ```json
 {
-  "id": "p1",
-  "title": "Cimientos",
-  "months": "Nov 2026 – Ene 2027",
-  "english": "A2 sólido",
-  "objective": "…",
-  "groups": [ { "title": "Inglés", "items": [ … ] } ],
-  "checkpoint": [ "60 o más días seguidos de rutina" ]
+  "id": "data",
+  "name": "Datos",
+  "description": "Diseñar, consultar, optimizar y proteger los datos de un sistema.",
+  "skills": [ … ]
 }
 ```
 
-## La bitácora
+Para agregar un dominio nuevo, crea `domains/<id>.json` y agrega su `id` a `order` en `domains.json`.
 
-Cada mes de `plan.json → log.months` puede tener `values` (valores iniciales) y `targets` (la meta, que se ve en gris). Lo que escribes se guarda por `mes.columna` (por ejemplo `2027-01.efset`), así que puedes agregar meses o columnas sin perder lo escrito.
+## Una habilidad
+
+```json
+{
+  "id": "data-indexes",
+  "name": "Índices y planes de ejecución",
+  "what": "Qué es y para qué sirve, en una o dos líneas.",
+  "complexity": "media",
+  "usefulness": "alta",
+  "levels": {
+    "junior": "Sabe que un índice acelera las búsquedas.",
+    "mid": "Crea índices compuestos en el orden correcto y lee un EXPLAIN.",
+    "senior": "Diseña la estrategia de índices de un sistema."
+  },
+  "resources": [ { "name": "Use The Index, Luke", "url": "https://use-the-index-luke.com/es" } ],
+  "evidence": [ { "name": "PR: índices en movimientos", "url": "https://github.com/…" } ]
+}
+```
+
+- `complexity` y `usefulness` aceptan `baja`, `media` o `alta`.
+  - **Complejidad:** tiempo y esfuerzo para llegar a nivel intermedio.
+  - **Utilidad:** qué tanto se usa en el día a día y qué tanto la piden las vacantes de backend y full stack.
+- `levels` describe qué se espera en cada nivel. Escríbelo como algo observable: "crea índices compuestos", no "sabe de índices".
+- `url` es opcional en los recursos (un libro puede ir sin link).
+- `evidence` es la prueba de que dominas la habilidad: un PR, un repo o una nota. Agrégala cuando subas de nivel.
+
+## En el dominio Inglés
+
+Los niveles junior, intermedio y senior equivalen a A2, B1 y B2+ del Marco Común Europeo (MCER). Empieza cada descripción con el nivel: `"B1: escribe PRs y documentación clara."`
 
 ## Antes de publicar
 
 - [ ] Los JSON son válidos (la página carga sin aviso de error)
-- [ ] Los puntos nuevos están al final de su lista
+- [ ] Ningún `id` existente cambió
+- [ ] Los IDs nuevos no se repiten
 - [ ] El CHANGELOG tiene el cambio en `[Unreleased]`

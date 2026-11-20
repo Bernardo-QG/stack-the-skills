@@ -1,0 +1,203 @@
+{
+  "id": "architecture",
+  "name": "Arquitectura y diseño",
+  "description": "Organizar el código y los sistemas para que se puedan entender, cambiar y escalar.",
+  "skills": [
+    {
+      "id": "architecture-clean-code",
+      "name": "Código limpio",
+      "what": "Nombres claros, funciones pequeñas, una responsabilidad y código fácil de leer.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Escribe código que funciona.",
+        "mid": "Escribe código legible sin que se lo pidan y reconoce code smells.",
+        "senior": "Eleva el estándar de legibilidad del equipo con revisiones y ejemplos."
+      },
+      "resources": [
+        {
+          "name": "Clean Code (Robert C. Martin)"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "architecture-solid",
+      "name": "Principios SOLID y de diseño",
+      "what": "SOLID, DRY, KISS, YAGNI, cohesión y acoplamiento.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Conoce los nombres de los principios.",
+        "mid": "Los aplica con criterio y explica un ejemplo propio de cada uno.",
+        "senior": "Sabe cuándo romper un principio a propósito y lo justifica."
+      },
+      "resources": [
+        {
+          "name": "Refactoring Guru",
+          "url": "https://refactoring.guru/es"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "architecture-design-patterns",
+      "name": "Patrones de diseño",
+      "what": "Strategy, Factory, Builder, Adapter, Observer, Repository y otros.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Reconoce patrones que ya usa el framework.",
+        "mid": "Aplica el patrón adecuado a un problema real.",
+        "senior": "Evita el exceso de patrones y elige soluciones simples."
+      },
+      "resources": [
+        {
+          "name": "Refactoring Guru: patrones",
+          "url": "https://refactoring.guru/es/design-patterns"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "architecture-layered-architecture",
+      "name": "Arquitectura en capas y hexagonal",
+      "what": "Separar presentación, negocio y datos; puertos y adaptadores.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Sigue la estructura controller, service, repository.",
+        "mid": "Mantiene la lógica de negocio independiente del framework y la base de datos.",
+        "senior": "Define la arquitectura de un sistema y la defiende con argumentos."
+      },
+      "resources": [
+        {
+          "name": "Fundamentals of Software Architecture (Richards y Ford)"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "architecture-ddd",
+      "name": "Diseño guiado por el dominio (DDD)",
+      "what": "Lenguaje ubicuo, entidades, agregados y contextos delimitados.",
+      "complexity": "alta",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Usa nombres del negocio en el código.",
+        "mid": "Modela agregados y entidades a partir del negocio.",
+        "senior": "Divide sistemas grandes en contextos delimitados y define sus integraciones."
+      },
+      "resources": [
+        {
+          "name": "Domain-Driven Design Distilled (Vaughn Vernon)"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "architecture-system-design",
+      "name": "Diseño de sistemas",
+      "what": "Escalabilidad, caché, colas, balanceo de carga, réplicas y compromisos.",
+      "complexity": "alta",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Sabe que un sistema tiene varias piezas.",
+        "mid": "Diseña un sistema mediano en pizarrón explicando sus partes.",
+        "senior": "Diseña sistemas a escala, anticipa fallas y documenta los compromisos."
+      },
+      "resources": [
+        {
+          "name": "roadmap.sh: system-design",
+          "url": "https://roadmap.sh/system-design"
+        },
+        {
+          "name": "System Design Interview (Alex Xu)"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "architecture-refactoring",
+      "name": "Refactorización",
+      "what": "Mejorar la estructura del código sin cambiar su comportamiento, en pasos pequeños.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Renombra y extrae métodos con el IDE.",
+        "mid": "Refactoriza módulos completos con pruebas que lo respaldan.",
+        "senior": "Planea refactorizaciones grandes en etapas sin detener la entrega."
+      },
+      "resources": [
+        {
+          "name": "Refactoring (Martin Fowler)"
+        },
+        {
+          "name": "Refactoring Guru",
+          "url": "https://refactoring.guru/es/refactoring"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "architecture-legacy-migration",
+      "name": "Migración de sistemas legacy",
+      "what": "Pruebas de caracterización, patrón Strangler Fig y migración gradual.",
+      "complexity": "alta",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Mantiene código legacy con cuidado.",
+        "mid": "Agrega pruebas a código legacy y lo migra por partes.",
+        "senior": "Diseña y lidera la migración completa de un sistema legacy."
+      },
+      "resources": [
+        {
+          "name": "Working Effectively with Legacy Code (Michael Feathers)"
+        },
+        {
+          "name": "Martin Fowler: Strangler Fig",
+          "url": "https://martinfowler.com/bliki/StranglerFigApplication.html"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "architecture-adr",
+      "name": "Decisiones de arquitectura documentadas",
+      "what": "ADRs y documentos de diseño antes de construir.",
+      "complexity": "baja",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Lee documentación de decisiones existentes.",
+        "mid": "Escribe ADRs y documentos de diseño para sus funcionalidades.",
+        "senior": "Instituye la práctica en el equipo y revisa diseños de otros."
+      },
+      "resources": [
+        {
+          "name": "adr.github.io",
+          "url": "https://adr.github.io"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "architecture-integration-patterns",
+      "name": "Patrones de integración",
+      "what": "Integrar sistemas: APIs, eventos, archivos, sincronización y consistencia eventual.",
+      "complexity": "alta",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Consume una API de otro sistema.",
+        "mid": "Integra sistemas manejando errores, reintentos y duplicados.",
+        "senior": "Diseña la integración entre muchos sistemas y su consistencia."
+      },
+      "resources": [
+        {
+          "name": "Enterprise Integration Patterns",
+          "url": "https://www.enterpriseintegrationpatterns.com"
+        }
+      ],
+      "evidence": []
+    }
+  ]
+}

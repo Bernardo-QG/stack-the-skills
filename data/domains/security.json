@@ -1,0 +1,201 @@
+{
+  "id": "security",
+  "name": "Seguridad",
+  "description": "Escribir software que protege los datos y no abre puertas a ataques.",
+  "skills": [
+    {
+      "id": "security-owasp-top-10",
+      "name": "OWASP Top 10",
+      "what": "Las vulnerabilidades web más comunes y cómo prevenirlas.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Conoce que existe la lista.",
+        "mid": "Revisa su código contra cada categoría y corrige lo que encuentra.",
+        "senior": "Audita sistemas completos y forma al equipo en desarrollo seguro."
+      },
+      "resources": [
+        {
+          "name": "OWASP Top 10",
+          "url": "https://owasp.org/Top10/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "security-injection",
+      "name": "Inyección (SQL y otras)",
+      "what": "Consultas parametrizadas y nunca concatenar datos externos en código.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Usa consultas parametrizadas cuando el framework lo hace solo.",
+        "mid": "Detecta y corrige riesgos de inyección en SQL, comandos y plantillas.",
+        "senior": "Define reglas y revisiones que hacen imposible la inyección."
+      },
+      "resources": [
+        {
+          "name": "OWASP Cheat Sheet: SQL Injection Prevention",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "security-xss-csrf",
+      "name": "XSS y CSRF",
+      "what": "Escapar la salida, Content Security Policy y protección de formularios.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Sabe que no debe insertar HTML sin escapar.",
+        "mid": "Aplica escape de salida, CSP básica y protección CSRF.",
+        "senior": "Diseña la defensa en profundidad del frontend."
+      },
+      "resources": [
+        {
+          "name": "OWASP Cheat Sheet: Cross Site Scripting Prevention",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "security-authentication",
+      "name": "Autenticación segura",
+      "what": "Contraseñas con hash, sesiones, JWT, MFA y recuperación de cuenta.",
+      "complexity": "alta",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Usa el login que ya existe.",
+        "mid": "Implementa autenticación con hash seguro y tokens con expiración.",
+        "senior": "Diseña la identidad de un sistema con OAuth 2.0, OIDC y MFA."
+      },
+      "resources": [
+        {
+          "name": "OWASP Cheat Sheet: Authentication",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html"
+        },
+        {
+          "name": "jwt.io",
+          "url": "https://jwt.io/introduction"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "security-authorization",
+      "name": "Autorización y control de acceso",
+      "what": "Roles, permisos, mínimo privilegio y validar el acceso en el servidor.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Oculta botones según el rol.",
+        "mid": "Valida permisos en el backend en cada operación.",
+        "senior": "Diseña el modelo de permisos de un sistema y lo audita."
+      },
+      "resources": [
+        {
+          "name": "OWASP Cheat Sheet: Authorization",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "security-secrets",
+      "name": "Manejo de secretos",
+      "what": "Credenciales fuera del código, rotación y gestores de secretos.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "No sube contraseñas a Git.",
+        "mid": "Usa variables de entorno y revisa que no se filtren en logs.",
+        "senior": "Implementa gestores de secretos y rotación automática."
+      },
+      "resources": [
+        {
+          "name": "OWASP Cheat Sheet: Secrets Management",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "security-dependencies",
+      "name": "Seguridad de dependencias",
+      "what": "Revisar vulnerabilidades en librerías y mantenerlas actualizadas.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Actualiza cuando alguien lo pide.",
+        "mid": "Usa Dependabot u OWASP Dependency-Check y atiende alertas.",
+        "senior": "Define la política de actualización y respuesta a vulnerabilidades."
+      },
+      "resources": [
+        {
+          "name": "GitHub Dependabot",
+          "url": "https://docs.github.com/es/code-security/dependabot"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "security-data-protection",
+      "name": "Protección de datos personales",
+      "what": "Cifrado en tránsito y en reposo, datos mínimos y regulación.",
+      "complexity": "media",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Usa HTTPS.",
+        "mid": "Cifra datos sensibles y guarda solo lo necesario.",
+        "senior": "Asegura el cumplimiento de la regulación de datos personales."
+      },
+      "resources": [
+        {
+          "name": "OWASP Cheat Sheet: Cryptographic Storage",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "security-secure-logging",
+      "name": "Registro seguro",
+      "what": "Qué registrar para auditar y qué nunca registrar.",
+      "complexity": "baja",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Evita imprimir contraseñas.",
+        "mid": "Registra eventos de seguridad sin datos sensibles.",
+        "senior": "Diseña la auditoría y la detección de incidentes."
+      },
+      "resources": [
+        {
+          "name": "OWASP Cheat Sheet: Logging",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "security-threat-modeling",
+      "name": "Modelado de amenazas",
+      "what": "Pensar cómo podría atacarse un sistema antes de construirlo.",
+      "complexity": "alta",
+      "usefulness": "baja",
+      "levels": {
+        "junior": "Sabe que existe.",
+        "mid": "Identifica amenazas principales de una funcionalidad nueva.",
+        "senior": "Lidera sesiones de modelado de amenazas con el equipo."
+      },
+      "resources": [
+        {
+          "name": "OWASP Threat Modeling",
+          "url": "https://owasp.org/www-community/Threat_Modeling"
+        }
+      ],
+      "evidence": []
+    }
+  ]
+}

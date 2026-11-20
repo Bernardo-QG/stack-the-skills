@@ -1,0 +1,271 @@
+{
+  "id": "backend",
+  "name": "Backend",
+  "description": "Construir servicios confiables: APIs, lógica de negocio, comunicación entre sistemas y rendimiento.",
+  "skills": [
+    {
+      "id": "backend-spring-core",
+      "name": "Spring: inyección de dependencias",
+      "what": "IoC, beans, scopes, configuración, perfiles y autoconfiguración de Spring Boot.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Usa anotaciones como @Service y @Autowired siguiendo ejemplos.",
+        "mid": "Entiende el ciclo de vida de los beans, configura perfiles y propiedades, e inyecta por constructor.",
+        "senior": "Diseña la configuración de proyectos grandes y crea autoconfiguraciones propias."
+      },
+      "resources": [
+        {
+          "name": "Documentación de Spring Boot",
+          "url": "https://docs.spring.io/spring-boot/"
+        },
+        {
+          "name": "roadmap.sh: spring-boot",
+          "url": "https://roadmap.sh/spring-boot"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "backend-rest-api",
+      "name": "Diseño de APIs REST",
+      "what": "Recursos, verbos, códigos de estado, paginación, filtros, versionado y errores consistentes.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Crea endpoints CRUD.",
+        "mid": "Diseña APIs con paginación, validación, errores en formato Problem Details y documentación OpenAPI.",
+        "senior": "Define los lineamientos de API de un equipo y gestiona su evolución sin romper clientes."
+      },
+      "resources": [
+        {
+          "name": "Especificación OpenAPI",
+          "url": "https://spec.openapis.org/oas/latest.html"
+        },
+        {
+          "name": "RFC 9457: Problem Details",
+          "url": "https://www.rfc-editor.org/rfc/rfc9457"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "backend-validation-errors",
+      "name": "Validación y manejo de errores",
+      "what": "Bean Validation, excepciones de negocio y manejo global de errores.",
+      "complexity": "baja",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Valida algunos campos a mano.",
+        "mid": "Usa Bean Validation y @RestControllerAdvice para errores consistentes.",
+        "senior": "Define la estrategia de errores de todo un sistema y su relación con logs y monitoreo."
+      },
+      "resources": [
+        {
+          "name": "Documentación de Spring Boot",
+          "url": "https://docs.spring.io/spring-boot/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "backend-persistence",
+      "name": "Acceso a datos con Spring Data",
+      "what": "Repositorios, consultas, proyecciones, transacciones con @Transactional.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Usa repositorios de Spring Data para un CRUD.",
+        "mid": "Escribe consultas propias, usa proyecciones y entiende @Transactional y sus trampas.",
+        "senior": "Optimiza el acceso a datos de un sistema y decide entre ORM y SQL nativo."
+      },
+      "resources": [
+        {
+          "name": "Spring Data JPA",
+          "url": "https://docs.spring.io/spring-data/jpa/reference/"
+        },
+        {
+          "name": "Vlad Mihalcea",
+          "url": "https://vladmihalcea.com"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "backend-auth",
+      "name": "Autenticación y autorización",
+      "what": "Spring Security, sesiones, JWT, OAuth 2.0, OpenID Connect y roles.",
+      "complexity": "alta",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Protege endpoints con una configuración existente.",
+        "mid": "Implementa login con JWT, roles y protección por endpoint.",
+        "senior": "Diseña la autenticación entre múltiples servicios con OAuth 2.0 y OpenID Connect."
+      },
+      "resources": [
+        {
+          "name": "Spring Security",
+          "url": "https://docs.spring.io/spring-security/reference/"
+        },
+        {
+          "name": "OAuth 2.0",
+          "url": "https://oauth.net/2/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "backend-service-communication",
+      "name": "Comunicación entre servicios",
+      "what": "Clientes HTTP (RestClient, interfaces HTTP), timeouts, reintentos y circuit breakers.",
+      "complexity": "media",
+      "usefulness": "alta",
+      "levels": {
+        "junior": "Llama a otra API con un cliente HTTP.",
+        "mid": "Configura timeouts, reintentos y manejo de errores al llamar a otros servicios.",
+        "senior": "Diseña la resiliencia entre servicios con circuit breakers y degradación controlada."
+      },
+      "resources": [
+        {
+          "name": "Documentación de Spring Boot",
+          "url": "https://docs.spring.io/spring-boot/"
+        },
+        {
+          "name": "Resilience4j",
+          "url": "https://resilience4j.readme.io"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "backend-messaging",
+      "name": "Mensajería y eventos",
+      "what": "Colas y eventos con RabbitMQ o Kafka para comunicación asíncrona.",
+      "complexity": "alta",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Sabe qué es una cola de mensajes.",
+        "mid": "Publica y consume mensajes, y maneja errores y reintentos.",
+        "senior": "Diseña arquitecturas orientadas a eventos y garantiza entrega e idempotencia."
+      },
+      "resources": [
+        {
+          "name": "Documentación de Kafka",
+          "url": "https://kafka.apache.org/documentation/"
+        },
+        {
+          "name": "Documentación de RabbitMQ",
+          "url": "https://www.rabbitmq.com/docs"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "backend-microservices",
+      "name": "Microservicios",
+      "what": "Separación por servicios, gateway, descubrimiento, configuración centralizada y sus costos.",
+      "complexity": "alta",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Trabaja en un microservicio existente.",
+        "mid": "Crea servicios nuevos dentro de la arquitectura y entiende gateway, discovery y config server.",
+        "senior": "Decide cuándo conviene un microservicio y cuándo un monolito modular, y diseña sus límites."
+      },
+      "resources": [
+        {
+          "name": "Spring Cloud",
+          "url": "https://spring.io/projects/spring-cloud"
+        },
+        {
+          "name": "microservices.io",
+          "url": "https://microservices.io"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "backend-batch-scheduling",
+      "name": "Tareas programadas y procesos batch",
+      "what": "Jobs programados, procesamiento por lotes y reintentos.",
+      "complexity": "media",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Crea una tarea con @Scheduled.",
+        "mid": "Procesa grandes volúmenes por lotes con control de errores.",
+        "senior": "Diseña procesos batch tolerantes a fallas y fáciles de reanudar."
+      },
+      "resources": [
+        {
+          "name": "Spring Batch",
+          "url": "https://spring.io/projects/spring-batch"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "backend-performance",
+      "name": "Rendimiento del backend",
+      "what": "Perfilado, caché, pools de conexiones, paginación y virtual threads.",
+      "complexity": "alta",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Nota que algo es lento.",
+        "mid": "Usa perfiladores, ajusta pools y aplica caché donde conviene.",
+        "senior": "Establece metas de rendimiento, hace pruebas de carga y resuelve cuellos de botella."
+      },
+      "resources": [
+        {
+          "name": "Gatling",
+          "url": "https://docs.gatling.io"
+        },
+        {
+          "name": "k6",
+          "url": "https://grafana.com/docs/k6/latest/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "backend-graphql-grpc",
+      "name": "GraphQL y gRPC",
+      "what": "Alternativas a REST: consultas flexibles (GraphQL) y comunicación binaria eficiente (gRPC).",
+      "complexity": "media",
+      "usefulness": "baja",
+      "levels": {
+        "junior": "Sabe que existen.",
+        "mid": "Construye o consume una API GraphQL o gRPC.",
+        "senior": "Elige entre REST, GraphQL y gRPC según el caso."
+      },
+      "resources": [
+        {
+          "name": "GraphQL",
+          "url": "https://graphql.org/learn/"
+        },
+        {
+          "name": "gRPC",
+          "url": "https://grpc.io/docs/"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "id": "backend-file-handling",
+      "name": "Archivos, reportes y documentos",
+      "what": "Carga y descarga de archivos, generación de PDF y Excel, y almacenamiento en la nube.",
+      "complexity": "baja",
+      "usefulness": "media",
+      "levels": {
+        "junior": "Sube y descarga archivos en un endpoint.",
+        "mid": "Genera reportes PDF o Excel y maneja archivos grandes con streaming.",
+        "senior": "Diseña el almacenamiento de archivos con seguridad, costos y retención."
+      },
+      "resources": [
+        {
+          "name": "Documentación de Spring Boot",
+          "url": "https://docs.spring.io/spring-boot/"
+        }
+      ],
+      "evidence": []
+    }
+  ]
+}

@@ -7,6 +7,31 @@ y el proyecto usa [Versionado Semántico](https://semver.org/lang/es/).
 
 ## [Unreleased]
 
+## [2.0.0] - 2026-11-19
+
+Stack the Skills pasa a ser **solo el mapa de habilidades** para llegar a desarrollador senior y bilingüe (ADR 0013). Es un cambio incompatible: el avance de la versión 1.x no se conserva.
+
+### Added
+- Mapa de 14 dominios y 141 habilidades en `data/domains/`, cada una con descripción, niveles junior/intermedio/senior, complejidad, utilidad, recursos y evidencia.
+- Selector de "mi nivel" en cada habilidad, guardado por ID (ADR 0014).
+- Modo **por nivel**: lo que se espera en junior, intermedio o senior, con filtro "solo lo que me falta".
+- Modo **por complejidad y utilidad**: matriz de 3 × 3 para decidir por dónde empezar (ADR 0015).
+- Resumen de tu mapa: cuántas habilidades tienes en cada nivel y cuánto te falta para intermedio y senior.
+- ADRs 0013, 0014 y 0015.
+
+### Changed
+- La comparativa junior/intermedio/senior se movió a `data/levels.json`.
+- Recursos en `data/resources.json`, sin la categoría de trabajo remoto.
+- Guía de contenido y conceptos actualizados a la nueva estructura.
+
+### Removed
+- Plan personal (fases, bitácora, presupuesto, semana tipo, reglas de estudio, plan de inglés, proyecto StockFlow y carrera): se mueve al repo privado `growth-plan`.
+- Estándares: se convierten en reglas del `engineering-handbook`.
+- Checklist universal: la reemplazan las reglas verificables del handbook.
+- Autodiagnóstico de 15 preguntas: lo reemplaza el nivel por habilidad (ADR 0012 reemplazada por 0014).
+
+## [1.1.0] - 2026-11-18
+
 ### Added
 - Sección "Mi nivel": tabla junior, intermedio y senior, checklist de autodiagnóstico con resultado y señales de que vas pasando a senior.
 - Nivel 12 de Fundamentos: IA aplicada.
@@ -45,5 +70,5 @@ y el proyecto usa [Versionado Semántico](https://semver.org/lang/es/).
 - Favicon, imagen de vista previa para redes y metadatos Open Graph.
 - Licencia MIT y `.editorconfig`.
 
-[Unreleased]: https://github.com/Bernardo-QG/stack-the-skills/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/Bernardo-QG/stack-the-skills/releases/tag/v1.0.0
+[Unreleased]: https://github.com/Bernardo-QG/stack-the-skills/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/Bernardo-QG/stack-the-skills/releases/tag/v2.0.0
